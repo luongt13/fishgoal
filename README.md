@@ -110,7 +110,7 @@ Mobile design shows the changes needed in order to fit the components in the scr
 ## Project Schedule
 | Day | Deliverable | Status |
 | :---- | :---- | :---- |
-| Thursday 3/18  | Wireframes / Timeframes / Priority Matrix | In progress |
+| Thursday 3/18  | Wireframes / Timeframes | In progress |
 | Friday 3/19    | Project Proposal / AirTable / Create function components / Render Data | In progress |
 | Saturday 3/20  | Continue create function components / Render Data / Buttons | In progress |
 | Sunday 3/21    | Continue previous day / Add create | In progress |
