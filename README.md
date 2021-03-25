@@ -4,86 +4,144 @@
 FishGoal
 
 ## Project Description
-To create a tool to allows users to add, edit, and remove custom goals. The goal is to allow users to keep track of daily goals or tasks.
-
-## API and Data Sample
-```
-
-```
+A tool to allows users to add, update, and remove custom goals. The goal is to allow users to keep track of SMART goals or tasks.
 
 ## Wireframes
 
 #### Below are screenshots of the wireframe with description
 
-**Desktop**
-**Image 1:**  
+**Desktop Image 1:**  
+Upon page load, user than view their goals, add a goal, mark as complete, mark as incomplete, or edit their goal.
 
-![alt text](/public/desktop-1.png)
+![desktop wireframe](/assets/desktop-2.png)
 
-**Image 2:**
+**Desktop Image 2:**
+The user can access their completed goals in the completed goals component. 
 
-![alt text](/public/desktop-2.png)
+![desktop wireframe](/assets/desktop-1.png)
 
 
-**Tablet**
+**Tablet Image 1:**
+The tablet design is the same as the desktop design. The first image is for portrait and the second is landscape.
 
-![alt text](/public/tablet-1.png)
+![tablet wireframe](/assets/tablet-1.png)
 
-![alt text](/public/tablet-2.png)
+**Tablet Image 2:**
+
+![tablet wireframe](/assets/tablet-2.png)
 
 **Mobile:**
+Mobile design shows the changes needed in order to fit the components in the screen.
 
-![alt text](/public/mobile.png)
+![mobile wireframe](/assets/mobile.png)
+
+## Component Hierarchy
+
+![component hierarchy](/assets/hierarchy.png)
+
+## API and Data Sample
+```
+{
+    "records": [
+        {
+            "id": "recAdivpV88WZROBj",
+            "fields": {
+                "what": "Meal prep ",
+                "when": "6:30pm",
+                "measure": "7 meals",
+                "how": "plan out the meals"
+            },
+            "createdTime": "2021-03-25T16:49:03.000Z"
+        },
+        {
+            "id": "recHPIlfyl1ErvbPo",
+            "fields": {
+                "what": "Finish homework ",
+                "when": "8pm",
+                "measure": "all assignments",
+                "how": "put away my phone"
+            },
+            "createdTime": "2021-03-25T15:09:32.000Z"
+        },
+        {
+            "id": "reciz8i4VAIDRYnzO",
+            "fields": {
+                "what": "Drink more water",
+                "when": "the end of the day",
+                "measure": "8 cups",
+                "how": "fill my bottle the night before"
+            },
+            "createdTime": "2021-03-25T15:09:32.000Z"
+        },
+        {
+            "id": "recvpePOmAvqGWxdF",
+            "fields": {
+                "what": "Take a walk",
+                "when": "the end of my lunch break",
+                "measure": "30 mins",
+                "how": "set a reminder"
+            },
+            "createdTime": "2021-03-25T15:09:32.000Z"
+        }
+    ]
+}
+```
 
 ## MVP/Post MVP
 
 ### MVP
 * Get and post goals from AirTable
-* Create buttons to edit (put) and add (post) goals
-* Allow users to add custom goals 
+* Allow users to add custom goals
+* Create buttons to update (put) and create (post) goals
 * Allow users to mark complete or incomplete for goals
 * Users can view completed goals 
+* Responsive design 
 
 ### Post MVP
-* Allow users to add a time to complete goals
+* Arrange goals based on time to start/complete
 * Users can add an alarm to remind them to complete each specific goal
 * Add a display for goals for one week
-* Users can see uncompleted goals and add back to their goals
+* Users can see incomplete goals and add them back to their active goals
 * Users can create an account to save their goals
+* Allow admin accounts (healthcare professionals) to access user accounts goals
+* Users can delete their completed goals and incomplete goals
 
 
 ## Project Schedule
 | Day | Deliverable | Status |
-| :----: | :----: | :----: |
-| Thursday 3/18 | Wireframes / Timeframes / Priority Matrix | In progress |
-| Friday 3/19 | Project Proposal | In progress |
-| Saturday 3/20 |  | In progress |
-| Sunday 3/21 | | In progress |
-| Monday 3/22 | | In progress |
-| Tuesday 3/23 | | In progress |
-| Wednesday 3/24 | | In progress |
-| Thursday 3/25 | MVP / User Testing | In progress |
-| Friday 3/26 | Project Presentation | In progress |
+| :---- | :---- | :---- |
+| Thursday 3/18  | Wireframes / Timeframes / Priority Matrix | In progress |
+| Friday 3/19    | Project Proposal / AirTable / Create function components / Render Data | In progress |
+| Saturday 3/20  | Continue create function components / Render Data / Buttons | In progress |
+| Sunday 3/21    | Continue previous day / Add create | In progress |
+| Monday 3/22    | Continue previous day / Add update | In progress |
+| Tuesday 3/23   | Wrap up components / Start styling | In progress |
+| Wednesday 3/24 | Style | In progress |
+| Thursday 3/25  | MVP / User Testing | In progress |
+| Friday 3/26    | Project Presentation | In progress |
 
 ## Timeframes
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
 | --------- | :----: | :----: | :----: | :----: |
 | **COMPONENTS:** |
-| Nav              | H | 3 | 5 | 5 |
-| Goal             | H | 3 | 5 | 5 |
-| Form             | H | 3 | 5 | 5 |
+| Nav              | H | 2 |  |  |
+| Goal             | H | 3 |  |  |
+| Completed Goals  | H | 3 |  |  |
+| Form to Create   | H | 3 |  |  |
+| Form to Update   | H | 3 |  |  |
 | **DATA:** |
-| Set up airTable | H | 6 | 7 | 7 |
-| Axios calls     | H | 4 | 4 | 4 |
-| Render on page  | H | 3 | 3 | 3 |
-| React Router    | H | 3 | 3 | 3 |
+| Set up AirTable | H | 4 |  |  |
+| Axios calls     | H | 3 |  |  |
+| Render on page  | H | 5 |  |  |
+| React Router    | H | 2 |  |  |
 | **DESIGN:** |
-| Nav             | H | 6 | 7 | 7 |
-| Goal            | H | 3 | 5 | 5 |
-| Goal item       | H | 3 | 5 | 5 |
-| Form            | H | 3 | 3 | 3 |
-| Buttons         | L | 4 | 3 | 3 |
-| **TOTAL:**                |   |**48**|**52**|**52**| 
+| Nav             | H | 2 |  |  |
+| Goal            | H | 3 |  |  |
+| Goal item       | H | 3 |  |  |
+| Form            | L | 3 |  |  |
+| Buttons         | L | 3 |  |  |
+| General Design  | L | 5 |  |  |
+| **TOTAL:**      |   |**47**|**TBD**|**TBD**| 
 
 ## SWOT Analysis
 **Strengths:**
