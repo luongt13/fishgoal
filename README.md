@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Name
+FishGoal
 
-## Available Scripts
+## Project Description
+To create a tool to allows users to add, edit, and remove custom goals. The goal is to allow users to keep track of daily goals or tasks.
 
-In the project directory, you can run:
+## API and Data Sample
+```
 
-### `npm start`
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wireframes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Below are screenshots of the wireframe with description
 
-### `npm test`
+**Desktop**
+**Image 1:**  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![alt text](/public/desktop-1.png)
 
-### `npm run build`
+**Image 2:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![alt text](/public/desktop-2.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Tablet**
 
-### `npm run eject`
+![alt text](/public/tablet-1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![alt text](/public/tablet-2.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Mobile:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![alt text](/public/mobile.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## MVP/Post MVP
 
-## Learn More
+### MVP
+* Get and post goals from AirTable
+* Create buttons to edit (put) and add (post) goals
+* Allow users to add custom goals 
+* Allow users to mark complete or incomplete for goals
+* Users can view completed goals 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Post MVP
+* Allow users to add a time to complete goals
+* Users can add an alarm to remind them to complete each specific goal
+* Add a display for goals for one week
+* Users can see uncompleted goals and add back to their goals
+* Users can create an account to save their goals
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Project Schedule
+| Day | Deliverable | Status |
+| :----: | :----: | :----: |
+| Thursday 3/18 | Wireframes / Timeframes / Priority Matrix | In progress |
+| Friday 3/19 | Project Proposal | In progress |
+| Saturday 3/20 |  | In progress |
+| Sunday 3/21 | | In progress |
+| Monday 3/22 | | In progress |
+| Tuesday 3/23 | | In progress |
+| Wednesday 3/24 | | In progress |
+| Thursday 3/25 | MVP / User Testing | In progress |
+| Friday 3/26 | Project Presentation | In progress |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Timeframes
+| Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
+| --------- | :----: | :----: | :----: | :----: |
+| **COMPONENTS:** |
+| Nav              | H | 3 | 5 | 5 |
+| Goal             | H | 3 | 5 | 5 |
+| Form             | H | 3 | 5 | 5 |
+| **DATA:** |
+| Set up airTable | H | 6 | 7 | 7 |
+| Axios calls     | H | 4 | 4 | 4 |
+| Render on page  | H | 3 | 3 | 3 |
+| React Router    | H | 3 | 3 | 3 |
+| **DESIGN:** |
+| Nav             | H | 6 | 7 | 7 |
+| Goal            | H | 3 | 5 | 5 |
+| Goal item       | H | 3 | 5 | 5 |
+| Form            | H | 3 | 3 | 3 |
+| Buttons         | L | 4 | 3 | 3 |
+| **TOTAL:**                |   |**48**|**52**|**52**| 
 
-### Analyzing the Bundle Size
+## SWOT Analysis
+**Strengths:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I am clear as to what I would like to accomplish with my project. I anticipate to implement the design I have planned. 
 
-### Making a Progressive Web App
+**Weaknesses:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I am not completely comfortable with CRUD and the component hierarchy. Getting the components mentally organized takes a little more time. 
 
-### Advanced Configuration
+**Opportunities:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This opportunity will solidify my understanding of React and reinforce my knowledge in HTML/CSS/JavaScript. 
 
-### Deployment
+**Threats:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I tend to tackle the problem on my own, but sometimes I spend more time than I have to struggling on a problem. It's okay to reach out to my resources. 
