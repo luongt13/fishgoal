@@ -94,7 +94,6 @@ Mobile design shows the changes needed in order to fit the components in the scr
 * Allow users to add custom goals
 * Create buttons to update (put) and create (post) goals
 * Allow users to mark complete or incomplete for goals
-* Users can view completed goals 
 * Responsive design 
 
 ### Post MVP
