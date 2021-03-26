@@ -145,11 +145,11 @@ Mobile design shows the changes needed in order to fit the components in the scr
 ## SWOT Analysis
 **Strengths:**
 
-I am clear as to what I would like to accomplish with my project. I anticipate to implement the design I have planned. 
+I am clear as to what I would like to accomplish with my project. I anticipate to implement the design I have planned. I am always trying to learn and challenge myself. 
 
 **Weaknesses:**
 
-I am not completely comfortable with CRUD and the component hierarchy. Getting the components mentally organized takes a little more time.
+I am not completely comfortable with CRUD and the component hierarchy. Getting the components mentally organized takes a little more time. I can get caught up on the little details of styling/animation. 
 
 **Opportunities:**
 
