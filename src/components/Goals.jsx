@@ -26,35 +26,26 @@ function Goals() {
         setGoals(resp.data.records)
     }
 
-    let anotherText = goals.map((goal) => {
-        return goal.fields
-    })
-
     function findPending() {
+        //empty array to put filtered items
         let pendingArray = []
-
-        anotherText.map((item) => {
-            if(Object.values(item).includes(0)) {
-                console.log(item)
-                pendingArray.push(item)
-                // setPending(pendingArray)
-              
-            }
-         
+        //map through array and push only if there is a value of 0
+        goals.map((ugh) => {
+            if(Object.values(ugh.fields).includes(0))
+                pendingArray.push({id: ugh.id, fields: ugh.fields})
         })
+        //set the spending array to state
         setPending((prevState) => {
             return (
             [...prevState], 
             pendingArray
         )})
     }
-   console.log(pending)
     return (
         <div>
             <Add setToggle={setToggle}/>
-            {goals.map((goal)=> {
-                
-                return <GoalItem goal={goal}/>
+            {pending.map((pending)=> {
+                return <GoalItem key={pending.id} pending={pending}/>
 
             })}
         </div>

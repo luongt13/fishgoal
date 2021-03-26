@@ -3,9 +3,9 @@ import Edit from "./Edit"
 
 
 function GoalItem(props) {
-    let goalDetails = props.goal.fields
-
-console.log(Object.values(goalDetails))
+    let pendingDetails = props.pending.fields
+console.log(props.pending.id)
+// console.log(Object.values(goalDetails))
 
     // goalDetails.map((status) => {
     //     console.log(status)
@@ -19,16 +19,16 @@ console.log(Object.values(goalDetails))
             <div className="goal-item">
                 <button>Reel it in</button>
 
-                <p>What? {goalDetails.what}</p>
-                <p>Amount? {goalDetails.measure}</p>
-                <p>By when? {goalDetails.when}</p>
-                <p>How? {goalDetails.how}</p>
+                <p>What? {pendingDetails.what}</p>
+                <p>Amount? {pendingDetails.measure}</p>
+                <p>By when? {pendingDetails.when}</p>
+                <p>How? {pendingDetails.how}</p>
                
                 <button>Fish got away</button>
                 <button>Change Bait</button>
 
             </div>
-                <Edit key={props.goal.id} goalDetails={goalDetails} id={props.goal}/>
+                <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id}/>
         </div>
     )
 }
