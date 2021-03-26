@@ -1,9 +1,19 @@
 import React from 'react'
 import Edit from "./Edit"
-import {Route} from "react-router-dom"
+
 
 function GoalItem(props) {
     let goalDetails = props.goal.fields
+
+console.log(Object.values(goalDetails))
+
+    // goalDetails.map((status) => {
+    //     console.log(status)
+    // })
+    // status.find((complete) => {
+    //     console.log(complete)
+    // })
+
     return (
         <div>
             <div className="goal-item">
@@ -18,7 +28,7 @@ function GoalItem(props) {
                 <button>Change Bait</button>
 
             </div>
-                <Edit goalDetails={goalDetails} id={props.goal}/>
+                <Edit key={props.goal.id} goalDetails={goalDetails} id={props.goal}/>
         </div>
     )
 }

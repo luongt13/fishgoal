@@ -20,7 +20,13 @@ function Goals() {
         let resp = await axios.get(baseURL, config)
         setGoals(resp.data.records)
     }
- 
+
+    let anotherText = goals.map((goal) => {
+        return goal.fields.status
+    })
+
+    console.log(anotherText.filter((num) => num == 0 ))
+
     return (
         <div>
             <Add setToggle={setToggle}/>
