@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Route exact path="/">
+      <Route path="/">
         <Goals setIncomplete={setIncomplete} setComplete={setComplete}/>
       </Route>
       <Route exact path="/caught">
