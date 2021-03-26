@@ -149,11 +149,11 @@ I am clear as to what I would like to accomplish with my project. I anticipate t
 
 **Weaknesses:**
 
-I am not completely comfortable with CRUD and the component hierarchy. Getting the components mentally organized takes a little more time. 
+I am not completely comfortable with CRUD and the component hierarchy. Getting the components mentally organized takes a little more time.
 
 **Opportunities:**
 
-This opportunity will solidify my understanding of React and reinforce my knowledge in HTML/CSS/JavaScript. 
+This opportunity will solidify my understanding of React and reinforce my knowledge in HTML/CSS/JavaScript. I anticipate to learn how to integrate a CSS library (bootstrap or material UI). I have an idea of what this project will look like postMVP and this project will help build my confidence in React to achieve my goal.
 
 **Threats:**
 

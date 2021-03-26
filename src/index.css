@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background-image: url("./ocean.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
