@@ -8,6 +8,8 @@ import axios from "axios"
 function Goals() {
 
     const [goals, setGoals] = useState([])
+    const [pending, setPending] = useState([])
+
     const [toggle, setToggle] = useState(false)
 
     //invoke handleRequest when toggle changes
@@ -15,6 +17,9 @@ function Goals() {
         handleRequest()
     }, [toggle])
 
+    useEffect(() => {
+        findPending()
+    }, [goals])
     //axios get API data
     async function handleRequest(){
         let resp = await axios.get(baseURL, config)
@@ -22,11 +27,28 @@ function Goals() {
     }
 
     let anotherText = goals.map((goal) => {
-        return goal.fields.status
+        return goal.fields
     })
 
-    console.log(anotherText.filter((num) => num == 0 ))
+    function findPending() {
+        let pendingArray = []
 
+        anotherText.map((item) => {
+            if(Object.values(item).includes(0)) {
+                console.log(item)
+                pendingArray.push(item)
+                // setPending(pendingArray)
+              
+            }
+         
+        })
+        setPending((prevState) => {
+            return (
+            [...prevState], 
+            pendingArray
+        )})
+    }
+   console.log(pending)
     return (
         <div>
             <Add setToggle={setToggle}/>
