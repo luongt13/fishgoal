@@ -1,10 +1,8 @@
 import React from 'react'
 import Edit from "./Edit"
 
-
 function GoalItem(props) {
     let pendingDetails = props.pending.fields
-console.log(props.pending.id)
 
     return (
         <div>
