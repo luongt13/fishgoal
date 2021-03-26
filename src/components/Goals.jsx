@@ -9,6 +9,8 @@ function Goals() {
 
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
+    const [complete, setComplete] = useState([])
+    const [incomplete, setIncomplete] = useState([])
 
     const [toggle, setToggle] = useState(false)
 
@@ -29,16 +31,33 @@ function Goals() {
     function findPending() {
         //empty array to put filtered items
         let pendingArray = []
+        let completeArray = []
+        let incompleteArray = []
         //map through array and push only if there is a value of 0
         goals.map((ugh) => {
-            if(Object.values(ugh.fields).includes(0))
+            if(Object.values(ugh.fields).includes(0)) {
                 pendingArray.push({id: ugh.id, fields: ugh.fields})
+            } else if (Object.values(ugh.fields).includes(1)) {
+                completeArray.push({id: ugh.id, fields: ugh.fields})
+            } else if (Object.values(ugh.fields).includes(2)) {
+                incompleteArray.push({id: ugh.id, fields: ugh.fields})
+            } 
         })
-        //set the spending array to state
+        //set the array to state
         setPending((prevState) => {
             return (
             [...prevState], 
             pendingArray
+        )})
+        setComplete((prevState) => {
+            return (
+            [...prevState], 
+            completeArray
+        )})
+        setIncomplete((prevState) => {
+            return (
+            [...prevState], 
+            incompleteArray
         )})
     }
     return (

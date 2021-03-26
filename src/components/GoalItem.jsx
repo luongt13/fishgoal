@@ -5,14 +5,6 @@ import Edit from "./Edit"
 function GoalItem(props) {
     let pendingDetails = props.pending.fields
 console.log(props.pending.id)
-// console.log(Object.values(goalDetails))
-
-    // goalDetails.map((status) => {
-    //     console.log(status)
-    // })
-    // status.find((complete) => {
-    //     console.log(complete)
-    // })
 
     return (
         <div>
