@@ -6,7 +6,7 @@ function Nav() {
         <div className="nav">
             <Link to="/">FishGoals</Link>
             <Link to="/caught">Fish Caught</Link>
-            <Link to="/missed">Missed Fish</Link>
+            <Link to="/missed">Fish Missed</Link>
         </div>
     )
 }
