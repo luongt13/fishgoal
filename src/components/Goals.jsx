@@ -66,7 +66,7 @@ function Goals(props) {
         <div>
             <Add setToggle={setToggle}/>
             {pending.map((pending)=> {
-                return <GoalItem key={pending.id} pending={pending}/>
+                return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
 
             {/* {complete.map((complete)=> {

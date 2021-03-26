@@ -11,13 +11,13 @@ function GoalItem(props) {
     function displayEdit() {
         if(showEdit){
             return (
-                <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id}/>
+                    <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setToggle={props.setToggle}/>
             )
         } else {
             return (
                 <div>
                     <p>What? {pendingDetails.what}</p>
-                    <p>Amount? {pendingDetails.measure}</p>
+                    <p>Amount? {pendingDetails.amount}</p>
                     <p>By when? {pendingDetails.when}</p>
                     <p>How? {pendingDetails.how}</p>
                 </div>
@@ -37,16 +37,13 @@ function GoalItem(props) {
                 <p>How? {pendingDetails.how}</p> */}
                
                 <button>Fish got away</button>
-                <Link to={`/edit/${props.pending.id}`} onClick={() => setShowEdit(prevState => !prevState)}><button>Change Bait</button></Link>
-
+                <button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</button>
             </div>
-            
-            <Route path="/edit/:id">
-                
-            </Route>
             {/* <Route path="/edit/:id">
                 <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id}/>
             </Route> */}
+
+{/* <Link to={`/edit/${props.pending.id}`} onClick={() => setShowEdit(prevState => !prevState)}><button>Change Bait</button></Link> */}
              
         </div>
     )
