@@ -3,6 +3,7 @@ import {useState} from "react"
 import axios from "axios"
 
 function Add(props) {
+    //storing new goal data
     const [newGoal, setNewGoal] = useState({
         what: "",
         when: "",
@@ -37,7 +38,6 @@ function Add(props) {
             <input type="text" id="when" value={newGoal.when} onChange={handleChange}/>
             <label htmlFor="how">How will you reach your goal?</label>
             <input type="text" id="how" value={newGoal.how} onChange={handleChange}/>
-
             <button type="submit">Set Bait</button>
         </form>
     )

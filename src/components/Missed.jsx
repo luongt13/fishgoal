@@ -2,7 +2,6 @@ import React from 'react'
 
 function Missed(props) {
     let incompleteDetails = props.incomplete.fields
-    // console.log(props.complete)
     return (
         <div className="goal-item">
             <p>What? {incompleteDetails.what}</p>

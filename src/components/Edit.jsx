@@ -3,26 +3,13 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 
 function Edit(props) {
-    console.log(props.id)
-
-    // const [update, setUpdate] = useState({
-    //     what: "",
-    //     when: "",
-    //     how: "",
-    //     amount: "",
-    // })
-
+    //set state of variables
     const [what, setWhat] = useState(props.goalDetails.what)
     const [when, setWhen] = useState(props.goalDetails.when)
     const [how, setHow] = useState(props.goalDetails.how)
     const [amount, setAmount] = useState(props.goalDetails.amount)
-    
-    // useEffect(() => {
-    //     setUpdate(props.goalDetails)
-    // }, [props.id])
-  
-    // console.log(update)
 
+    //axios to update info
     async function handleEdit(event) {
         event.preventDefault()
         const data = {
@@ -38,17 +25,8 @@ function Edit(props) {
         await axios.put(updateURL, data, config)
         props.setShowEdit(prevState => !prevState)
         props.setToggle(prevState => !prevState)
-        // let [value, id] = event.target
-        // setUpdate((prevState) => {
-        //     return {...prevState, [id]: value}
-        // })
     }
 
-
-    // function handleUpdate() {
-
-    // }
-    // const updateURL = `${baseURL}/${id}`
     return (
         <form onSubmit={handleEdit}>
             <label htmlFor="what">What?</label>
