@@ -1,10 +1,11 @@
 import axios from "axios"
 import {baseURL, config} from "../service"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 function Edit(props) {
-    console.log(props.goalDetails)
-    console.log(props.id)
+    console.log(props)
+    let id = props.id
+    console.log(id)
 
     const [update, setUpdate] = useState({
         what: "",
@@ -12,10 +13,23 @@ function Edit(props) {
         how: "",
         amount: "",
     })
-    
-    function handleChange() {
 
+    useEffect(() => {
+        setUpdate(props.goalDetails)
+    }, [])
+  
+    console.log(update)
+
+    function handleChange(event) {
+        event.preventDefault()
+        console.log("works")
+        // let [value, id] = event.target
+        // setUpdate((prevState) => {
+        //     return {...prevState, [id]: value}
+        // })
     }
+
+
     // function handleUpdate() {
 
     // }
@@ -23,14 +37,14 @@ function Edit(props) {
     return (
         <form>
             <label htmlFor="what">What?</label>
-            <input type="text" id="what" value={props.goalDetails.what} onChange={handleChange}/>
+            <input type="text" id="what" value={update.what} onChange={handleChange}/>
             <label htmlFor="amount">Amount</label>
-            <input type="text" id="amount" value={props.goalDetails.amount} onChange={handleChange}/>
+            <input type="text" id="amount" value={update.amount} onChange={handleChange}/>
             <label htmlFor="when">By when?</label>
-            <input type="text" id="when" value={props.goalDetails.when} onChange={handleChange}/>
+            <input type="text" id="when" value={update.when} onChange={handleChange}/>
             <label htmlFor="how">How?</label>
-            <input type="text" id="how"  value={props.goalDetails.how} onChange={handleChange}/>
-            <input type="submit" value={props.id}/>
+            <input type="text" id="how"  value={update.how} onChange={handleChange}/>
+            <input type="submit"/>
         </form>
     )
 }

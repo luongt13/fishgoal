@@ -1,6 +1,6 @@
 import React from 'react'
-import Goals from './Goals'
 import Edit from "./Edit"
+import {Route} from "react-router-dom"
 
 function GoalItem(props) {
     let goalDetails = props.goal.fields
@@ -18,7 +18,7 @@ function GoalItem(props) {
                 <button>Change Bait</button>
 
             </div>
-            <Edit goalDetails={goalDetails} id={props.goal.id}/>
+                <Edit goalDetails={goalDetails} id={props.goal}/>
         </div>
     )
 }
