@@ -9,7 +9,7 @@ function GoalItem(props) {
     console.log(props.pending.id)
     //toggle to show input or text
     const [showEdit, setShowEdit] = useState(false)
-    // const [status, setStatus] = useState(pendingDetails.status)
+    const [status, setStatus] = useState({})
     //display either input to edit to goal text
     function displayEdit() {
         if(showEdit){
@@ -32,32 +32,37 @@ function GoalItem(props) {
     //mark compete
     async function handleComplete(event) {
         // let update = setStatus((prevState) => prevState = 1)
+        let value = Number(event.target.value)
+        setStatus((prevState) => {
+            return ( {
+                ...prevState,
+                status: value
+            })
+        })
         let newURL = `${baseURL}/${props.pending.id}`
-        console.log(event.target.id)
-        if(event.target.id === "complete") {
-            let updateBody = {
-                fields: {
-                    what: pendingDetails.what,
-                    amount: pendingDetails.amount,
-                    when: pendingDetails.when,
-                    how: pendingDetails.how,
-                    status: 1,
-                }
-            }
-            await axios.put(newURL, updateBody , config)
-        props.setToggle(prevState => !prevState)
-        }
-       
-        
+        // console.log(event.target.id)
+        // if(event.target.id === "complete") {
+        //     let updateBody = {
+        //         fields: {
+        //             what: pendingDetails.what,
+        //             amount: pendingDetails.amount,
+        //             when: pendingDetails.when,
+        //             how: pendingDetails.how,
+        //             status: 1,
+        //         }
+        //     }
+        //     await axios.put(newURL, updateBody , config)
+        // props.setToggle(prevState => !prevState)
+        // }
     }
-    // console.log(status)
+    console.log(status)
 
     return (
         <div>
             <div className="goal-item">
-                <button id="complete" onClick={handleComplete}>Reel it in</button>
+                <button id="complete" value="1" onClick={handleComplete}>Reel it in</button>
                 {displayEdit()}
-                <button onClick={handleComplete}>Fish got away</button>
+                <button id="incomplete" value="2"onClick={handleComplete}>Fish got away</button>
                 <button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</button>
             </div>
         </div>
