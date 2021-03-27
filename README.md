@@ -109,11 +109,11 @@ Mobile design shows the changes needed in order to fit the components in the scr
 ## Project Schedule
 | Day | Deliverable | Status |
 | :---- | :---- | :---- |
-| Thursday 3/18  | Wireframes / Timeframes | In progress |
-| Friday 3/19    | Project Proposal / AirTable / Create function components / Render Data | In progress |
-| Saturday 3/20  | Continue create function components / Render Data / Buttons | In progress |
-| Sunday 3/21    | Continue previous day / Add create | In progress |
-| Monday 3/22    | Continue previous day / Add update | In progress |
+| Thursday 3/18  | Wireframes / Timeframes | Complete |
+| Friday 3/19    | Project Proposal / AirTable / Create function components / Render Data | Complete |
+| Saturday 3/20  | Continue create function components / Render Data / Buttons | Complete |
+| Sunday 3/21    | Continue previous day / Add create | Complete |
+| Monday 3/22    | Continue previous day / Add update | Complete |
 | Tuesday 3/23   | Wrap up components / Start styling | In progress |
 | Wednesday 3/24 | Style | In progress |
 | Thursday 3/25  | MVP / User Testing | In progress |
@@ -123,16 +123,16 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
 | --------- | :----: | :----: | :----: | :----: |
 | **COMPONENTS:** |
-| Nav              | H | 2 |  |  |
-| Goal             | H | 3 |  |  |
-| Completed Goals  | H | 3 |  |  |
-| Form to Create   | H | 3 |  |  |
-| Form to Update   | H | 3 |  |  |
+| Nav              | H | 2 | 1 |  |
+| Goal             | H | 3 | 3 |  |
+| Completed Goals  | H | 3 | 3 |  |
+| Form to Create   | H | 3 | 3 |  |
+| Form to Update   | H | 3 | 3 |  |
 | **DATA:** |
-| Set up AirTable | H | 4 |  |  |
-| Axios calls     | H | 3 |  |  |
-| Render on page  | H | 5 |  |  |
-| React Router    | H | 2 |  |  |
+| Set up AirTable | H | 4 | 2 |  |
+| Axios calls     | H | 3 | 3 |  |
+| Render on page  | H | 5 | 3 |  |
+| React Router    | H | 2 | 2 |  |
 | **DESIGN:** |
 | Nav             | H | 2 |  |  |
 | Goal            | H | 3 |  |  |

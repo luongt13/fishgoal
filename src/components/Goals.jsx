@@ -1,26 +1,23 @@
-import React from 'react'
-import Add from "./Add"
-import GoalItem from "./GoalItem"
-// import Missed from "./Missed"
-// import Caught from "./Caught"
 import {baseURL, config} from "../service"
 import {useEffect, useState} from "react"
 import axios from "axios"
-
+import Add from "./Add"
+import GoalItem from "./GoalItem"
+// import Caught from "./Caught"
+// import Missed from "./Missed"
+//get goals from airtable, pass props 
 function Goals(props) {
-
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
     // const [complete, setComplete] = useState([])
     // const [incomplete, setIncomplete] = useState([])
-
     const [toggle, setToggle] = useState(false)
-
-    //invoke handleRequest when toggle changes
+    //get data when toggle changes
     useEffect(() => {
         handleRequest()
+        // findStatus()
     }, [toggle])
-
+    //pass the props accordingly when goals change
     useEffect(() => {
         findStatus()
     }, [goals])
@@ -29,7 +26,7 @@ function Goals(props) {
         let resp = await axios.get(baseURL, config)
         setGoals(resp.data.records)
     }
-
+    //find the status and pass it accordingly to be displayed in the correct list
     function findStatus() {
         //empty array to put filtered items
         let pendingArray = []
@@ -45,13 +42,13 @@ function Goals(props) {
                 incompleteArray.push({id: goal.id, fields: goal.fields})
             } 
         })
-        //set the array to state
+        //set the array to state to pass props
         setPending((prevState) => {
             return (
             [...prevState], 
             pendingArray
         )})
-        props.setComplete((prevState) => {
+         props.setComplete((prevState) => {
             return (
             [...prevState], 
             completeArray
@@ -68,15 +65,6 @@ function Goals(props) {
             {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
-
-            {/* {complete.map((complete)=> {
-                return <Caught key={complete.id} complete={complete}/>
-            })}
-            
-            {incomplete.map((incomplete)=> {
-                return <Missed key={incomplete.id} incomplete={incomplete}/>
-            })} */}
-
         </div>
     )
 }

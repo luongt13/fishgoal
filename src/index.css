@@ -7,13 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+/* html {
   background-image: url("./ocean.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
   background-attachment: fixed;
-}
+} */
 
 
 

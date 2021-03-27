@@ -1,15 +1,14 @@
-import axios from "axios"
 import {baseURL, config} from "../service"
 import {useState} from "react"
-
+import axios from "axios"
+//edit goals
 function Edit(props) {
     //set state of variables
     const [what, setWhat] = useState(props.goalDetails.what)
     const [when, setWhen] = useState(props.goalDetails.when)
     const [how, setHow] = useState(props.goalDetails.how)
     const [amount, setAmount] = useState(props.goalDetails.amount)
-
-    //axios to update info
+    //axios to update info, change state of showedit and re-render info
     async function handleEdit(event) {
         event.preventDefault()
         const data = {
@@ -26,7 +25,6 @@ function Edit(props) {
         props.setShowEdit(prevState => !prevState)
         props.setToggle(prevState => !prevState)
     }
-
     return (
         <form onSubmit={handleEdit}>
             <label htmlFor="what">What?</label>

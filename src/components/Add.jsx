@@ -1,7 +1,7 @@
 import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
-
+//add new goal
 function Add(props) {
     //storing new goal data
     const [newGoal, setNewGoal] = useState({
@@ -11,7 +11,6 @@ function Add(props) {
         how: "",
         status: 0,
     })
-
     //update the object when the input changes
     function handleChange(event) {
         let {value, id} = event.target
@@ -19,14 +18,12 @@ function Add(props) {
             return {...prevState, [id]: value}
         })
     }
-
-    //post form data to API then change toggle 
+    //post form data to API then re-render
     async function handleSubmit(event) {
         event.preventDefault()
         await axios.post(baseURL, {fields: newGoal}, config)
         props.setToggle((prevState) => !prevState)
     }
-
     return (
         //form to add new goal
         <form onSubmit={handleSubmit}>

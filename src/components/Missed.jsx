@@ -1,13 +1,14 @@
-import React from 'react'
-
+import Delete from "./Delete"
+//display incomplete goals
 function Missed(props) {
-    let incompleteDetails = props.incomplete.fields
+    const {incomplete} = props
     return (
         <div className="goal-item">
-            <p>What? {incompleteDetails.what}</p>
-            <p>Amount? {incompleteDetails.measure}</p>
-            <p>By when? {incompleteDetails.when}</p>
-            <p>How? {incompleteDetails.how}</p>
+            <p>What? {incomplete.fields.what}</p>
+            <p>Amount? {incomplete.fields.amount}</p>
+            <p>By when? {incomplete.fields.when}</p>
+            <p>How? {incomplete.fields.how}</p>
+            <Delete id={incomplete.fields.id}/>
         </div>
     )
 }
