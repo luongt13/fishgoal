@@ -2,6 +2,7 @@ import Delete from "./Delete"
 //display incomplete goals
 function Missed(props) {
     const {incomplete} = props
+    console.log(props.incomplete)
     return (
         <div className="goal-item">
             <p>What? {incomplete.fields.what}</p>

@@ -11,23 +11,21 @@ import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 
 function App() {
-  const [complete, setComplete] = useState([])
-  const [incomplete, setIncomplete] = useState([])
-
   const [goals, setGoals] = useState([])
   const [pending, setPending] = useState([])
-  // const [complete, setComplete] = useState([])
-  // const [incomplete, setIncomplete] = useState([])
+  const [complete, setComplete] = useState([])
+  const [incomplete, setIncomplete] = useState([])
   const [toggle, setToggle] = useState(false)
+  console.log(goals)
   //get data when toggle changes
   useEffect(() => {
       handleRequest()
-      // findStatus()
   }, [toggle])
   //pass the props accordingly when goals change
   useEffect(() => {
       findStatus()
   }, [goals])
+  //ISSUE IS HERE!!!
   //axios get API data
   async function handleRequest(){
       let resp = await axios.get(baseURL, config)
@@ -35,6 +33,7 @@ function App() {
   }
   //find the status and pass it accordingly to be displayed in the correct list
   function findStatus() {
+    console.log(goals)
       //empty array to put filtered items
       let pendingArray = []
       let completeArray = []
@@ -73,8 +72,8 @@ function App() {
         <Nav />
       </Route>
       <Route exact path="/goals">
-      <Add setToggle={setToggle}/>
-      {pending.map((pending)=> {
+        <Add setToggle={setToggle}/>
+        {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
         {/* <Goals setIncomplete={setIncomplete} setComplete={setComplete}/> */}
