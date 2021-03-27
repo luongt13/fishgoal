@@ -1,6 +1,6 @@
 import React from 'react'
 import Edit from "./Edit"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import axios from "axios"
 import {baseURL, config} from "../service"
 
@@ -9,7 +9,25 @@ function GoalItem(props) {
     console.log(props.pending.id)
     //toggle to show input or text
     const [showEdit, setShowEdit] = useState(false)
-    const [status, setStatus] = useState({})
+    const [status, setStatus] = useState({
+        what: pendingDetails.what,
+        when: pendingDetails.when,
+        how: pendingDetails.how,
+        amount: pendingDetails.amount,
+        status: pendingDetails.status,
+    })
+
+    useEffect(() => {
+        async function setChange() {
+            let newURL = `${baseURL}/${props.pending.id}`
+    
+            await axios.put(newURL, {fields: status } , config)
+            props.setToggle(prevState => !prevState)
+        }
+      
+        setChange()
+    }, [status])
+    
     //display either input to edit to goal text
     function displayEdit() {
         if(showEdit){
@@ -30,7 +48,7 @@ function GoalItem(props) {
     }
 
     //mark compete
-    async function handleComplete(event) {
+    function handleComplete(event) {
         // let update = setStatus((prevState) => prevState = 1)
         let value = Number(event.target.value)
         setStatus((prevState) => {
@@ -39,7 +57,6 @@ function GoalItem(props) {
                 status: value
             })
         })
-        let newURL = `${baseURL}/${props.pending.id}`
         // console.log(event.target.id)
         // if(event.target.id === "complete") {
         //     let updateBody = {
