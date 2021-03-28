@@ -31,7 +31,7 @@ function GoalItem(props) {
             return (
                 <div className="goal-text">
                     <p>What? {pendingDetails.what}</p>
-                    <p>Amount???? {pendingDetails.amount}</p>
+                    <p>Amount? {pendingDetails.amount}</p>
                     <p>By when? {pendingDetails.when}</p>
                     <p>How? {pendingDetails.how}</p>
                 </div>

@@ -26,13 +26,13 @@ function Edit(props) {
     }
     return (
         <form onSubmit={handleEdit}>
-            <label htmlFor="what">What?</label>
+            <label htmlFor="what">What? </label>
             <input type="text" id="what" required value={what} onChange={(e)=> setWhat(e.target.value)}/>
-            <label htmlFor="amount">Amount</label>
+            <label htmlFor="amount">Amount? </label>
             <input type="text" id="amount" required value={amount} onChange={(e)=> setAmount(e.target.value)}/>
-            <label htmlFor="when">By when?</label>
+            <label htmlFor="when">By when? </label>
             <input type="text" id="when" required value={when} onChange={(e)=> setWhen(e.target.value)}/>
-            <label htmlFor="how">How?</label>
+            <label htmlFor="how">How? </label>
             <input type="text" id="how" required value={how} onChange={(e)=> setHow(e.target.value)}/>
             <input type="submit"/>
         </form>

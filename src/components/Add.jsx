@@ -22,18 +22,25 @@ function Add(props) {
     async function handleSubmit(event) {
         event.preventDefault()
         await axios.post(baseURL, {fields: newGoal}, config)
+        setNewGoal({
+            what: "",
+            when: "",
+            amount: "",
+            how: "",
+            status: 0,
+        })
         props.setToggle((prevState) => !prevState)
     }
     return (
         //form to add new goal
         <form onSubmit={handleSubmit}>
-            <label htmlFor="what">What is your goal?</label>
+            <label htmlFor="what">What is your goal? </label>
             <input type="text" id="what" value={newGoal.what} onChange={handleChange}/>
-            <label htmlFor="amount">How many? How much? How long?</label>
+            <label htmlFor="amount">How many? How much? How long? </label>
             <input type="text" id="amount" value={newGoal.amount} onChange={handleChange}/>
-            <label htmlFor="when">When will you finish this by?</label>
+            <label htmlFor="when">When will you finish this by? </label>
             <input type="text" id="when" value={newGoal.when} onChange={handleChange}/>
-            <label htmlFor="how">How will you reach your goal?</label>
+            <label htmlFor="how">How will you reach your goal? </label>
             <input type="text" id="how" value={newGoal.how} onChange={handleChange}/>
             <button type="submit">Set Bait</button>
         </form>
