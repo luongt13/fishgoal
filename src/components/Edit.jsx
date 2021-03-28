@@ -8,20 +8,19 @@ function Edit(props) {
     const [when, setWhen] = useState(props.goalDetails.when)
     const [how, setHow] = useState(props.goalDetails.how)
     const [amount, setAmount] = useState(props.goalDetails.amount)
-    //axios to update info, change state of showedit and re-render info
+    //axios to update info, change state of showedit and re-render info and set status for goalitem
     async function handleEdit(event) {
         event.preventDefault()
         const data = {
-            fields: {
                 amount,
                 what,
                 when,
                 how,
                 status: 0,
-            }
         }
         const updateURL = `${baseURL}/${props.id}`
-        await axios.put(updateURL, data, config)
+        await axios.put(updateURL, {fields: data }, config)
+        props.setStatus(data)
         props.setShowEdit(prevState => !prevState)
         props.setToggle(prevState => !prevState)
     }

@@ -16,7 +16,6 @@ function App() {
   const [complete, setComplete] = useState([])
   const [incomplete, setIncomplete] = useState([])
   const [toggle, setToggle] = useState(false)
-  console.log(goals)
   //get data when toggle changes
   useEffect(() => {
       handleRequest()
@@ -25,7 +24,6 @@ function App() {
   useEffect(() => {
       findStatus()
   }, [goals])
-  //ISSUE IS HERE!!!
   //axios get API data
   async function handleRequest(){
       let resp = await axios.get(baseURL, config)
@@ -33,7 +31,6 @@ function App() {
   }
   //find the status and pass it accordingly to be displayed in the correct list
   function findStatus() {
-    console.log(goals)
       //empty array to put filtered items
       let pendingArray = []
       let completeArray = []
@@ -65,7 +62,6 @@ function App() {
           incompleteArray
       )})
   }
-
   return (
     <div className="App">
       <Route path="/">
@@ -76,6 +72,10 @@ function App() {
         {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
+         {/* <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/> */}
+
+        {/* <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/> */}
+       
         {/* <Goals setIncomplete={setIncomplete} setComplete={setComplete}/> */}
       </Route>
       <Route exact path="/caught">
@@ -87,6 +87,7 @@ function App() {
         {incomplete.map((incomplete)=> {
                   return <Missed key={incomplete.id} incomplete={incomplete}/>
               })}
+   
       </Route>
       </div>
   );
