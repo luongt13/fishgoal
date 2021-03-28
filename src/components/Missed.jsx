@@ -1,14 +1,14 @@
 import Delete from "./Delete"
 //display incomplete goals
 function Missed(props) {
-    const {incomplete} = props
+    const incompleteDetails = props.incomplete.fields
     return (
         <div className="goal-item">
-            <p>What? {incomplete.fields.what}</p>
-            <p>Amount? {incomplete.fields.amount}</p>
-            <p>By when? {incomplete.fields.when}</p>
-            <p>How? {incomplete.fields.how}</p>
-            <Delete id={incomplete.fields.id}/>
+            <p>What? {incompleteDetails.what}</p>
+            <p>Amount? {incompleteDetails.amount}</p>
+            <p>By when? {incompleteDetails.when}</p>
+            <p>How? {incompleteDetails.how}</p>
+            <Delete id={props.incomplete.id} setToggle={props.setToggle}/>
         </div>
     )
 }

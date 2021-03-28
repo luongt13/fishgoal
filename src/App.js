@@ -72,22 +72,16 @@ function App() {
         {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
-         {/* <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/> */}
-
-        {/* <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/> */}
-       
-        {/* <Goals setIncomplete={setIncomplete} setComplete={setComplete}/> */}
       </Route>
       <Route exact path="/caught">
         {complete.map((complete)=> {
-          return <Caught key={complete.id} complete={complete}/>
+          return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
       })}
       </Route>
       <Route exact path="/missed">
         {incomplete.map((incomplete)=> {
-                  return <Missed key={incomplete.id} incomplete={incomplete}/>
+                  return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
               })}
-   
       </Route>
       </div>
   );
