@@ -1,13 +1,58 @@
+// import React from 'react'
+// import {Route, Switch} from "react-router-dom"
+// import Home from "./components/Home"
+// import Nav from "./components/Nav"
+// import Caught from "./components/Caught"
+// import Missed from "./components/Missed"
+// import GoalItem from "./components/GoalItem"
+// import Add from "./components/Add"
+// import Goals from "./components/Goals"
+// function App() {
+//     return (
+//         <div>
+//         <Switch>
+//         <Goals />
+
+//         <Route path="/">
+//              <Nav />
+//         </Route>
+         
+//             <Route exact path="/home">
+//                 <Home />
+//             </Route>
+           
+//             <Route exact path="/goals">
+//                 <Add />
+//                 {/* <GoalItem /> */}
+//             </Route>
+//             <Route  exact path="/caught">
+//             <Caught />
+//             </Route>
+//             <Route exact path="/missed">
+//                 <Missed /> 
+//             </Route>
+          
+           
+//         </Switch>
+//         </div>
+//     )
+// }
+// export default App
+
+
+
 import './App.css';
 import {Route} from "react-router-dom"
 import {baseURL, config} from "./service"
 import {useEffect, useState} from "react"
 import axios from "axios"
 import Nav from "./components/Nav"
+import Home from "./components/Home"
 import Caught from "./components/Caught"
 import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
+import Welcome from "./components/Welcome"
 
 function App() {
   const [goals, setGoals] = useState([])
@@ -63,25 +108,38 @@ function App() {
   }
   return (
     <div className="App">
-      <Route path="/">
+        <Route exact path="/">
+            <Welcome />
+        </Route>
+        {/* <Route path="/">
         <Nav />
-      </Route>
+      </Route> */}
+      <Route path="/home">
+          <Home />
+        </Route>
       <Route exact path="/goals">
+      <Nav />
+
         <Add setToggle={setToggle}/>
         {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
       </Route>
       <Route exact path="/caught">
+      <Nav />
+
         {complete.map((complete)=> {
           return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
       })}
       </Route>
       <Route exact path="/missed">
+      <Nav />
+
         {incomplete.map((incomplete)=> {
                   return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
               })}
       </Route>
+     
       </div>
   );
 }
