@@ -10,9 +10,11 @@ const useStyles = makeStyles({
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        backgroundColor: "black",
     },
     item: {
     textDecoration: "none",
+    color: "white",
 
     },
     // pos: {

@@ -76,7 +76,6 @@ function App() {
         </Route>
       <Route exact path="/goals">
       <Nav />
-
         <Add setToggle={setToggle}/>
         {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
@@ -84,19 +83,16 @@ function App() {
       </Route>
       <Route exact path="/caught">
       <Nav />
-
         {complete.map((complete)=> {
           return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
       })}
       </Route>
       <Route exact path="/missed">
       <Nav />
-
         {incomplete.map((incomplete)=> {
                   return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
               })}
       </Route>
-     
       </div>
   );
 }
