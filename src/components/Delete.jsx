@@ -11,7 +11,7 @@ function Delete(props) {
     }
     return (
         <div>
-            <Button variant="outlined" onClick={handleDelete}>Delete</Button>
+            <Button size="small" variant="contained" color="primary" onClick={handleDelete}>Delete</Button>
         </div>
     )
 }

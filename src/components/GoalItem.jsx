@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import {baseURL, config} from "../service"
 import axios from "axios"
 import Edit from "./Edit"
-import {Button, ButtonGroup, Card, CardContent, Typography} from "@material-ui/core"
+import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
 import "../App.css"
 
   
@@ -30,28 +30,56 @@ function GoalItem(props) {
         if(showEdit){
             return (
                 //to edit page
-                <Card>
-                    <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle}/>
-                </Card>
+                    <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle}/> 
             )
         } else {
             return (
-                <div className="goal-item">
-                    <Card variant="outlined" className="card">
-                        <CardContent>
-                            <Typography component="p">
-                                What? {pendingDetails.what}
+                <div className="goal-list">
+                    <Card className="card">
+                        <CardContent className="goal-item">
+                            <Grid container>
+                                <Grid item xs={6} sm={3}>
+                                <Typography component="p" className="label">
+                                What? 
                             </Typography>
                             <Typography component="p">
-                                Amount? {pendingDetails.amount}
+                                {pendingDetails.what}
+                            </Typography>
+                                </Grid>
+                            <Grid item xs={6} sm={3}>
+                            <Typography component="p" className="label">
+                                Amount? 
                             </Typography>
                             <Typography component="p">
-                                By when? {pendingDetails.when}
+                               {pendingDetails.amount}
+                            </Typography>
+                            </Grid>
+                            <Grid item xs={6} sm={3}>
+                            <Typography component="p" className="label">
+                                By when? 
                             </Typography>
                             <Typography component="p">
-                                How? {pendingDetails.how}
+                                {pendingDetails.when}
                             </Typography>
+                            </Grid>
+                            <Grid item xs={6} sm={3}>
+                            <Typography component="p" className="label">
+                                How? 
+                            </Typography> 
+                            <Typography component="p">
+                                {pendingDetails.how}
+                            </Typography>
+                            </Grid>
+                            </Grid>
+                            
                         </CardContent>
+                        <CardActions className="selectButtons">
+                            <ButtonGroup variant="contained" color="primary" size="small">
+                                <Button id="complete" value="1" onClick={handleComplete}>Reel it in</Button>
+                                <Button id="incomplete" value="2" onClick={handleComplete}>Fish got away</Button>
+                                <Button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</Button>
+                            </ButtonGroup> 
+                        </CardActions>
                     </Card>
                 </div>
             )
@@ -74,15 +102,15 @@ function GoalItem(props) {
     }
     return (
         <div>
-            <div className="goal-item">
+    
                 {displayEdit()}
-                <ButtonGroup variant="contained" color="primary">
+                {/* <ButtonGroup variant="contained" color="primary">
                     <Button id="complete" value="1" onClick={handleComplete}>Reel it in</Button>
                     <Button id="incomplete" value="2" onClick={handleComplete}>Fish got away</Button>
                     <Button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</Button>
-                </ButtonGroup> 
+                </ButtonGroup>  */}
             </div>
-        </div>
+
     )
 }
 

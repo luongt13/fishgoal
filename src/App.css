@@ -1,16 +1,86 @@
+
 .App {
   text-align: center;
 }
 
-.goal-item {
+.goal-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  background-color: transparent;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 80%;
+  margin-bottom: 40px;
+}
 
+.goal-item {
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.selectButtons {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  color: gray;
+}
+
+.button {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+
+.other-list {
+  margin-top: 100px;
+}
+
+form {
+  margin: 100px auto;
+  width: 100%;
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-container {
+  width: 80%;
+}
+
+.form-item {
+  background-color: black;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  background-color: transparent;
+  margin-top: 10px;
+  border-radius: 5px;
+  height: 25px;
+  border: 1px solid gray;
+}
+
+input[type=text] {
+  padding-left: 15px;
+  color: white;
+}
+
+label {
+  color: white;
+  margin-top: 20px;
 }

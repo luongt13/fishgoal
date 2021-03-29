@@ -1,18 +1,36 @@
 import {Link} from "react-router-dom"
-import {Button, ButtonGroup} from "@material-ui/core"
+import {useState} from "react"
+import Home from "./Home"
+import {Button, ButtonGroup, Card, CardContent} from "@material-ui/core"
 import "./styles/Welcome.css"
 
 function Welcome() {
+    const [form, setForm] = useState(false)
+
+   
+
+    function showForm() {
+        if(form) {
+            return (
+                <Home/>
+            )
+        }  
+    }
+  
     return (
-        <div className="container">
-            <div>
+        <div >
+            <Card className="container">
+                <CardContent className="banner">
                 <h1>FishGoals</h1>
-            </div>
-            <ButtonGroup variant="contained">
-                <Button><Link to="/home">Sign Up</Link></Button>
-                <Button><Link to="/home">Guest</Link></Button>
-                <Button><Link to="/home">Log In</Link></Button>
+                <ButtonGroup  variant="contained" color="secondary">
+                    <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/sign-up">Sign Up</Link></Button>
+                    <Button><Link to="/goals">Guest</Link></Button>
+                    <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/log-in">Log In</Link></Button>
+                    <Button>Log In</Button>
             </ButtonGroup>
+            </CardContent>
+            </Card>
+            {showForm()}
         </div>
     )
 }

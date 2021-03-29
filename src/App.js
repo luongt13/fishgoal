@@ -71,7 +71,7 @@ function App() {
         {/* <Route path="/">
         <Nav />
       </Route> */}
-      <Route path="/home">
+      <Route path="/form/:title">
           <Home />
         </Route>
       <Route exact path="/goals">

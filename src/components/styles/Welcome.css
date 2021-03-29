@@ -1,5 +1,5 @@
 a {
-    color: black;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -7,8 +7,19 @@ a {
 h1 {
     font-size: 8vw;
     margin-bottom: 50px;
+    color: white;
 }
 
 .container {
-    margin: 200px auto;
+    text-align: center;
+    margin: 0 auto;
+    /* width: 100%; */
+
+}
+
+.banner{
+    background-color: black;
+    /* position: fixed; */
+    width: 100%;
+
 }
