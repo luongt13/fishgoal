@@ -11,7 +11,9 @@ import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
 import {Button} from "@material-ui/core"
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
+import AddIcon from '@material-ui/icons/Add'
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip'
 
 function App() {
   const [goals, setGoals] = useState([])
@@ -41,7 +43,11 @@ function App() {
           return (
             <div className="add-icon">
                 <div className="add-container">
-                    <Button onClick={() => setClose(prevState => !prevState)} variant="contained" color="secondary" startIcon={<AddCircleOutlineIcon fontSize="large"/>}>Add New</Button>
+                    <Tooltip title="Add" aria-label="add">
+                        <Fab color="secondary" onClick={() => setClose(prevState => !prevState)}>
+                            <AddIcon/>
+                        </Fab>
+                    </Tooltip>
                 </div>
             </div>
           )
@@ -90,10 +96,11 @@ function App() {
         </Route>
         <Route exact path="/goals">
             <Nav />
-            {displayAdd()}
+            <h2>FishGoals</h2>
             {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
+            {displayAdd()}
         </Route>
         <Route exact path="/caught">
             <Nav />

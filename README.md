@@ -114,7 +114,7 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | Saturday 3/20  | Continue create function components / Render Data / Buttons | Complete |
 | Sunday 3/21    | Continue previous day / Add create | Complete |
 | Monday 3/22    | Continue previous day / Add update | Complete |
-| Tuesday 3/23   | Wrap up components / Start styling | In progress |
+| Tuesday 3/23   | Wrap up components / Start styling | Complete |
 | Wednesday 3/24 | Style | In progress |
 | Thursday 3/25  | MVP / User Testing | In progress |
 | Friday 3/26    | Project Presentation | In progress |
@@ -134,11 +134,11 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | Render on page  | H | 5 | 4 |  |
 | React Router    | H | 2 | 2 |  |
 | **DESIGN:** |
-| Nav             | H | 2 | .5 |  |
-| Goal            | H | 3 |  |  |
-| Goal item       | H | 3 | 1 |  |
-| Form            | L | 3 | 2 |  |
-| Buttons         | L | 3 | 1 |  |
+| Nav             | H | 2 | 2 |  |
+| Goal            | H | 3 | 3 |  |
+| Goal item       | H | 3 | 3 |  |
+| Form            | L | 3 | 3 |  |
+| Buttons         | L | 3 | 2 |  |
 | General Design  | L | 5 | 5 |  |
 | **TOTAL:**      |   |**47**|**TBD**|**TBD**| 
 

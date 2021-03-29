@@ -65,7 +65,7 @@ function Add(props) {
                     <input type="text" id="how" value={newGoal.how} onChange={handleChange} required/>
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="secondary">Set Bait</Button>
+                    <Button size="small" type="submit" variant="contained" color="secondary" onClick={() => props.setClose(prevState => !prevState)}>Set Bait</Button>
                 </CardActions>
             </Card>
         </form>

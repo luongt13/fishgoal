@@ -19,10 +19,10 @@ function Nav() {
                         <Menu className="icon hidden"/>
                     </IconButton>
                     <div className="desktop">
-                    <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
-                    <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/caught">Caught</Link></Button>
-                    <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/missed">Missed</Link></Button>
-                    <Button color="inherit" startIcon={<ExitToAppIcon />}><Link to="/">Logout</Link></Button>
+                        <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
+                        <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/caught">Caught</Link></Button>
+                        <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/missed">Missed</Link></Button>
+                        <Button color="inherit" startIcon={<ExitToAppIcon />}><Link to="/">Logout</Link></Button>
                     </div>
                 </Toolbar>
             </AppBar>

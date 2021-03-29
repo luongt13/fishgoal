@@ -3,6 +3,9 @@ import {baseURL, config} from "../service"
 import axios from "axios"
 import Edit from "./Edit"
 import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
+import CheckBoxIcon from '@material-ui/icons/CheckBox'
+import NotInterestedIcon from '@material-ui/icons/NotInterested'
+import EditIcon from '@material-ui/icons/Edit'
 import "../App.css"
 
   
@@ -57,42 +60,42 @@ function GoalItem(props) {
                                 <Grid item xs={6} sm={3}>
                                 <Typography component="p" className="label">
                                 What? 
-                            </Typography>
-                            <Typography component="p">
-                                {pendingDetails.what}
-                            </Typography>
+                                </Typography>
+                                <Typography component="p">
+                                    {pendingDetails.what}
+                                </Typography>
                                 </Grid>
-                            <Grid item xs={6} sm={3}>
-                            <Typography component="p" className="label">
-                                Amount? 
-                            </Typography>
-                            <Typography component="p">
-                               {pendingDetails.amount}
-                            </Typography>
-                            </Grid>
-                            <Grid item xs={6} sm={3}>
-                            <Typography component="p" className="label">
-                                By when? 
-                            </Typography>
-                            <Typography component="p">
-                                {pendingDetails.when}
-                            </Typography>
-                            </Grid>
-                            <Grid item xs={6} sm={3}>
-                            <Typography component="p" className="label">
-                                How? 
-                            </Typography> 
-                            <Typography component="p">
-                                {pendingDetails.how}
-                            </Typography>
-                            </Grid>
+                                <Grid item xs={6} sm={3}>
+                                <Typography component="p" className="label">
+                                    Amount? 
+                                </Typography>
+                                <Typography component="p">
+                                {pendingDetails.amount}
+                                </Typography>
+                                </Grid>
+                                <Grid item xs={6} sm={3}>
+                                <Typography component="p" className="label">
+                                    By when? 
+                                </Typography>
+                                <Typography component="p">
+                                    {pendingDetails.when}
+                                </Typography>
+                                </Grid>
+                                <Grid item xs={6} sm={3}>
+                                <Typography component="p" className="label">
+                                    How? 
+                                </Typography> 
+                                <Typography component="p">
+                                    {pendingDetails.how}
+                                </Typography>
+                                </Grid>
                             </Grid>
                         </CardContent>
                         <CardActions className="selectButtons">
                             <ButtonGroup variant="contained" color="primary" size="small">
-                                <Button id="complete" value="1" onClick={handleComplete}>Reel it in</Button>
-                                <Button id="incomplete" value="2" onClick={handleComplete}>Fish got away</Button>
-                                <Button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</Button>
+                                <Button id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}>Reel it in</Button>
+                                <Button id="incomplete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}>Fish got away</Button>
+                                <Button onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}>Change Bait</Button>
                             </ButtonGroup> 
                         </CardActions>
                     </Card>
