@@ -15,20 +15,17 @@ function Nav() {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-                <Drawer variant="persistent" anchor="left" open={toggleMenu}>
-                    <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
-                        <ChevronLeft />
-                    </IconButton>
-                    <List>
-                        <ListItem ><Link className="item" to="/goals">FishGoals</Link></ListItem>
-                        <ListItem><Link className="item" to="/caught">Fish Caught</Link></ListItem>
-                        <ListItem><Link className="item" to="/missed">Fish Missed</Link></ListItem>            
-                        <ListItem><Link className="item" to="/">Log Out</Link></ListItem>
-                    </List>
-                </Drawer>
-    
-     
-          
+            <Drawer variant="persistent" anchor="left" open={toggleMenu}>
+                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
+                    <ChevronLeft />
+                </IconButton>
+                <List>
+                    <ListItem ><Link className="item" to="/goals">FishGoals</Link></ListItem>
+                    <ListItem><Link className="item" to="/caught">Fish Caught</Link></ListItem>
+                    <ListItem><Link className="item" to="/missed">Fish Missed</Link></ListItem>            
+                    <ListItem><Link className="item" to="/">Log Out</Link></ListItem>
+                </List>
+            </Drawer>
         </div>
     )
 }

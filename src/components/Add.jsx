@@ -36,7 +36,7 @@ function Add(props) {
     return (
         //form to add new goal
         <form onSubmit={handleSubmit}>
-            <Card variant="outlined" class="inputs">
+            {/* <Card variant="outlined" class="inputs">
                 <CardContent>
                     <div className="card">
                         <TextField fullWidth name="what" label="What is your goal?" id="outlined-textarea" variant="outlined" value={newGoal.what} onChange={handleChange}/>
@@ -51,15 +51,26 @@ function Add(props) {
                         <TextField fullWidth name="how" label="How will you reach your goal?" id="outlined-textarea" variant="outlined" value={newGoal.how} onChange={handleChange} />
                     </div>
                 </CardContent>
+            </Card> */}
+            <Card >
+                <CardContent className="card">
+                    <label htmlFor="what">What is your goal? </label>
+                    <input type="text" name="what" value={newGoal.what} onChange={handleChange}/>
+                {/* </CardContent> */}
+                {/* <CardContent className="card">   */}
+                    <label htmlFor="amount">How many? How much? How long? </label>
+                    <input type="text" name="amount" value={newGoal.amount} onChange={handleChange}/>
+                {/* </CardContent> */}
+                {/* <CardContent className="card">   */}
+                    <label htmlFor="when">When will you finish this by? </label>
+                    <input type="text" name="when" value={newGoal.when} onChange={handleChange}/>
+                {/* </CardContent> */}
+                {/* <CardContent className="card">   */}
+                    <label htmlFor="how">How will you reach your goal? </label>
+                    <input type="text" name="how" value={newGoal.how} onChange={handleChange}/>
+                </CardContent>
             </Card>
-            {/* <label htmlFor="what">What is your goal? </label>
-            <input type="text" id="what" value={newGoal.what} onChange={handleChange}/> */}
-            {/* <label htmlFor="amount">How many? How much? How long? </label>
-            <input type="text" id="amount" value={newGoal.amount} onChange={handleChange}/> */}
-            {/* <label htmlFor="when">When will you finish this by? </label>
-            <input type="text" id="when" value={newGoal.when} onChange={handleChange}/> */}
-            {/* <label htmlFor="how">How will you reach your goal? </label>
-            <input type="text" id="how" value={newGoal.how} onChange={handleChange}/> */}
+           
             <Button type="submit" variant="contained" color="primary">Set Bait</Button>
         </form>
     )
