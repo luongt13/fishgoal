@@ -1,42 +1,52 @@
-import React from 'react'
+import {useState} from 'react'
 import {Link} from "react-router-dom"
-import {MenuList, MenuItem, AppBar} from "@material-ui/core"
+import {List, ListItem, AppBar, IconButton, Toolbar, Drawer} from "@material-ui/core"
+import {Menu, ChevronLeft} from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
-import { findByLabelText } from '@testing-library/dom';
 
 
 const useStyles = makeStyles({
     root: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        backgroundColor: "black",
+        // display: "flex",
+        // flexDirection: "row",
+        // justifyContent: "center",
+        // backgroundColor: "black",
     },
     item: {
     textDecoration: "none",
-    color: "white",
+    // color: "white",
 
     },
-    // pos: {
-    //   marginBottom: 12,
-    // },
   });
 
 function Nav() {
     const classes = useStyles()
-
+    const [toggleMenu, setToggleMenu] = useState(false)
     return (
         <div className="nav">
             <AppBar>
-            <MenuList className={classes.root}>
-                <MenuItem ><Link className={classes.item} to="/goals">FishGoals</Link></MenuItem>
-                <MenuItem><Link className={classes.item} to="/caught">Fish Caught</Link></MenuItem>
-                <MenuItem><Link className={classes.item} to="/missed">Fish Missed</Link></MenuItem>            
-                <MenuItem><Link className={classes.item} to="/">Log Out</Link></MenuItem>
-            </MenuList>
-            </AppBar>
-          
+                <Toolbar>
 
+                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
+                    <Menu />
+                </IconButton>
+                </Toolbar>
+                </AppBar>
+                <Drawer variant="persistent" anchor="left" open={toggleMenu}>
+                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
+                    <ChevronLeft />
+                </IconButton>
+                    
+                    <List className={classes.root}>
+                    <ListItem ><Link className={classes.item} to="/goals">FishGoals</Link></ListItem>
+                    <ListItem><Link className={classes.item} to="/caught">Fish Caught</Link></ListItem>
+                    <ListItem><Link className={classes.item} to="/missed">Fish Missed</Link></ListItem>            
+                    <ListItem><Link className={classes.item} to="/">Log Out</Link></ListItem>
+                    </List>
+                </Drawer>
+    
+     
+          
         </div>
     )
 }

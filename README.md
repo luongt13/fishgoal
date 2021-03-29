@@ -131,15 +131,15 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | **DATA:** |
 | Set up AirTable | H | 4 | 2 |  |
 | Axios calls     | H | 3 | 3 |  |
-| Render on page  | H | 5 | 3 |  |
+| Render on page  | H | 5 | 4 |  |
 | React Router    | H | 2 | 2 |  |
 | **DESIGN:** |
-| Nav             | H | 2 |  |  |
+| Nav             | H | 2 | .5 |  |
 | Goal            | H | 3 |  |  |
-| Goal item       | H | 3 |  |  |
-| Form            | L | 3 |  |  |
-| Buttons         | L | 3 |  |  |
-| General Design  | L | 5 |  |  |
+| Goal item       | H | 3 | 1 |  |
+| Form            | L | 3 | 2 |  |
+| Buttons         | L | 3 | 1 |  |
+| General Design  | L | 5 | 5 |  |
 | **TOTAL:**      |   |**47**|**TBD**|**TBD**| 
 
 ## SWOT Analysis
