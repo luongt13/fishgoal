@@ -4,12 +4,14 @@ import {baseURL, config} from "./service"
 import {useEffect, useState} from "react"
 import axios from "axios"
 import Nav from "./components/Nav"
-import Home from "./components/Home"
+import Form from "./components/Form"
 import Caught from "./components/Caught"
 import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
+import {Button} from "@material-ui/core"
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
 
 function App() {
   const [goals, setGoals] = useState([])
@@ -17,6 +19,7 @@ function App() {
   const [complete, setComplete] = useState([])
   const [incomplete, setIncomplete] = useState([])
   const [toggle, setToggle] = useState(false)
+  const [close, setClose] = useState(false)
   //get data when toggle changes
   useEffect(() => {
       handleRequest()
@@ -29,6 +32,20 @@ function App() {
   async function handleRequest(){
       let resp = await axios.get(baseURL, config)
       setGoals(resp.data.records)
+  }
+  //display add form 
+  function displayAdd() {
+      if(close) {
+          return  <Add setToggle={setToggle} setClose={setClose}/>
+      } else {
+          return (
+            <div className="add-icon">
+                <div className="add-container">
+                    <Button onClick={() => setClose(prevState => !prevState)} variant="contained" color="secondary" startIcon={<AddCircleOutlineIcon fontSize="large"/>}>Add New</Button>
+                </div>
+            </div>
+          )
+      }
   }
   //find the status and pass it accordingly to be displayed in the correct list
   function findStatus() {
@@ -68,33 +85,31 @@ function App() {
         <Route exact path="/">
             <Welcome />
         </Route>
-        {/* <Route path="/">
-        <Nav />
-      </Route> */}
-      <Route path="/form/:title">
-          <Home />
+        <Route path="/form/:title">
+          <Form />
         </Route>
-      <Route exact path="/goals">
-      <Nav />
-        <Add setToggle={setToggle}/>
-        {pending.map((pending)=> {
+        <Route exact path="/goals">
+            <Nav />
+            {displayAdd()}
+            {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
-      </Route>
-      <Route exact path="/caught">
-      <Nav />
-        {complete.map((complete)=> {
-          return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
-      })}
-      </Route>
-      <Route exact path="/missed">
-      <Nav />
-        {incomplete.map((incomplete)=> {
-                  return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
-              })}
-      </Route>
-      </div>
+        </Route>
+        <Route exact path="/caught">
+            <Nav />
+            <h2>Caught Fish</h2>
+            {complete.map((complete)=> {
+                return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
+            })}
+        </Route>
+        <Route exact path="/missed">
+            <Nav />
+            <h2>Fish That Got Away</h2>
+            {incomplete.map((incomplete)=> {
+                return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
+            })}
+        </Route>
+    </div>
   );
 }
-
 export default App;

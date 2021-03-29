@@ -1,7 +1,8 @@
 import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
-import {Button, Card, CardContent, CardActions, Typography} from "@material-ui/core"
+import {Button, Card, CardContent, CardActions, Typography, IconButton} from "@material-ui/core"
+import HighlightOffIcon from "@material-ui/icons/HighlightOff"
 import "./styles/Add.css"
 //add new goal
 function Add(props) {
@@ -15,9 +16,9 @@ function Add(props) {
     })
     //update the object when the input changes
     function handleChange(event) {
-        let {value, name} = event.target
+        let {value, id} = event.target
         setNewGoal((prevState) => {
-            return {...prevState, [name]: value}
+            return {...prevState, [id]: value}
         })
     }
     //post form data to API then re-render
@@ -36,52 +37,38 @@ function Add(props) {
     return (
         //form to add new goal 
         <form onSubmit={handleSubmit}>
-            {/* <Card variant="outlined" class="inputs">
-                <CardContent>
-                    <div className="card">
-                        <TextField fullWidth name="what" label="What is your goal?" id="outlined-textarea" variant="outlined" value={newGoal.what} onChange={handleChange}/>
-                    </div>
-                    <div className="card">
-                        <TextField fullWidth name="amount" label="How many? How much? How long?" id="outlined-textarea" variant="outlined" value={newGoal.amount} onChange={handleChange}/>
-                    </div>
-                    <div className="card">
-                        <TextField fullWidth name="when" label="When will you finish this by?" id="outlined-textarea" variant="outlined" value={newGoal.when} onChange={handleChange}/>
-                    </div>
-                    <div className="card">
-                        <TextField fullWidth name="how" label="How will you reach your goal?" id="outlined-textarea" variant="outlined" value={newGoal.how} onChange={handleChange} />
-                    </div>
-                </CardContent>
-            </Card> */}
             <Card className="form-container">
+                <CardContent className="form-item close-icon">
+                    <IconButton color="secondary" onClick={() => props.setClose(prevState => !prevState)}>
+                        <HighlightOffIcon fontSize="large"/>
+                    </IconButton>
+                </CardContent>
                 <CardContent className="form-item">
                     <Typography component="h2">
                         Add A New Goal
-                    </Typography>
+                    </Typography> 
                 </CardContent>
                 <CardContent className="form-item">
-                        <label htmlFor="what">What is your goal? </label>
-                        <input type="text" name="what" value={newGoal.what} onChange={handleChange}/>
+                    <label htmlFor="what">What is your goal? </label>
+                    <input type="text" id="what" value={newGoal.what} onChange={handleChange} required/>
                 </CardContent>
                 <CardContent className="form-item">  
                     <label htmlFor="amount">How many? How much? How long? </label>
-                    <input type="text" name="amount" value={newGoal.amount} onChange={handleChange}/>
+                    <input type="text" id="amount" value={newGoal.amount} onChange={handleChange} required/>
                 </CardContent>
                 <CardContent className="form-item">  
                     <label htmlFor="when">When will you finish this by? </label>
-                    <input type="text" name="when" value={newGoal.when} onChange={handleChange}/>
+                    <input type="text" id="when" value={newGoal.when} onChange={handleChange} required/>
                 </CardContent>
                 <CardContent className="form-item">  
                     <label htmlFor="how">How will you reach your goal? </label>
-                    <input type="text" name="how" value={newGoal.how} onChange={handleChange}/>
+                    <input type="text" id="how" value={newGoal.how} onChange={handleChange} required/>
                 </CardContent>
                 <CardActions className="button">
-                <Button size="small" type="submit" variant="contained" color="primary">Set Bait</Button>
+                    <Button size="small" type="submit" variant="contained" color="secondary">Set Bait</Button>
                 </CardActions>
             </Card>
-           
-            
         </form>
     )
 }
-
 export default Add

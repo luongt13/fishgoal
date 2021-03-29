@@ -9,3 +9,10 @@
 .item {
     color: black;
 }
+
+@media screen and (min-width: 600px) {
+    .hidden {
+        display: none;
+        color: black;
+    }
+}

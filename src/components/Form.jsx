@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Link, useParams} from "react-router-dom"
 import {Button, Card, CardContent, CardActions} from "@material-ui/core"
-import "./styles/Home.css"
+import "./styles/Form.css"
 
 function Home() {
     let { title } = useParams()

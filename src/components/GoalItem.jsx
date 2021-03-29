@@ -14,6 +14,7 @@ function GoalItem(props) {
     const [showEdit, setShowEdit] = useState(false)
     //change state of status to move to caught or missed list
     const [status, setStatus] = useState(pendingDetails)
+
     //put when status state is changed
     useEffect(() => {
         setChange()
@@ -25,12 +26,27 @@ function GoalItem(props) {
         await axios.put(newURL, {fields: status }, config)
         props.setToggle(prevState => !prevState)
     }
+    //mark compete or incomplete
+    function handleComplete(event) {
+        //update state based on the value from the button click
+        let value = Number(event.currentTarget.value)
+        setStatus((prevState) => {
+            return ( {
+                ...prevState,
+                what: pendingDetails.what,
+                when: pendingDetails.when,
+                how: pendingDetails.how,
+                amount: pendingDetails.amount,
+                status: value,
+            })
+        })
+    }
     //display either input to edit to goal text, pass toggle to rerender, pass status to set status
     function displayEdit() {
         if(showEdit){
             return (
                 //to edit page
-                    <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle}/> 
+                <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle}/> 
             )
         } else {
             return (
@@ -71,7 +87,6 @@ function GoalItem(props) {
                             </Typography>
                             </Grid>
                             </Grid>
-                            
                         </CardContent>
                         <CardActions className="selectButtons">
                             <ButtonGroup variant="contained" color="primary" size="small">
@@ -85,30 +100,18 @@ function GoalItem(props) {
             )
         }
     }
-    //mark compete or incomplete
-    function handleComplete(event) {
-        //update state based on the value from the button click
-        let value = Number(event.target.value)
-        setStatus((prevState) => {
-            return ( {
-                ...prevState,
-                what: pendingDetails.what,
-                when: pendingDetails.when,
-                how: pendingDetails.how,
-                amount: pendingDetails.amount,
-                status: value,
-            })
-        })
-    }
+    
     return (
         <div>
-    
                 {displayEdit()}
-                {/* <ButtonGroup variant="contained" color="primary">
-                    <Button id="complete" value="1" onClick={handleComplete}>Reel it in</Button>
-                    <Button id="incomplete" value="2" onClick={handleComplete}>Fish got away</Button>
-                    <Button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</Button>
-                </ButtonGroup>  */}
+                {/* <CardActions className="selectButtons">
+                            <ButtonGroup variant="contained" color="primary" size="small">
+                                <Button id="complete" value="1" onClick={handleComplete}>Reel it in</Button>
+                                <Button id="incomplete" value="2" onClick={handleComplete}>Fish got away</Button>
+                                <Button onClick={() => setShowEdit(prevState => !prevState)}>Change Bait</Button>
+                            </ButtonGroup> 
+                        </CardActions> */}
+            
             </div>
 
     )

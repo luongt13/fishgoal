@@ -1,43 +1,10 @@
-/* form {
-    margin: 100px auto;
-    width: 100%;
-    /* background-color: black; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-} */ 
 h2 {
     color: white;
-}
-/* .form-container {
-    width: 80%;
+    text-transform: uppercase;
 }
 
-.form-item {
-    background-color: black;
-    margin: 0 auto;
+.close-icon {
     display: flex;
-    flex-direction: column;
-} */
-
-/* .button {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-} */
-
-/* input{
-    background-color: white;
-    margin-top: 10px;
-    border-radius: 5px;
-    height: 25px;
+    flex-direction: row;
+    height: 10px;
 }
-input[type=text] {
-    padding-left: 15px;
-}
-label {
-    color: white;
-    margin-top: 20px;
-} */

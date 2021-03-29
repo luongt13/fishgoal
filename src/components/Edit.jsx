@@ -2,6 +2,7 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
 import {Button, Card, CardContent, CardActions} from "@material-ui/core"
+import SaveIcon from "@material-ui/icons/Save"
 //edit goals
 function Edit(props) {
     //set state of variables
@@ -45,7 +46,7 @@ function Edit(props) {
             <input type="text" id="how" required value={how} onChange={(e)=> setHow(e.target.value)}/>
             </CardContent>
             <CardActions className="button">
-            <Button size="small" type="submit" variant="contained" color="secondary">Save</Button>
+            <Button size="small" type="submit" variant="contained" color="secondary" startIcon={<SaveIcon/>}>Save</Button>
             </CardActions>
             </Card>   
         </form>

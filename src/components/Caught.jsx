@@ -9,46 +9,44 @@ function Caught(props) {
                 <CardContent className="goal-item">
                     <Grid container>
                         <Grid item xs={6} sm={3}>
-                        <Typography component="p" className="label">
-                        What? 
-                        </Typography>
-                        <Typography component="p">
-                        {completeDetails.what}
-                        </Typography>
+                            <Typography component="p" className="label">
+                            What? 
+                            </Typography>
+                            <Typography component="p">
+                            {completeDetails.what}
+                            </Typography>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                        <Typography component="p" className="label">
-                        Amount?
-                        </Typography>
-                        <Typography component="p">
-                        {completeDetails.amount}
-                        </Typography>
+                            <Typography component="p" className="label">
+                            Amount?
+                            </Typography>
+                            <Typography component="p">
+                            {completeDetails.amount}
+                            </Typography>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                        <Typography component="p" className="label">
-                        By when? 
-                        </Typography>
-                        <Typography component="p">
-                        {completeDetails.when}
-                        </Typography>
+                            <Typography component="p" className="label">
+                            By when? 
+                            </Typography>
+                            <Typography component="p">
+                            {completeDetails.when}
+                            </Typography>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                        <Typography component="p" className="label">
-                        How? 
-                        </Typography>
-                        <Typography component="p">
-                        {completeDetails.how}
-                        </Typography>
+                            <Typography component="p" className="label">
+                            How? 
+                            </Typography>
+                            <Typography component="p">
+                            {completeDetails.how}
+                            </Typography>
                         </Grid>
                     </Grid>
                 </CardContent>
                 <CardActions className="button">
-                <Delete id={props.complete.id} setToggle={props.setToggle}/>
+                    <Delete id={props.complete.id} setToggle={props.setToggle}/>
                 </CardActions>
             </Card>
-            
-        </div>
+        </div>       
     )
 }
-
 export default Caught

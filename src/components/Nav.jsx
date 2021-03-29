@@ -1,23 +1,24 @@
 import {useState} from 'react'
 import {Link} from "react-router-dom"
-import {List, ListItem, AppBar, IconButton, Toolbar, Drawer} from "@material-ui/core"
-import {Menu, ChevronLeft} from '@material-ui/icons';
+import {Button, List, ListItem, AppBar, IconButton, Toolbar, Drawer} from "@material-ui/core"
+import {Menu, Close} from '@material-ui/icons';
 import "./styles/Nav.css"
 
 function Nav() {
     const [toggleMenu, setToggleMenu] = useState(false)
     return (
         <div className="nav">
-            <AppBar >
+            <AppBar>
                 <Toolbar className="nav-bar">
                     <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
-                        <Menu className="icon"/>
+                        <Menu className="icon hidden"/>
                     </IconButton>
+                    <Button className="nav-text" color="inherit">Logout</Button>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="persistent" anchor="left" open={toggleMenu}>
-                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
-                    <ChevronLeft />
+            <Drawer variant="persistent" anchor="left" open={toggleMenu} className="hidden">
+                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)} edge="start" aria-label="menu">
+                    <Close />
                 </IconButton>
                 <List>
                     <ListItem ><Link className="item" to="/goals">FishGoals</Link></ListItem>
