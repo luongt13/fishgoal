@@ -1,12 +1,18 @@
 import {Link} from "react-router-dom"
+import {Button, ButtonGroup} from "@material-ui/core"
+import "./styles/Welcome.css"
 
 function Welcome() {
     return (
-        <div>
-            <h1>Set Your FishGoals</h1>
-            <Link to="/home"><button>Guest</button></Link>
-            <Link to="/home"><button>Sign Up</button></Link>
-            <Link to="/home"><button>Log In</button></Link>
+        <div className="container">
+            <div>
+                <h1>FishGoals</h1>
+            </div>
+            <ButtonGroup variant="contained">
+                <Button><Link to="/home">Sign Up</Link></Button>
+                <Button><Link to="/home">Guest</Link></Button>
+                <Button><Link to="/home">Log In</Link></Button>
+            </ButtonGroup>
         </div>
     )
 }

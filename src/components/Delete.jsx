@@ -1,5 +1,6 @@
 import {baseURL, config} from "../service"
 import axios from "axios"
+import {Button} from "@material-ui/core"
 //handle delete items
 function Delete(props) {
     //axios to delete item and change toggle
@@ -10,7 +11,7 @@ function Delete(props) {
     }
     return (
         <div>
-            <button onClick={handleDelete}>Delete</button>
+            <Button variant="outlined" onClick={handleDelete}>Delete</Button>
         </div>
     )
 }

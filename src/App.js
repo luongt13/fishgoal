@@ -10,7 +10,6 @@ import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
-import {Button} from "@material-ui/core"
 
 function App() {
   const [goals, setGoals] = useState([])
@@ -66,7 +65,6 @@ function App() {
   }
   return (
     <div className="App">
-        <Button>Butt</Button>
         <Route exact path="/">
             <Welcome />
         </Route>

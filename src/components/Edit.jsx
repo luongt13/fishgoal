@@ -1,6 +1,7 @@
 import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
+import {Button} from "@material-ui/core"
 //edit goals
 function Edit(props) {
     //set state of variables
@@ -34,7 +35,7 @@ function Edit(props) {
             <input type="text" id="when" required value={when} onChange={(e)=> setWhen(e.target.value)}/>
             <label htmlFor="how">How? </label>
             <input type="text" id="how" required value={how} onChange={(e)=> setHow(e.target.value)}/>
-            <input type="submit"/>
+            <Button type="submit" variant="outlined">Save</Button>
         </form>
     )
 }

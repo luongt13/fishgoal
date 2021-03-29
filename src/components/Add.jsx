@@ -1,6 +1,8 @@
 import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
+import {Button, TextField, Card, CardContent} from "@material-ui/core"
+import "./styles/Add.css"
 //add new goal
 function Add(props) {
     //storing new goal data
@@ -13,9 +15,9 @@ function Add(props) {
     })
     //update the object when the input changes
     function handleChange(event) {
-        let {value, id} = event.target
+        let {value, name} = event.target
         setNewGoal((prevState) => {
-            return {...prevState, [id]: value}
+            return {...prevState, [name]: value}
         })
     }
     //post form data to API then re-render
@@ -34,15 +36,31 @@ function Add(props) {
     return (
         //form to add new goal
         <form onSubmit={handleSubmit}>
-            <label htmlFor="what">What is your goal? </label>
-            <input type="text" id="what" value={newGoal.what} onChange={handleChange}/>
-            <label htmlFor="amount">How many? How much? How long? </label>
-            <input type="text" id="amount" value={newGoal.amount} onChange={handleChange}/>
-            <label htmlFor="when">When will you finish this by? </label>
-            <input type="text" id="when" value={newGoal.when} onChange={handleChange}/>
-            <label htmlFor="how">How will you reach your goal? </label>
-            <input type="text" id="how" value={newGoal.how} onChange={handleChange}/>
-            <button type="submit">Set Bait</button>
+            <Card variant="outlined" class="inputs">
+                <CardContent>
+                    <div className="card">
+                        <TextField fullWidth name="what" label="What is your goal?" id="outlined-textarea" variant="outlined" value={newGoal.what} onChange={handleChange}/>
+                    </div>
+                    <div className="card">
+                        <TextField fullWidth name="amount" label="How many? How much? How long?" id="outlined-textarea" variant="outlined" value={newGoal.amount} onChange={handleChange}/>
+                    </div>
+                    <div className="card">
+                        <TextField fullWidth name="when" label="When will you finish this by?" id="outlined-textarea" variant="outlined" value={newGoal.when} onChange={handleChange}/>
+                    </div>
+                    <div className="card">
+                        <TextField fullWidth name="how" label="How will you reach your goal?" id="outlined-textarea" variant="outlined" value={newGoal.how} onChange={handleChange} />
+                    </div>
+                </CardContent>
+            </Card>
+            {/* <label htmlFor="what">What is your goal? </label>
+            <input type="text" id="what" value={newGoal.what} onChange={handleChange}/> */}
+            {/* <label htmlFor="amount">How many? How much? How long? </label>
+            <input type="text" id="amount" value={newGoal.amount} onChange={handleChange}/> */}
+            {/* <label htmlFor="when">When will you finish this by? </label>
+            <input type="text" id="when" value={newGoal.when} onChange={handleChange}/> */}
+            {/* <label htmlFor="how">How will you reach your goal? </label>
+            <input type="text" id="how" value={newGoal.how} onChange={handleChange}/> */}
+            <Button type="submit" variant="contained" color="primary">Set Bait</Button>
         </form>
     )
 }

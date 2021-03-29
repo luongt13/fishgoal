@@ -1,0 +1,19 @@
+form {
+    margin: 100px auto;
+    width: 100%;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    width: 500px;
+    margin-top: 10px;
+}
+
+.inputs {
+    background-color: white;
+}
