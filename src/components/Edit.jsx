@@ -1,6 +1,8 @@
+//react and data
 import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
+//styling
 import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
 import SaveIcon from "@material-ui/icons/Save"
 //edit goals
@@ -29,29 +31,21 @@ function Edit(props) {
     return (
         <form >
             <Card className="form-container">
-            <CardContent className="form-item">
-            <TextField type="text" id="what" variant="outlined" required value={what} onChange={(e)=> setWhat(e.target.value)}/>
-            {/* <label htmlFor="what">What? </label>
-            <input type="text" id="what" required value={what} onChange={(e)=> setWhat(e.target.value)}/> */}
-            </CardContent>
-            <CardContent className="form-item">
-            <TextField type="text" id="amount" variant="outlined" required value={amount} onChange={(e)=> setAmount(e.target.value)}/>
-            {/* <label htmlFor="amount">Amount? </label>
-            <input type="text" id="amount" required value={amount} onChange={(e)=> setAmount(e.target.value)}/> */}
-            </CardContent>
-            <CardContent className="form-item">
-            <TextField type="text" id="when" variant="outlined" required value={when} onChange={(e)=> setWhen(e.target.value)}/>
-            {/* <label htmlFor="when">By when? </label>
-            <input type="text" id="when" required value={when} onChange={(e)=> setWhen(e.target.value)}/> */}
-            </CardContent>
-            <CardContent className="form-item">
-            <TextField type="text" id="how" variant="outlined" required value={how} onChange={(e)=> setHow(e.target.value)}/>
-            {/* <label htmlFor="how">How? </label>
-            <input type="text" id="how" required value={how} onChange={(e)=> setHow(e.target.value)}/> */}
-            </CardContent>
-            <CardActions className="button">
-            <Button size="small" type="submit" variant="contained" color="secondary" startIcon={<SaveIcon/>} onClick={handleEdit}>Save</Button>
-            </CardActions>
+                <CardContent className="form-item">
+                    <TextField type="text" id="what" variant="outlined" required value={what} onChange={(e)=> setWhat(e.target.value)}/>
+                </CardContent>
+                <CardContent className="form-item">
+                    <TextField type="text" id="amount" variant="outlined" required value={amount} onChange={(e)=> setAmount(e.target.value)}/>
+                </CardContent>
+                <CardContent className="form-item">
+                    <TextField type="text" id="when" variant="outlined" required value={when} onChange={(e)=> setWhen(e.target.value)}/>
+                </CardContent>
+                <CardContent className="form-item">
+                    <TextField type="text" id="how" variant="outlined" required value={how} onChange={(e)=> setHow(e.target.value)}/>
+                </CardContent>
+                <CardActions className="button">
+                    <Button size="small" type="submit" variant="contained" color="secondary" startIcon={<SaveIcon/>} onClick={handleEdit}>Save</Button>
+                </CardActions>
             </Card>   
         </form>
     )

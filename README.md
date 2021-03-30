@@ -1,10 +1,28 @@
 # Project Overview
 
+## Table of contents
+* [Project Introduction](#project-description)
+* [Setup](#setup)
+* [Wireframes](#wireframes)
+* [Component Hierarchy](#component-hierarchy)
+* [API Sample Data](#api-and-sample-data)
+* [MVP and Post MVP](#mvp/post-mvp)
+* [Project Schedule](#project-schedule)
+* [Timeframes](#timeframes)
+* [SWOT Analysis](#swot-analysis)
+
 ## Project Name
 FishGoal
 
 ## Project Description
 A tool to allows users to add, update, and remove custom goals. The goal is to allow users to keep track of SMART goals or tasks.
+
+## Setup
+
+```
+npm install
+npm start
+```
 
 ## Wireframes
 

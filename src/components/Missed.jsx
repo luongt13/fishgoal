@@ -1,46 +1,26 @@
+//component
 import Delete from "./Delete"
+//styling
 import {Card, CardContent, Typography, CardActions, Grid} from "@material-ui/core"
-import "../App.css"
+import "./styles/Missed.css"
 //display incomplete goals
 function Missed(props) {
     const incompleteDetails = props.incomplete.fields
     return (
-        <div className="goal-list other-list">
+        <div className="goal-list">
             <Card className="card">
-            <Grid container>
-                <Grid item xs={11}>
-                    <CardContent className="goal-item">
-                        <Typography component="p" className="label">
-                            What? 
-                        </Typography>
-                        <Typography component="p">
-                            {incompleteDetails.what}
-                        </Typography>
-                        {/* </Grid> */}
-                        {/* <Grid item xs={6} sm={3}> */}
-                        <Typography component="p" className="label">
-                        Amount? 
-                        </Typography>
-                        <Typography component="p">
-                        {incompleteDetails.amount}
-                        </Typography>
-                        {/* </Grid> */}
-                        {/* <Grid item xs={6} sm={3}> */}
-                        <Typography component="p" className="label">
-                            When?
-                        </Typography>
-                        <Typography component="p">
-                            {incompleteDetails.when}
-                        </Typography>
-                        {/* </Grid> */}
-                        {/* <Grid item xs={6} sm={3}> */}
-                        <Typography component="p" className="label">
-                            How?
-                        </Typography>
-                        <Typography component="p">
-                           {incompleteDetails.how}
-                        </Typography>
-                    </CardContent>
+                <Grid container>
+                    <Grid item xs={11}>
+                        <CardContent className="goal-item">
+                            <Typography component="p" className="label">What?</Typography>
+                            <Typography component="p">{incompleteDetails.what}</Typography>
+                            <Typography component="p" className="label">Amount?</Typography>
+                            <Typography component="p">{incompleteDetails.amount}</Typography>
+                            <Typography component="p" className="label">When?</Typography>
+                            <Typography component="p">{incompleteDetails.when}</Typography>
+                            <Typography component="p" className="label">How?</Typography>
+                            <Typography component="p">{incompleteDetails.how}</Typography>
+                        </CardContent>
                     </Grid>
                     <Grid item xs={1}>
                         <CardActions className="button delete">
@@ -52,5 +32,4 @@ function Missed(props) {
         </div>
     )
 }
-
 export default Missed

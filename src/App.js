@@ -1,8 +1,9 @@
-import './App.css';
+//react and data
 import {Route} from "react-router-dom"
 import {baseURL, config} from "./service"
 import {useEffect, useState} from "react"
 import axios from "axios"
+//components
 import Nav from "./components/Nav"
 import Form from "./components/Form"
 import Caught from "./components/Caught"
@@ -10,10 +11,10 @@ import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
-// import {Button} from "@material-ui/core"
+//styling
 import AddIcon from '@material-ui/icons/Add'
-import Fab from '@material-ui/core/Fab'
-import Tooltip from '@material-ui/core/Tooltip'
+import {Fab, Tooltip} from "@material-ui/core"
+import './App.css';
 
 function App() {
   const [goals, setGoals] = useState([])
@@ -41,14 +42,12 @@ function App() {
           return  <Add setToggle={setToggle} setClose={setClose}/>
       } else {
           return (
-            <div className="add-icon">
-                <div className="add-container">
-                    <Tooltip title="Add" aria-label="add">
-                        <Fab color="primary" onClick={() => setClose(prevState => !prevState)}>
-                            <AddIcon/>
-                        </Fab>
-                    </Tooltip>
-                </div>
+            <div className="add-container">
+                <Tooltip title="Add" aria-label="add">
+                    <Fab color="primary" onClick={() => setClose(prevState => !prevState)}>
+                        <AddIcon/>
+                    </Fab>
+                </Tooltip>
             </div>
           )
       }
