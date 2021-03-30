@@ -1,6 +1,6 @@
 //react
 import {Link} from "react-router-dom"
-import {useState} from "react"
+// import {useState} from "react"
 //component
 // import Form from "./Form"
 //styling
@@ -25,10 +25,11 @@ function Welcome() {
                         <Button><Link to="/goals">Guest</Link></Button>
                         <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/log-in">Log In</Link></Button>
                     </ButtonGroup> */}
-                    <Button variant="contained" color="primary"><Link to="/goals">Get Started</Link></Button>
+                    <Button variant="contained" color="primary"><Link to="/form/login">Get Started</Link></Button>
                 </div>
             {/* {showForm()} */}
             {/* </Container> */}
+            <Button size="small" variant="contained" color="primary"><Link to="/goals">Enter</Link></Button>
          </div>
     )
 }
