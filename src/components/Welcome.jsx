@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import {useState} from "react"
 import Form from "./Form"
-import {Button, ButtonGroup, Card, CardContent} from "@material-ui/core"
+import {Button, ButtonGroup, Card, CardContent, Container} from "@material-ui/core"
 import "./styles/Welcome.css"
 
 function Welcome() {
@@ -14,16 +14,17 @@ function Welcome() {
     }
     return (
         <div >
-            <Card className="container">
+            <Container maxWidth="lg" className="container">
                 <CardContent className="banner">
                 <h1>FishGoals</h1>
-                    <ButtonGroup color="primary" variant="contained">
+                    {/* <ButtonGroup color="primary" variant="contained">
                         <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/sign-up">Sign Up</Link></Button>
                         <Button><Link to="/goals">Guest</Link></Button>
                         <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/log-in">Log In</Link></Button>
-                    </ButtonGroup>
+                    </ButtonGroup> */}
+                    <Button variant="contained" color="primary"><Link to="/goals">Get Started</Link></Button>
                 </CardContent>
-            </Card>
+            </Container>
             {showForm()}
         </div>
     )
