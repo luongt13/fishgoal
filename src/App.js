@@ -96,10 +96,10 @@ function App() {
         <Route exact path="/goals">
             <Nav />
             <h2>FishGoals</h2>
+            {displayAdd()}
             {pending.map((pending)=> {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
-            {displayAdd()}
         </Route>
         <Route exact path="/caught">
             <Nav />

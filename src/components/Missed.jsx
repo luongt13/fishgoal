@@ -2,7 +2,7 @@
 import Delete from "./Delete"
 //styling
 import {Card, CardContent, Typography, CardActions, Grid} from "@material-ui/core"
-import "./styles/Missed.css"
+import "../App.css"
 //display incomplete goals
 function Missed(props) {
     const incompleteDetails = props.incomplete.fields

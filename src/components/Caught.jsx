@@ -2,7 +2,7 @@
 import Delete from "./Delete"
 //styling
 import {Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
-import "./styles/Caught.css"
+import "../App.css"
 //display completed goals
 function Caught(props) {
     const completeDetails = props.complete.fields

@@ -84,12 +84,10 @@ form {
 } 
 
 .add-container {
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   padding: 20px;
-  width: 80%;
+  bottom: 0;
+  left: 0;
+  position: fixed;
 }
 
 @media screen and (max-width: 600px) {
