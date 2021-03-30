@@ -1,7 +1,7 @@
 import {baseURL, config} from "../service"
 import axios from "axios"
 // import {Button} from "@material-ui/core"
-import DeleteIcon from "@material-ui/icons/Delete"
+import CloseIcon from '@material-ui/icons/Close'
 import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
 //handle delete items
@@ -16,7 +16,7 @@ function Delete(props) {
         <div>
             <Tooltip title="Delete" aria-label="delete">
                 <IconButton  onClick={handleDelete}>
-                    <DeleteIcon/>
+                    <CloseIcon/>
                 </IconButton>
             </Tooltip>
             {/* <Button size="small" variant="contained" color="secondary" startIcon={<DeleteIcon/>}onClick={handleDelete}>Delete</Button> */}

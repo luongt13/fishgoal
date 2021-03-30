@@ -1,5 +1,5 @@
 h2 {
-    color: white;
+    /* color: white; */
     text-transform: uppercase;
 }
 
@@ -7,4 +7,5 @@ h2 {
     display: flex;
     flex-direction: row;
     height: 10px;
+    justify-content: flex-end;
 }

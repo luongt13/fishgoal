@@ -44,7 +44,7 @@ function App() {
             <div className="add-icon">
                 <div className="add-container">
                     <Tooltip title="Add" aria-label="add">
-                        <Fab color="secondary" onClick={() => setClose(prevState => !prevState)}>
+                        <Fab color="primary" onClick={() => setClose(prevState => !prevState)}>
                             <AddIcon/>
                         </Fab>
                     </Tooltip>

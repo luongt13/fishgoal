@@ -6,45 +6,45 @@ function Caught(props) {
     return (
         <div className="goal-list other-list">
             <Card className="card">
+            <Grid container>
+            <Grid item xs={11}>
+
                 <CardContent className="goal-item">
-                    <Grid container>
-                        <Grid item xs={6} sm={3}>
+                   
                             <Typography component="p" className="label">
                             What? 
                             </Typography>
                             <Typography component="p">
                             {completeDetails.what}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
                             <Typography component="p" className="label">
                             Amount?
                             </Typography>
                             <Typography component="p">
                             {completeDetails.amount}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
                             <Typography component="p" className="label">
                             When? 
                             </Typography>
                             <Typography component="p">
                             {completeDetails.when}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
                             <Typography component="p" className="label">
                             How? 
                             </Typography>
                             <Typography component="p">
                             {completeDetails.how}
                             </Typography>
-                        </Grid>
-                    </Grid>
+                       
                 </CardContent>
+                </Grid>
+                <Grid item xs={1}>
+
                 <CardActions className="button delete">
                     <Delete id={props.complete.id} setToggle={props.setToggle}/>
                 </CardActions>
+                </Grid>
+                </Grid>
             </Card>
         </div>       
     )

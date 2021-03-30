@@ -17,7 +17,7 @@ function Welcome() {
             <Card className="container">
                 <CardContent className="banner">
                 <h1>FishGoals</h1>
-                    <ButtonGroup  variant="contained" color="secondary">
+                    <ButtonGroup color="primary" variant="contained">
                         <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/sign-up">Sign Up</Link></Button>
                         <Button><Link to="/goals">Guest</Link></Button>
                         <Button onClick={() => setForm(prevState => !prevState)}><Link to="/form/log-in">Log In</Link></Button>
