@@ -3,11 +3,12 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
 //styling
-import {Button, Card, CardContent, CardActions, Typography, IconButton, TextField, Tooltip} from "@material-ui/core"
+import {Button, Card, CardContent, CardActions, Typography, IconButton, TextField, Tooltip, Snackbar} from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close'
 import "./styles/Add.css"
 //add new goal
 function Add(props) {
+    const [open, setOpen] = useState(false)
     //storing new goal data
     const [newGoal, setNewGoal] = useState({
         what: "",
@@ -24,9 +25,14 @@ function Add(props) {
             return {...prevState, [id]: value}
         })
     }
+    function handleClose(event, reason) {
+    if (reason === "clickaway") {
+        return
+    } setOpen(false)
+    }
     //post form data to API then re-render
     async function handleSubmit(event) {
-       console.dir(event)
+        setOpen(true)
         event.preventDefault()
         await axios.post(baseURL, {fields: newGoal}, config)
         setNewGoal({
@@ -68,6 +74,7 @@ function Add(props) {
                     <Button size="small" type="submit" variant="contained" color="primary" onClick={handleSubmit}>Set Bait</Button>
                 </CardActions>
             </Card>
+            <Snackbar open={open} message="Bait Set" onClose={handleClose}></Snackbar>
         </form>
     )
 }
