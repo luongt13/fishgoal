@@ -42,14 +42,13 @@ function Add(props) {
         //form to add new goal 
         <form>
             <Card className="form-container">
-                <CardContent className="form-item">
-                
-                <Tooltip title="Close" aria-label="close" >
-                    <IconButton  id="close-icon" onClick={() => props.setClose(prevState => !prevState)}>
-                        <CloseIcon />
-                    </IconButton>
-                    </Tooltip>
+                <CardContent className="form-head">
                     <Typography component="h2">Add A New Goal</Typography> 
+                    <Tooltip title="Close" aria-label="close" >
+                        <IconButton onClick={() => props.setClose(prevState => !prevState)}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Tooltip>
                 </CardContent>
                 <CardContent className="form-item">
                     <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} required label="What is your goal?"/>

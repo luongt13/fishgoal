@@ -44,7 +44,7 @@ function Edit(props) {
                     <TextField type="text" id="how" variant="outlined" required value={how} onChange={(e)=> setHow(e.target.value)}/>
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="secondary" startIcon={<SaveIcon/>} onClick={handleEdit}>Save</Button>
+                    <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}>Save</Button>
                 </CardActions>
             </Card>   
         </form>
