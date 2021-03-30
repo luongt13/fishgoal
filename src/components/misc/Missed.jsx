@@ -1,5 +1,5 @@
 //component
-import Delete from "./Delete"
+import Delete from "../Delete"
 //styling
 import {Card, CardContent, Typography, CardActions, Grid} from "@material-ui/core"
 import "../App.css"

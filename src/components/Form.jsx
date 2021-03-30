@@ -1,15 +1,19 @@
 import {useState} from 'react'
-import { useParams} from "react-router-dom"
+import {useParams} from "react-router-dom"
+import {useLocalStorage} from "../useLocalStorage"
+//styling
 import {Link, Button, Card, CardContent, CardActions, Typography, TextField} from "@material-ui/core"
 import "./styles/Form.css"
 
 
 function Home() {
     let { title } = useParams()
-    const [userData, setUserData] = useState({
-        name: "",
-        email: "",
-        password: "",
+    const [name, setName] = useLocalStorage('name', 'Bob')
+    const [email, setEmail] =useLocalStorage('email', 'email')
+    const [userData, setUserData] = useLocalStorage({
+        name: "Bob",
+        email: "email@gmail.com",
+        // password: "",
     })
 
 
@@ -39,33 +43,33 @@ function Home() {
             )
         }
     }
-    function handleInput(event) {
-        event.preventDefault()
-        const { id, value } = event.target
-        setUserData((prevState) => {
-            return ( {
-            ...prevState,
-            [id]: value,
-            })
-        })
-    }
+    // function handleInput(event) {
+    //     event.preventDefault()
+    //     const { value } = event.target
+    //     setUserData((prevState) => {
+    //         return ( {
+    //         ...prevState,
+    //         [id]: value,
+    //         })
+    //     })
+    // }
     return (
         <div>
             {showForm()}
-            <form onChange={handleInput}>
+            <form>
                 <Card className="form-container">
                     <CardContent className="form-item">
-                        <TextField type="text" id="name" value={userData.name} variant="outlined" label="Name"/>
+                        <TextField type="text" id="name" value={name} variant="outlined" label="Name" onChange={(e) => setName(e.target.value)}/>
                         {/* <label htmlFor="name">Name </label>
                         <input type="text" id="name" value={userData.name}/> */}
                     </CardContent>
                     <CardContent className="form-item">
-                        <TextField type="email" id="email" value={userData.email} variant="outlined" label="Email"/>
+                        <TextField type="email" id="email" value={email} variant="outlined" label="Email" onChange={(e) => setEmail(e.target.value)}/>
                         {/* <label htmlFor="email">Email </label>
                         <input type="email" id="email" value={userData.email}/> */}
                     </CardContent>
                     <CardContent className="form-item">
-                        <TextField type="password" id="password" value={userData.password} variant="outlined" label="Password"/>
+                        <TextField type="password" id="password" variant="outlined" label="Password"/>
                         {/* <label htmlFor="password">Password </label>
                         <input type="password" id="password" value={userData.password}/> */}
                     </CardContent>  

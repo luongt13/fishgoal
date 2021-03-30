@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 //component
 // import Form from "./Form"
 //styling
-import {Button, ButtonGroup, Card, CardContent, Container} from "@material-ui/core"
+import {Button} from "@material-ui/core"
 import "./styles/Welcome.css"
 
 function Welcome() {
