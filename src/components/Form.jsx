@@ -5,15 +5,11 @@ import {useLocalStorage} from "../useLocalStorage"
 import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
 import "./styles/Form.css"
 
-
 function Home() {
     let { title } = useParams()
-    const [name, setName] = useState('')
-    const [username, setUsername] = useState('')
-    const [userData, setUserData] = useLocalStorage('username','')
-
-    // const checkUser = localStorage.getItem("username")
-    // console.log(checkUser)
+    const [name, setName] = useLocalStorage("name",'')
+    const [username, setUsername] = useState("")
+    const [userData, setUserData] = useLocalStorage("username","")
 
     function showForm() {
         if(title === "login") {
@@ -59,5 +55,4 @@ function Home() {
         </div>
     )
 }
-
 export default Home

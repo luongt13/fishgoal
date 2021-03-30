@@ -16,9 +16,9 @@ import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 
 function App() {
+    //get local storage username
+    let userName = localStorage.getItem("name").replace(/['"]+/g, '')
     const userId = localStorage.getItem("username")
-    console.log(userId)
-
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
     const [complete, setComplete] = useState([])
@@ -42,7 +42,7 @@ function App() {
     //display add form 
     function displayAdd() {
         if(close) {
-            return  <Add setToggle={setToggle} setClose={setClose}/>
+            return  <Add setToggle={setToggle} setClose={setClose} userId={userId}/>
         } else {
             return (
                 <div className="add-container">
@@ -98,26 +98,12 @@ function App() {
             </Route>
             <Route exact path="/goals">
                 <Nav />
-                <h2>FishGoals</h2>
+                <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {
                     return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
                 })}
             </Route>
-            {/* <Route exact path="/caught">
-                <Nav />
-                <h2>Caught Fish</h2>
-                {complete.map((complete)=> {
-                    return <Caught key={complete.id} complete={complete} setToggle={setToggle}/>
-                })}
-            </Route>
-            <Route exact path="/missed">
-                <Nav />
-                <h2>Fish That Got Away</h2>
-                {incomplete.map((incomplete)=> {
-                    return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
-                })}
-            </Route> */}
             <Route exact path="/remove/:type">
                 <Nav />
                 <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
