@@ -26,7 +26,7 @@ function Caught(props) {
                         </Grid>
                         <Grid item xs={6} sm={3}>
                             <Typography component="p" className="label">
-                            By when? 
+                            When? 
                             </Typography>
                             <Typography component="p">
                             {completeDetails.when}
@@ -42,7 +42,7 @@ function Caught(props) {
                         </Grid>
                     </Grid>
                 </CardContent>
-                <CardActions className="button">
+                <CardActions className="button delete">
                     <Delete id={props.complete.id} setToggle={props.setToggle}/>
                 </CardActions>
             </Card>

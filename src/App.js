@@ -10,9 +10,9 @@ import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
-import {Button} from "@material-ui/core"
+// import {Button} from "@material-ui/core"
 import AddIcon from '@material-ui/icons/Add'
-import Fab from '@material-ui/core/Fab';
+import Fab from '@material-ui/core/Fab'
 import Tooltip from '@material-ui/core/Tooltip'
 
 function App() {

@@ -55,49 +55,46 @@ function GoalItem(props) {
             return (
                 <div className="goal-list">
                     <Card className="card">
-                        <CardContent className="goal-item">
-                            <Grid container>
-                                <Grid item xs={6} sm={3}>
+                        <Grid container>
+                        <Grid item xs={5}>
+                        <CardActions className="selectButtons">
+                            <ButtonGroup orientation="vertical"variant="contained" color="primary" size="small">
+                                <Button id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}>Reel it in</Button>
+                                <Button id="incomplete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}>Fish got away</Button>
+                                <Button onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}>Change Bait</Button>
+                            </ButtonGroup> 
+                        </CardActions>
+                        </Grid>
+                            <Grid item xs={7}>
+                                <CardContent className="goal-item">
                                 <Typography component="p" className="label">
                                 What? 
                                 </Typography>
                                 <Typography component="p">
                                     {pendingDetails.what}
                                 </Typography>
-                                </Grid>
-                                <Grid item xs={6} sm={3}>
                                 <Typography component="p" className="label">
                                     Amount? 
                                 </Typography>
                                 <Typography component="p">
                                 {pendingDetails.amount}
                                 </Typography>
-                                </Grid>
-                                <Grid item xs={6} sm={3}>
                                 <Typography component="p" className="label">
                                     By when? 
                                 </Typography>
                                 <Typography component="p">
                                     {pendingDetails.when}
                                 </Typography>
-                                </Grid>
-                                <Grid item xs={6} sm={3}>
                                 <Typography component="p" className="label">
                                     How? 
                                 </Typography> 
                                 <Typography component="p">
                                     {pendingDetails.how}
                                 </Typography>
-                                </Grid>
+                                </CardContent>
                             </Grid>
-                        </CardContent>
-                        <CardActions className="selectButtons">
-                            <ButtonGroup variant="contained" color="primary" size="small">
-                                <Button id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}>Reel it in</Button>
-                                <Button id="incomplete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}>Fish got away</Button>
-                                <Button onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}>Change Bait</Button>
-                            </ButtonGroup> 
-                        </CardActions>
+                    </Grid>
+
                     </Card>
                 </div>
             )
