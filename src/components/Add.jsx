@@ -35,10 +35,11 @@ function Add(props) {
             status: 0,
         })
         props.setToggle((prevState) => !prevState)
+        props.setClose((prevState) => !prevState)
     }
     return (
         //form to add new goal 
-        <form onSubmit={handleSubmit}>
+        <form>
             <Card className="form-container">
                 <CardContent className="form-item close-icon">
                 <Tooltip title="Close" aria-label="close">
@@ -73,7 +74,7 @@ function Add(props) {
                     <input type="text" id="how" value={newGoal.how} onChange={handleChange} required/> */}
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="primary" onClick={() => props.setClose(prevState => !prevState)}>Set Bait</Button>
+                    <Button size="small" type="submit" variant="contained" color="primary" onClick={handleSubmit}>Set Bait</Button>
                 </CardActions>
             </Card>
         </form>
