@@ -43,6 +43,7 @@ function GoalItem(props) {
                 how: pendingDetails.how,
                 amount: pendingDetails.amount,
                 status: value,
+                username: props.userId,
             })
         })
     }
@@ -51,7 +52,7 @@ function GoalItem(props) {
         if(showEdit){
             return (
                 //to edit page
-                <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle}/> 
+                <Edit key={props.pending.id} goalDetails={pendingDetails} id={props.pending.id} setShowEdit={setShowEdit} setStatus={setStatus} setToggle={props.setToggle} userId={props.userId}/> 
             )
         } else {
             return (

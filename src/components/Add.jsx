@@ -35,6 +35,7 @@ function Add(props) {
             amount: "",
             how: "",
             status: 0,
+            username: props.userId,
         })
         props.setToggle((prevState) => !prevState)
         props.setClose((prevState) => !prevState)

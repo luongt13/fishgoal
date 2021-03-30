@@ -16,7 +16,7 @@ function Home() {
             return (
                 <div>
                     <h2>Login</h2>
-                    <Link to="/sign-up"><h6>Don't have an account? Sign Up</h6></Link>
+                    <Link to="/form/sign-up"><h6>Don't have an account? Sign Up</h6></Link>
                 </div>
                
             ) 
@@ -24,7 +24,7 @@ function Home() {
             return (
                 <div>
                     <h2>Sign-Up</h2>
-                   <Link to="/login"><h6>Already have an account? Login</h6></Link>
+                   <Link to="/form/login"><h6>Already have an account? Login</h6></Link>
                 </div>
             )
         }

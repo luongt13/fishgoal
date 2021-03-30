@@ -14,10 +14,12 @@ import RemovedGoals from "./components/RemovedGoals"
 import AddIcon from '@material-ui/icons/Add'
 import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
+import { ContactSupportOutlined } from "@material-ui/icons"
 
 function App() {
     //get local storage username
-    let userName = localStorage.getItem("name").replace(/['"]+/g, '')
+    let userName = JSON.parse(localStorage.getItem("name"))
+    console.log(userName)
     const userId = localStorage.getItem("username")
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
@@ -101,7 +103,7 @@ function App() {
                 <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {
-                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
+                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
                 })}
             </Route>
             <Route exact path="/remove/:type">

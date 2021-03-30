@@ -21,6 +21,7 @@ function Edit(props) {
                 when,
                 how,
                 status: 0,
+                username: props.userId,
         }
         const updateURL = `${baseURL}/${props.id}`
         await axios.put(updateURL, {fields: data }, config)

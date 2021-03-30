@@ -29,7 +29,7 @@ function Welcome() {
                 </div>
             {/* {showForm()} */}
             {/* </Container> */}
-            <Button size="small" variant="contained" color="primary"><Link to="/goals">Enter</Link></Button>
+            {/* <Button size="small" variant="contained" color="primary"><Link to="/goals">Enter</Link></Button> */}
          </div>
     )
 }

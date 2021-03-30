@@ -12,6 +12,10 @@ import "./styles/Nav.css"
 
 function Nav() {
     const [toggleMenu, setToggleMenu] = useState(false)
+    //clear local storage upon logout
+    function handleLogOut(){
+        localStorage.clear()
+    }
     return (
         <div className="nav">
             <AppBar>
@@ -23,7 +27,7 @@ function Nav() {
                         <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
                         <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/remove/caught">Caught</Link></Button>
                         <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/remove/missed">Missed</Link></Button>
-                        <Button color="inherit" startIcon={<ExitToAppIcon />}><Link to="/">Logout</Link></Button>
+                        <Button color="inherit" startIcon={<ExitToAppIcon />} onClick={handleLogOut}><Link to="/">Logout</Link></Button>
                     </div>
                 </Toolbar>
             </AppBar>
