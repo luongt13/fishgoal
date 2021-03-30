@@ -20,7 +20,6 @@ console.log(props)
     function displayList() {
         if(type === "missed") {
            return ( props.incomplete.map((goal) => {
-                console.log(goal)
                 let incompleteDetails = goal.fields
                 return (
                     <div className="goal-list">
@@ -40,7 +39,7 @@ console.log(props)
                                 </Grid>
                                 <Grid item xs={1}>
                                     <CardActions className="button delete">
-                                            <Delete id={goal.id} setToggle={props.setToggle}/>
+                                        <Delete id={goal.id} setToggle={props.setToggle}/>
                                     </CardActions>
                                 </Grid>
                             </Grid>
@@ -50,7 +49,6 @@ console.log(props)
             }))
         } else if(type === "caught") {
             return ( props.complete.map((goal) => {
-                console.log(props.setToggle)
                 let completeDetails = goal.fields
                 return (
                     <div className="goal-list">
@@ -70,7 +68,7 @@ console.log(props)
                                 </Grid>
                                 <Grid item xs={1}>
                                     <CardActions className="button delete">
-                                            <Delete id={goal.id} setToggle={props.setToggle}/>
+                                        <Delete id={goal.id} setToggle={props.setToggle}/>
                                     </CardActions>
                                 </Grid>
                             </Grid>

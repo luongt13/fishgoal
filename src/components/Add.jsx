@@ -8,6 +8,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import "./styles/Add.css"
 //add new goal
 function Add(props) {
+    const userId = localStorage.getItem("username")
     //storing new goal data
     const [newGoal, setNewGoal] = useState({
         what: "",
@@ -15,6 +16,7 @@ function Add(props) {
         amount: "",
         how: "",
         status: 0,
+        username: userId,
     })
     //update the object when the input changes
     function handleChange(event) {
