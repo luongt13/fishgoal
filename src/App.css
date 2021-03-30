@@ -51,14 +51,14 @@ form {
 .goal-item {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color:white;
   color: white;
   text-align: left;
   /* width: 50%; */
 }
 
 .selectButtons {
-  background-color:black;
+  background-color:white;
   display: flex;
   justify-content: center;
   height: 100%;
@@ -70,15 +70,15 @@ form {
 }
 
 .button {
-  background-color:black;
+  background-color:white;
   display: flex;
   justify-content: center;
 }
 
 .delete {
   /* justify-content: flex-start; */
-  /* flex-direction: column;
-  justify-content: flex-end; */
+  flex-direction: column;
+  justify-content: flex-start;
   height: 100%;
 }
 

@@ -8,12 +8,12 @@ function Missed(props) {
         <div className="goal-list other-list">
             <Card className="card">
             <Grid container>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
                 <CardActions className="button delete">
                     <Delete id={props.incomplete.id} setToggle={props.setToggle}/>
                 </CardActions>
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={11}>
                 <CardContent className="goal-item">
                         <Typography component="p" className="label">
                             What? 

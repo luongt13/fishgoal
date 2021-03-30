@@ -15,7 +15,7 @@ function Delete(props) {
     return (
         <div>
             <Tooltip title="Delete" aria-label="delete">
-                <IconButton color="secondary" onClick={handleDelete}>
+                <IconButton  onClick={handleDelete}>
                     <DeleteIcon/>
                 </IconButton>
             </Tooltip>
