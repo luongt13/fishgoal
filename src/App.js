@@ -6,11 +6,12 @@ import axios from "axios"
 //components
 import Nav from "./components/Nav"
 import Form from "./components/Form"
-import Caught from "./components/Caught"
-import Missed from "./components/Missed"
+// import Caught from "./components/Caught"
+// import Missed from "./components/Missed"
 import GoalItem from "./components/GoalItem"
 import Add from "./components/Add"
 import Welcome from "./components/Welcome"
+import RemovedGoals from "./components/RemovedGoals"
 //styling
 import AddIcon from '@material-ui/icons/Add'
 import {Fab, Tooltip} from "@material-ui/core"
@@ -101,7 +102,7 @@ function App() {
                 return <GoalItem key={pending.id} pending={pending} setToggle={setToggle}/>
             })}
         </Route>
-        <Route exact path="/caught">
+        {/* <Route exact path="/caught">
             <Nav />
             <h2>Caught Fish</h2>
             {complete.map((complete)=> {
@@ -114,6 +115,10 @@ function App() {
             {incomplete.map((incomplete)=> {
                 return <Missed key={incomplete.id} incomplete={incomplete} setToggle={setToggle}/>
             })}
+        </Route> */}
+        <Route exact path="/remove/:type">
+            <Nav />
+            <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
         </Route>
     </div>
   );

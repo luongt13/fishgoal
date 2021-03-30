@@ -21,8 +21,8 @@ function Nav() {
                     </IconButton>
                     <div className="desktop">
                         <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
-                        <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/caught">Caught</Link></Button>
-                        <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/missed">Missed</Link></Button>
+                        <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/remove/caught">Caught</Link></Button>
+                        <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/remove/missed">Missed</Link></Button>
                         <Button color="inherit" startIcon={<ExitToAppIcon />}><Link to="/">Logout</Link></Button>
                     </div>
                 </Toolbar>
@@ -36,6 +36,8 @@ function Nav() {
                     <ListItem><Link className="item" to="/caught">Fish Caught</Link></ListItem>
                     <ListItem><Link className="item" to="/missed">Fish Missed</Link></ListItem>            
                     <ListItem><Link className="item" to="/">Log Out</Link></ListItem>
+                    <ListItem><Link className="item" to="/remove/caught">Fish Caught</Link></ListItem>
+                    <ListItem><Link className="item" to="/remove/missed">Fish Missed</Link></ListItem> 
                 </List>
             </Drawer>
         </div>

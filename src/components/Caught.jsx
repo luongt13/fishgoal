@@ -7,7 +7,7 @@ import "../App.css"
 function Caught(props) {
     const completeDetails = props.complete.fields
     return (
-        <div className="goal-list other-list">
+        <div className="goal-list">
             <Card className="card">
                 <Grid container>
                     <Grid item xs={11}>

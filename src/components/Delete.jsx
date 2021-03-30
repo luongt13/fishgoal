@@ -15,13 +15,11 @@ function Delete(props) {
     }
     return (
         <div>
-         {/* <CardActions className="button delete"> */}
             <Tooltip title="Delete" aria-label="delete">
                 <IconButton  onClick={handleDelete}>
                     <CloseIcon/>
                 </IconButton>
             </Tooltip>
-         {/* </CardActions> */}
         </div>
     )
 }
