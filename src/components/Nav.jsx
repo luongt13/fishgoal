@@ -39,7 +39,7 @@ function Nav() {
                     <ListItem ><Link className="item" to="/goals">FishGoals</Link></ListItem>           
                     <ListItem><Link className="item" to="/remove/caught">Fish Caught</Link></ListItem>
                     <ListItem><Link className="item" to="/remove/missed">Fish Missed</Link></ListItem> 
-                    <ListItem><Link className="item" to="/">Log Out</Link></ListItem>
+                    <ListItem onClick={handleLogOut}><Link className="item" to="/">Log Out</Link></ListItem>
                 </List>
             </Drawer>
         </div>

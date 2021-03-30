@@ -19,7 +19,6 @@ import { ContactSupportOutlined } from "@material-ui/icons"
 function App() {
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
-    console.log(userName)
     const userId = localStorage.getItem("username")
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
@@ -39,7 +38,6 @@ function App() {
     async function handleRequest(){
         let resp = await axios.get(baseURL, config)
         setGoals(resp.data.records)
-        console.log(resp.data.records)
     }
     //display add form 
     function displayAdd() {

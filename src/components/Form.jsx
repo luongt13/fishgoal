@@ -8,8 +8,8 @@ import "./styles/Form.css"
 function Home() {
     let { title } = useParams()
     const [name, setName] = useLocalStorage("name",'')
-    const [username, setUsername] = useState("")
-    const [userData, setUserData] = useLocalStorage("username","")
+    const [username, setUsername] = useLocalStorage("username","")
+    // const [userData, setUserData] = useLocalStorage("username","")
 
     function showForm() {
         if(title === "login") {
@@ -29,26 +29,22 @@ function Home() {
             )
         }
     }
-    //set local storage 
-    function handleSubmit() {
-       setUserData(username)
-    }
     return (
         <div>
             {showForm()}
             <form>
                 <Card className="form-container">
                     <CardContent className="form-item">
-                        <TextField type="text" id="name" value={name} variant="outlined" label="Name" onChange={(e) => setName(e.target.value)}/>
+                        <TextField type="text" id="name" value={name} variant="outlined" label="Name" onChange={(e) => setName(e.target.value)} required/>
                     </CardContent>
                     <CardContent className="form-item">
-                        <TextField type="text" id="username" value={username} variant="outlined" label="Username" onChange={(e) => setUsername(e.target.value)}/>
+                        <TextField type="text" id="username" value={username} variant="outlined" label="Username" onChange={(e) => setUsername(e.target.value)} required/>
                     </CardContent>
                     <CardContent className="form-item">
-                        <TextField type="password" id="password" variant="outlined" label="Password"/>
+                        <TextField type="password" id="password" variant="outlined" label="Password" required/>
                     </CardContent>  
                     <CardActions className="button">
-                        <Button size="small" type="submit" variant="contained" color="secondary" onClick={handleSubmit}><Link to="/goals">Submit</Link></Button>
+                        <Button size="small" type="submit" variant="contained" color="primary"><Link to="/goals">Submit</Link></Button>
                     </CardActions>
                 </Card>  
             </form>
