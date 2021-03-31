@@ -30,7 +30,7 @@ function Edit(props) {
         props.setToggle(prevState => !prevState)
     }
     return (
-        <form >
+        <form onSubmit={handleEdit}>
             <Card className="form-container">
                 <CardContent className="form-item">
                     <TextField type="text" id="what" variant="outlined" label="What?" required={true} value={what} onChange={(e)=> setWhat(e.target.value)}/>
@@ -46,10 +46,10 @@ function Edit(props) {
                 </CardContent>
                 <CardActions className="button">
                     <Tooltip aria-label="Save" title="Save">
-                        <IconButton color="primary">
-                            <SaveIcon onClick={handleEdit}/>
-                        </IconButton>
-                        {/* <Button size="large" type="submit" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}
+                        {/* <IconButton color="primary">
+                            <SaveIcon type="submit"/>
+                        </IconButton> */}
+                        <Button size="large" type="submit" color="primary"><SaveIcon/></Button>
                     </Tooltip>
                     {/* <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}
                 </CardActions>

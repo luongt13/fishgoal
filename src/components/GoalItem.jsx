@@ -6,7 +6,7 @@ import axios from "axios"
 import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
-import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, Tooltip, GridList} from "@material-ui/core"
+import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, Tooltip} from "@material-ui/core"
 // import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import CheckBoxIcon from "@material-ui/icons/CheckBox"
 import NotInterestedIcon from "@material-ui/icons/NotInterested"
@@ -97,33 +97,6 @@ function GoalItem(props) {
                         </ButtonGroup> */}
                     </CardActions>
                 </Card>
-
-                <GridList cols={5}>
-                    <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                <Card>
-                <Typography component="p" className="label">What? </Typography>
-                <Typography component="p">{pendingDetails.what}</Typography>
-                </Card>
-                </GridList>
             </div>
             )
         }

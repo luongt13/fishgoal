@@ -70,7 +70,7 @@ function Add(props) {
                     <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} label="How will you reach your goal?" required/>
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="primary" >Set Bait</Button>
+                    <Button size="small" type="submit" variant="contained" color="primary">Set Bait</Button>
                 </CardActions>
             </Card>
             <Snackbar open={open} message="Bait Set" >
