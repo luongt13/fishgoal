@@ -3,7 +3,7 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
 //styling
-import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
+import {Button, Card, CardContent, CardActions, TextField, Tooltip, IconButton} from "@material-ui/core"
 import SaveIcon from "@material-ui/icons/Save"
 //edit goals
 function Edit(props) {
@@ -33,19 +33,25 @@ function Edit(props) {
         <form >
             <Card className="form-container">
                 <CardContent className="form-item">
-                    <TextField type="text" id="what" variant="outlined" label="What?" required value={what} onChange={(e)=> setWhat(e.target.value)}/>
+                    <TextField type="text" id="what" variant="outlined" label="What?" required={true} value={what} onChange={(e)=> setWhat(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="amount" variant="outlined" label="Amount?" required value={amount} onChange={(e)=> setAmount(e.target.value)}/>
+                    <TextField type="text" id="amount" variant="outlined" label="Amount?" required={true} value={amount} onChange={(e)=> setAmount(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="when" variant="outlined" label="When?" required value={when} onChange={(e)=> setWhen(e.target.value)}/>
+                    <TextField type="text" id="when" variant="outlined" label="When?" required={true} value={when} onChange={(e)=> setWhen(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="how" variant="outlined" label="How?" required value={how} onChange={(e)=> setHow(e.target.value)}/>
+                    <TextField type="text" id="how" variant="outlined" label="How?" required={true} value={how} onChange={(e)=> setHow(e.target.value)}/>
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}>Save</Button>
+                    <Tooltip aria-label="Save" title="Save">
+                        <IconButton color="primary">
+                            <SaveIcon onClick={handleEdit}/>
+                        </IconButton>
+                        {/* <Button size="large" type="submit" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}
+                    </Tooltip>
+                    {/* <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}
                 </CardActions>
             </Card>   
         </form>

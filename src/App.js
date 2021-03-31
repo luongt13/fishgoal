@@ -12,7 +12,7 @@ import Welcome from "./components/Welcome"
 import RemovedGoals from "./components/RemovedGoals"
 //styling
 import AddIcon from "@material-ui/icons/Add"
-import {Fab, Tooltip, CircularProgress} from "@material-ui/core"
+import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
@@ -97,7 +97,7 @@ function App() {
             <Form setToggle={setToggle}/>
             </Route>
             <Route exact path="/goals">
-                <Nav setGoals={setGoals}/>
+                <Nav setGoals={setGoals} userName={userName}/>
                 <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {

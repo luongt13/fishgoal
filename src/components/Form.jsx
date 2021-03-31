@@ -30,14 +30,13 @@ function Form(props) {
             )
         }
     }
-
-    function handleRedirect() {
+    //redirect page to main page
+    function handleRedirect() {       
         if(password.length < 1 || name.length < 1 || username.length < 1) {
         } else { 
             props.setToggle(prevState => !prevState)
             history.push("/goals")
         }
-   
     }
     return (
         <div>

@@ -7,6 +7,7 @@ import {Button, Card, CardContent, CardActions, Typography, IconButton, TextFiel
 import Alert from "@material-ui/lab/Alert"
 import CloseIcon from "@material-ui/icons/Close"
 import "./styles/Add.css"
+import { ContactSupportOutlined } from "@material-ui/icons"
 //add new goal
 function Add(props) {
     const [open, setOpen] = useState(false)
@@ -42,6 +43,7 @@ function Add(props) {
         props.setToggle((prevState) => !prevState)
         props.setClose((prevState) => !prevState)
     }
+    console.log(newGoal)
     return (
         //form to add new goal 
         <form>
@@ -55,16 +57,16 @@ function Add(props) {
                     </Tooltip>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} required label="What is your goal?"/>
+                    <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} label="What is your goal?" required={true}/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} required label="How many? How much? How long?"/>
+                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How much? How long?" required={true}/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} required label="When will you finish this by?"/>
+                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you finish this by?" required={true}/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} required label="How will you reach your goal?"/>
+                    <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} label="How will you reach your goal?" required={true}/>
                 </CardContent>
                 <CardActions className="button">
                     <Button size="small" type="submit" variant="contained" color="primary" onClick={handleSubmit}>Set Bait</Button>

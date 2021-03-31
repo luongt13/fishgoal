@@ -4,6 +4,8 @@ import axios from "axios"
 //styling
 import CloseIcon from "@material-ui/icons/Close"
 import {IconButton, Tooltip} from "@material-ui/core"
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
+
 //handle delete items
 function Delete(props) {
     //axios to delete item and change toggle
@@ -15,8 +17,8 @@ function Delete(props) {
     return (
         <div>
             <Tooltip title="Delete" aria-label="delete">
-                <IconButton  onClick={handleDelete}>
-                    <CloseIcon/>
+                <IconButton onClick={handleDelete} color="primary">
+                    <DeleteOutlineIcon/>
                 </IconButton>
             </Tooltip>
         </div>

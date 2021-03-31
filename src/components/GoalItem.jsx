@@ -6,11 +6,13 @@ import axios from "axios"
 import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
-import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
+import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, IconButton, Tooltip} from "@material-ui/core"
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import CheckBoxIcon from "@material-ui/icons/CheckBox"
 import NotInterestedIcon from "@material-ui/icons/NotInterested"
 import EditIcon from "@material-ui/icons/Edit"
 import "./styles/GoalItem.css"
+import { DeleteOutlined } from "@material-ui/icons"
 //display goals and buttons to mark complete or incomplete
 function GoalItem(props) {
     let pendingDetails = props.pending.fields
@@ -75,12 +77,22 @@ function GoalItem(props) {
                             </CardActions>
                         </Grid>
                     </Grid>
-                    <CardActions className="selectButtons">
-                        <ButtonGroup variant="contained" color="primary" size="small" className="flex-buttons">
+                    <CardActions className="selectButtons">   
+                        <Tooltip aria-label="Reel It In" title="Reel It In" color="primary">
+                            <Button size="large" id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}></Button>
+                        </Tooltip>    
+                        <Tooltip aria-label="Fish Got Away" title="Fish Got Away" color="primary">
+                            <Button size="large" id="complete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}></Button>
+                        </Tooltip>   
+                        <Tooltip aria-label="Change Bait" title="Change Bait" color="primary">
+                            <Button size="large" onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}></Button>
+                        </Tooltip>
+
+                        {/* <ButtonGroup variant="contained" color="primary" size="small" className="flex-buttons">
                             <Button id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}>Reel it in</Button>
                             <Button id="incomplete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}>Fish got away</Button>
                             <Button onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}>Change Bait</Button>
-                        </ButtonGroup> 
+                        </ButtonGroup> */}
                     </CardActions>
                 </Card>
             </div>
