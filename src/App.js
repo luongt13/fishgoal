@@ -101,28 +101,14 @@ function App() {
                 <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 <div className="goal-list">
-
-                {/* <Grid container justify="center" xs={12}> */}
-                    {/* <Grid item > */}
-                        {/* <Grid container justify="center" spacing={2}> */}
                     {pending.map((pending)=> {
                     return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
                   })}
-                  </div>
-                  {/* </Grid> */}
-                    {/* </Grid> */}
-                {/* </Grid> */}
-                {/* {pending.map((pending)=> {
-                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
-                  })} */}
+                </div>
             </Route>
             <Route exact path="/remove/:type">
                 <Nav />
-                {/* <div className="goal-list"> */}
-
                 <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
-                {/* </div> */}
-
             </Route>
         </div>
     );
