@@ -5,6 +5,7 @@ import axios from "axios"
 //styling
 import {Button, Card, CardContent, CardActions, TextField, Tooltip} from "@material-ui/core"
 import SaveIcon from "@material-ui/icons/Save"
+import "./styles/Edit.css"
 //edit goals
 function Edit(props) {
     //set state of variables
@@ -31,7 +32,7 @@ function Edit(props) {
     }
     return (
         <form onSubmit={handleEdit}>
-            <Card className="form-container">
+            <Card className="form-container" id="edit-form">
                 <CardContent className="form-item">
                     <TextField type="text" id="what" variant="outlined" label="What?" required={true} value={what} onChange={(e)=> setWhat(e.target.value)}/>
                 </CardContent>
@@ -48,7 +49,6 @@ function Edit(props) {
                     <Tooltip aria-label="Save" title="Save">
                         <Button size="large" type="submit" color="primary"><SaveIcon/></Button>
                     </Tooltip>
-                    {/* <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}
                 </CardActions>
             </Card>   
         </form>
