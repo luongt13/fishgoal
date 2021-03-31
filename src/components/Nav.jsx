@@ -10,11 +10,12 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp"
 import ListAltIcon from "@material-ui/icons/ListAlt"
 import "./styles/Nav.css"
 //nav bar
-function Nav() {
+function Nav(props) {
     const [toggleMenu, setToggleMenu] = useState(false)
     //clear local storage upon logout
     function handleLogOut(){
         localStorage.clear()
+        props.setGoals([])
     }
     return (
         <div className="nav">

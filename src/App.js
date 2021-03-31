@@ -12,26 +12,20 @@ import Welcome from "./components/Welcome"
 import RemovedGoals from "./components/RemovedGoals"
 //styling
 import AddIcon from "@material-ui/icons/Add"
-import {Fab, Tooltip} from "@material-ui/core"
+import {Fab, Tooltip, CircularProgress} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
-    const [load, setLoad] = useState(true)
-
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
     const userId = localStorage.getItem("username")
+    //goals
     const [goals, setGoals] = useState([])
     const [pending, setPending] = useState([])
     const [complete, setComplete] = useState([])
     const [incomplete, setIncomplete] = useState([])
     const [toggle, setToggle] = useState(false)
     const [close, setClose] = useState(false)
-
-
-    useEffect(() => {
-        setTimeout(() => setLoad(false), 6000)
-      }, [])
     //get data when toggle changes
     useEffect(() => {
         handleRequest()
@@ -103,21 +97,12 @@ function App() {
             <Form setToggle={setToggle}/>
             </Route>
             <Route exact path="/goals">
-                <Nav />
-
-                {load ? 
-                <div><h2>Loading</h2></div> : 
-                <div><h2>{userName}'s FishGoals</h2>
+                <Nav setGoals={setGoals}/>
+                <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {
-                      return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
+                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
                   })}
-                    </div>}
-                {/* <h2>{userName}'s FishGoals</h2> */}
-                {/* {displayAdd()}
-                {pending.map((pending)=> {
-                      return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
-                  })} */}
             </Route>
             <Route exact path="/remove/:type">
                 <Nav />
