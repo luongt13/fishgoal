@@ -6,7 +6,7 @@ import axios from "axios"
 import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
-import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, Tooltip} from "@material-ui/core"
+import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Paper, Grid, Tooltip} from "@material-ui/core"
 // import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import CheckBoxIcon from "@material-ui/icons/CheckBox"
 import NotInterestedIcon from "@material-ui/icons/NotInterested"
@@ -58,10 +58,11 @@ function GoalItem(props) {
             )
         } else {
             return (
-                <div className="goal-list">
+                // <div className="goal-list">
+                <div>
                     <Card className="card" id="flex">
-                        <Grid container>
-                            <Grid item xs={12}>
+                        {/* <Grid container>
+                            <Grid item xs={12}> */}
                                 <CardContent className="goal-item">
                                     <Typography component="p" className="label">What? </Typography>
                                     <Typography component="p">{pendingDetails.what}</Typography>
@@ -72,13 +73,13 @@ function GoalItem(props) {
                                     <Typography component="p" className="label">How?</Typography> 
                                     <Typography component="p">{pendingDetails.how}</Typography>
                                 </CardContent>
-                            </Grid>
+                            {/* </Grid> */}
                         {/* <Grid item xs={1}>
                             <CardActions  className="button delete">
                                 <Delete id={props.pending.id} setToggle={props.setToggle}/>
                             </CardActions>
                         </Grid> */}
-                    </Grid>
+                    {/* </Grid> */}
                     <CardActions className="selectButtons">   
                         <Tooltip aria-label="Reel It In" title="Reel It In">
                             <Button size="large" id="complete" value="1" onClick={handleComplete}><CheckBoxIcon/></Button>

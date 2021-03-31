@@ -3,7 +3,7 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
 //styling
-import {Button, Card, CardContent, CardActions, TextField, Tooltip, IconButton} from "@material-ui/core"
+import {Button, Card, CardContent, CardActions, TextField, Tooltip} from "@material-ui/core"
 import SaveIcon from "@material-ui/icons/Save"
 //edit goals
 function Edit(props) {
@@ -46,9 +46,6 @@ function Edit(props) {
                 </CardContent>
                 <CardActions className="button">
                     <Tooltip aria-label="Save" title="Save">
-                        {/* <IconButton color="primary">
-                            <SaveIcon type="submit"/>
-                        </IconButton> */}
                         <Button size="large" type="submit" color="primary"><SaveIcon/></Button>
                     </Tooltip>
                     {/* <Button size="small" type="submit" variant="contained" color="primary" startIcon={<SaveIcon/>} onClick={handleEdit}></Button> */}

@@ -12,7 +12,7 @@ import Welcome from "./components/Welcome"
 import RemovedGoals from "./components/RemovedGoals"
 //styling
 import AddIcon from "@material-ui/icons/Add"
-import {Fab, Tooltip} from "@material-ui/core"
+import {Fab, Tooltip, Grid} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
@@ -100,13 +100,29 @@ function App() {
                 <Nav setGoals={setGoals} userName={userName}/>
                 <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
-                {pending.map((pending)=> {
+                <div className="goal-list">
+
+                {/* <Grid container justify="center" xs={12}> */}
+                    {/* <Grid item > */}
+                        {/* <Grid container justify="center" spacing={2}> */}
+                    {pending.map((pending)=> {
                     return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
                   })}
+                  </div>
+                  {/* </Grid> */}
+                    {/* </Grid> */}
+                {/* </Grid> */}
+                {/* {pending.map((pending)=> {
+                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
+                  })} */}
             </Route>
             <Route exact path="/remove/:type">
                 <Nav />
+                {/* <div className="goal-list"> */}
+
                 <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
+                {/* </div> */}
+
             </Route>
         </div>
     );

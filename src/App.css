@@ -27,15 +27,19 @@ form {
   align-items: center;
   background-color: transparent;
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  /* flex-direction: column; */
+  /* flex-direction: row; */
   width: 100%;
+  justify-content: center;
 }
 
 .card {
   display: flex;
   flex-direction: row;
-  margin-bottom: 40px;
-  width: 50%;
+  /* margin-bottom: 40px; */
+  margin: 5px 5px 5px 5px;
+  /* width: 50%; */
 }
 
 .goal-item {
@@ -89,6 +93,13 @@ form {
   left: 0;
   position: fixed;
   z-index: 1;
+}
+
+.goal-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
