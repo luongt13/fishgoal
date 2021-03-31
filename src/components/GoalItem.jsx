@@ -75,66 +75,49 @@ function GoalItem(props) {
             )
         } else {
             return (
-                // <div className="goal-list">
-                //  <div>
-                    <Card className="card" id="flex">
-                        <CardContent className="goal-item">
-                            <Typography variant="p" className="label">What? </Typography>
-                            <Typography variant="p">{pendingDetails.what}</Typography>
-                            <Typography variant="p" className="label">Amount? </Typography>
-                            <Typography variant="p">{pendingDetails.amount}</Typography>
-                            <Typography variant="p" className="label">When? </Typography>
-                            <Typography variant="p">{pendingDetails.when}</Typography>
-                            <Typography variant="p" className="label">How?</Typography> 
-                            <Typography variant="p">{pendingDetails.how}</Typography>
-                        </CardContent>
-                    <CardActions className="select-buttons" id="desktop-buttons">   
-                        <Tooltip aria-label="Reel It In" title="Reel It In">
-                            <Button size="large" id="complete" value="1" onClick={handleComplete}><CheckBoxIcon/></Button>
-                        </Tooltip>    
-                        <Tooltip aria-label="Fish Got Away" title="Fish Got Away">
-                            <Button size="large" id="complete" value="2" onClick={handleComplete} ><NotInterestedIcon/></Button>
-                        </Tooltip>   
-                        <Tooltip aria-label="Change Bait" title="Change Bait">
-                            <Button size="large" onClick={() => setShowEdit(prevState => !prevState)} ><EditIcon/></Button>
-                        </Tooltip>
-                        <Delete id={props.pending.id} setToggle={props.setToggle}/>
-                    </CardActions>
-
-                    <CardActions className="select-buttons" id="mobile-buttons">
-                        <Button id="three-dots" aria-describedby={id} onClick={handleClick}>
-                            <MoreVertIcon/>
-                        </Button>
-                        <Popover
-                            id={id}
-                            open={open}
-                            anchorEl={anchorEl}
-                            onClose={handleClose}
-                            anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center',
-                            }}
-                            transformOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center',
-                            }}>
-                            <ListItem>
+                <Card className="card" id="flex">
+                    <CardContent className="goal-item">
+                        <Typography variant="p" className="label">What? </Typography>
+                        <Typography variant="p">{pendingDetails.what}</Typography>
+                        <Typography variant="p" className="label">Amount? </Typography>
+                        <Typography variant="p">{pendingDetails.amount}</Typography>
+                        <Typography variant="p" className="label">When? </Typography>
+                        <Typography variant="p">{pendingDetails.when}</Typography>
+                        <Typography variant="p" className="label">How?</Typography> 
+                        <Typography variant="p">{pendingDetails.how}</Typography>
+                    </CardContent>
+                <CardActions className="select-buttons" id="desktop-buttons">   
+                    <Tooltip aria-label="Reel It In" title="Reel It In">
+                        <Button size="large" id="complete" value="1" onClick={handleComplete}><CheckBoxIcon/></Button>
+                    </Tooltip>    
+                    <Tooltip aria-label="Fish Got Away" title="Fish Got Away">
+                        <Button size="large" id="complete" value="2" onClick={handleComplete} ><NotInterestedIcon/></Button>
+                    </Tooltip>   
+                    <Tooltip aria-label="Change Bait" title="Change Bait">
+                        <Button size="large" onClick={() => setShowEdit(prevState => !prevState)} ><EditIcon/></Button>
+                    </Tooltip>
+                    <Delete id={props.pending.id} setToggle={props.setToggle}/>
+                </CardActions>
+                <CardActions className="select-buttons" id="mobile-buttons">
+                    <Button id="three-dots" aria-describedby={id} onClick={handleClick} endIcon={<MoreVertIcon/>}>
+                        {/* <MoreVertIcon/> */}
+                    </Button>
+                    <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorOrigin={{vertical: 'bottom', horizontal: 'center',}} transformOrigin={{vertical: 'bottom', horizontal: 'center',}}>
+                        <ListItem>
                             <Button size="small" id="complete" value="1" onClick={handleComplete}><CheckBoxIcon/></Button>
-                            </ListItem>
-                            <ListItem>
+                        </ListItem>
+                        <ListItem>
                             <Button size="small" id="complete" value="2" onClick={handleComplete}><NotInterestedIcon/></Button>
-                            </ListItem>
-                            <ListItem>
+                        </ListItem>
+                        <ListItem>
                             <Button size="small" onClick={() => setShowEdit(prevState => !prevState)}><EditIcon/></Button>
-                            </ListItem>
-                            <ListItem>
+                        </ListItem>
+                        <ListItem>
                             <Delete id={props.pending.id} setToggle={props.setToggle}/>
-                            </ListItem>
+                        </ListItem>
                     </Popover>
                 </CardActions>
-
-                </Card>
-            //  </div>
+            </Card>
             )
         }
     }

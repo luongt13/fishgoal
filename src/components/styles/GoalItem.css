@@ -3,27 +3,19 @@
     flex-direction: column;
 }
 
-
-
-/* #three-dots {
-   display: none;
-  
-} */
-
 #mobile-buttons {
     display: none;
 } 
+
 @media screen and (max-width: 600px) {
     #flex {
-        /* width: 100%; */
         width: 150px;
     }
-
     #desktop-buttons {
         display: none;
     }
     #mobile-buttons {
-        display: block;
         align-self: flex-end;
+        display: block;
     }
 }

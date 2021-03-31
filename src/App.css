@@ -24,20 +24,27 @@ form {
 }
 
 .goal-list {
-  align-items: center;
+  align-items: flex-start;
   background-color: transparent;
   display: flex;
   flex-flow: row wrap;
-  /* flex-direction: column; */
-  /* flex-direction: row; */
-  width: 100%;
   justify-content: center;
+  width: 100%;
+}
+
+.goal-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
 }
 
 .card {
   display: flex;
   flex-direction: row;
   margin: 5px;
+  max-width: 300px;
 }
 
 .goal-item {
@@ -46,13 +53,14 @@ form {
   display: flex;
   flex-direction: column;
   text-align: left;
+  overflow-wrap: break-word
 }
 
 .select-buttons {
   background-color:white;
   display: flex;
   height: 100%;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .label {
@@ -91,13 +99,7 @@ form {
   z-index: 1;
 }
 
-.goal-container {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 5px;
-}
+
 
 @media screen and (max-width: 600px) {
   .form-container {
@@ -105,8 +107,6 @@ form {
   }
   .card {
     width: 80%;
-  }
-  .goal-list {
   }
   .goal-container{
     width: 80%;
