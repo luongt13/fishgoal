@@ -19,7 +19,7 @@ function Form(props) {
     let { title } = useParams()
     let history = useHistory()
 
-    // let storedUserId = localStorage.getItem("username")
+    // let storedUserId = JSON.parse(localStorage.getItem("username"))
     // let storedUserName = localStorage.getItem("name")
     // console.log(storedUserId)
     // function handleForm(){
@@ -34,6 +34,7 @@ function Form(props) {
     //     } else {
     //         setUserName(name)
     //         setUserId(username)
+    //         history.push("/form/login")
     //     }
     // }
     //login or sign-up heading
