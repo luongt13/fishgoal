@@ -6,11 +6,36 @@ import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/co
 import "./styles/Form.css"
 //sign-up or login form
 function Form(props) {
+
+
     const [password, setPassword] = useState("")
     const [name, setName] = useLocalStorage("name",'')
     const [username, setUsername] = useLocalStorage("username","")
+
+    // const [name, setName] = useState("")
+    // const [username, setUsername] = useState("")
+    // const [userName, setUserName] = useLocalStorage("name",'')
+    // const [userId, setUserId] = useLocalStorage("username","")
     let { title } = useParams()
     let history = useHistory()
+
+    // let storedUserId = localStorage.getItem("username")
+    // let storedUserName = localStorage.getItem("name")
+    // console.log(storedUserId)
+    // function handleForm(){
+    //     if(title === "login") {
+    //         if (storedUserName === name || storedUserId === username) {
+    //             props.setToggle(prevState => !prevState)
+    //             history.push("/goals")
+    //         } else {
+    //             history.push("/form/sign-up")
+    //         }
+
+    //     } else {
+    //         setUserName(name)
+    //         setUserId(username)
+    //     }
+    // }
     //login or sign-up heading
     function showForm() {
         if(title === "login") {
@@ -31,16 +56,13 @@ function Form(props) {
     }
     //redirect page to main page
     function handleRedirect() {       
-        if(password.length < 1 || name.length < 1 || username.length < 1) {
-        } else { 
-            props.setToggle(prevState => !prevState)
-            history.push("/goals")
-        }
+        props.setToggle(prevState => !prevState)
+        history.push("/goals")
     }
     return (
         <div>
             {showForm()}
-            <form>
+            <form onSubmit={handleRedirect}>
                 <Card className="form-container">
                     <CardContent className="form-item">
                         <TextField type="text" id="name" value={name} variant="outlined" label="Name" onChange={(e) => setName(e.target.value)} required/>
@@ -52,7 +74,7 @@ function Form(props) {
                         <TextField type="password" id="password" value={password} variant="outlined" label="Password" onChange={(e) => setPassword(e.target.value)} required/>
                     </CardContent>  
                     <CardActions className="button">
-                        <Button size="small" type="submit" variant="contained" color="primary" onClick={handleRedirect}>Submit</Button>
+                        <Button size="small" type="submit" variant="contained" color="primary">Submit</Button>
                     </CardActions>
                 </Card>  
             </form>
