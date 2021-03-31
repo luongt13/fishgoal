@@ -1,10 +1,12 @@
 import {Link, useParams, useHistory} from "react-router-dom"
+import {useState} from "react"
 import {useLocalStorage} from "../useLocalStorage"
 //styling
 import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
 import "./styles/Form.css"
 //sign-up or login form
 function Form(props) {
+    const [password, setPassword] = useState("")
     const [name, setName] = useLocalStorage("name",'')
     const [username, setUsername] = useLocalStorage("username","")
     let { title } = useParams()
@@ -30,8 +32,12 @@ function Form(props) {
     }
 
     function handleRedirect() {
-        props.setToggle(prevState => !prevState)
-        history.push("/goals")
+        if(password.length < 1 || name.length < 1 || username.length < 1) {
+        } else { 
+            props.setToggle(prevState => !prevState)
+            history.push("/goals")
+        }
+   
     }
     return (
         <div>
@@ -45,7 +51,7 @@ function Form(props) {
                         <TextField type="text" id="username" value={username} variant="outlined" label="Username" onChange={(e) => setUsername(e.target.value)} required/>
                     </CardContent>
                     <CardContent className="form-item">
-                        <TextField type="password" id="password" variant="outlined" label="Password" required/>
+                        <TextField type="password" id="password" value={password} variant="outlined" label="Password" onChange={(e) => setPassword(e.target.value)} required/>
                     </CardContent>  
                     <CardActions className="button">
                         <Button size="small" type="submit" variant="contained" color="primary" onClick={handleRedirect}>Submit</Button>
