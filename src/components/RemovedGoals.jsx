@@ -5,7 +5,7 @@ import Delete from "./Delete"
 //styling
 import {Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
 import "../App.css"
-
+//show complete and incomplete goals
 function RemovedGoals(props) {
     let {type} = useParams()
     function displayTitle() {
@@ -84,5 +84,4 @@ function RemovedGoals(props) {
         </div>
     )
 }
-
 export default RemovedGoals

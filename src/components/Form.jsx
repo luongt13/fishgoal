@@ -1,16 +1,14 @@
-import {useState} from 'react'
 import {Link, useParams} from "react-router-dom"
 import {useLocalStorage} from "../useLocalStorage"
 //styling
 import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
 import "./styles/Form.css"
-
-function Home() {
+//sign-up or login form
+function Form(props) {
     let { title } = useParams()
     const [name, setName] = useLocalStorage("name",'')
     const [username, setUsername] = useLocalStorage("username","")
-    // const [userData, setUserData] = useLocalStorage("username","")
-
+    //login or sign-up heading
     function showForm() {
         if(title === "login") {
             return (
@@ -44,11 +42,11 @@ function Home() {
                         <TextField type="password" id="password" variant="outlined" label="Password" required/>
                     </CardContent>  
                     <CardActions className="button">
-                        <Button size="small" type="submit" variant="contained" color="primary"><Link to="/goals">Submit</Link></Button>
+                        <Button size="small" type="submit" variant="contained" color="primary" onClick={() => props.setToggle(prevState => !prevState)}><Link to="/goals">Submit</Link></Button>
                     </CardActions>
                 </Card>  
             </form>
         </div>
     )
 }
-export default Home
+export default Form

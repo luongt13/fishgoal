@@ -1,15 +1,15 @@
 //react
-import {useState} from 'react'
+import {useState} from "react"
 import {Link} from "react-router-dom"
 //styling
 import {Button, List, ListItem, AppBar, IconButton, Toolbar, Drawer} from "@material-ui/core"
-import {Menu, Close} from '@material-ui/icons';
-import CheckBoxIcon from '@material-ui/icons/CheckBox'
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import ListAltIcon from '@material-ui/icons/ListAlt';
+import {Menu, Close} from "@material-ui/icons"
+import CheckBoxIcon from "@material-ui/icons/CheckBox"
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank"
+import ExitToAppIcon from "@material-ui/icons/ExitToApp"
+import ListAltIcon from "@material-ui/icons/ListAlt"
 import "./styles/Nav.css"
-
+//nav bar
 function Nav() {
     const [toggleMenu, setToggleMenu] = useState(false)
     //clear local storage upon logout

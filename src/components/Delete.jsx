@@ -2,9 +2,8 @@
 import {baseURL, config} from "../service"
 import axios from "axios"
 //styling
-import CloseIcon from '@material-ui/icons/Close'
-import {IconButton, Tooltip, CardActions} from '@material-ui/core'
-// import "./styles/Delete.css"
+import CloseIcon from "@material-ui/icons/Close"
+import {IconButton, Tooltip} from "@material-ui/core"
 //handle delete items
 function Delete(props) {
     //axios to delete item and change toggle

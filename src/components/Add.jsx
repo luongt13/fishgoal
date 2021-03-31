@@ -4,7 +4,8 @@ import {useState} from "react"
 import axios from "axios"
 //styling
 import {Button, Card, CardContent, CardActions, Typography, IconButton, TextField, Tooltip, Snackbar} from "@material-ui/core"
-import CloseIcon from '@material-ui/icons/Close'
+import Alert from "@material-ui/lab/Alert"
+import CloseIcon from "@material-ui/icons/Close"
 import "./styles/Add.css"
 //add new goal
 function Add(props) {
@@ -24,11 +25,6 @@ function Add(props) {
         setNewGoal((prevState) => {
             return {...prevState, [id]: value}
         })
-    }
-    function handleClose(event, reason) {
-    if (reason === "clickaway") {
-        return
-    } setOpen(false)
     }
     //post form data to API then re-render
     async function handleSubmit(event) {
@@ -74,7 +70,9 @@ function Add(props) {
                     <Button size="small" type="submit" variant="contained" color="primary" onClick={handleSubmit}>Set Bait</Button>
                 </CardActions>
             </Card>
-            <Snackbar open={open} message="Bait Set" onClose={handleClose}></Snackbar>
+            <Snackbar open={open} message="Bait Set" >
+                <Alert severity="success">Set Bait</Alert>
+            </Snackbar>
         </form>
     )
 }

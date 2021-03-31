@@ -11,11 +11,10 @@ import Add from "./components/Add"
 import Welcome from "./components/Welcome"
 import RemovedGoals from "./components/RemovedGoals"
 //styling
-import AddIcon from '@material-ui/icons/Add'
+import AddIcon from "@material-ui/icons/Add"
 import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
-import { ContactSupportOutlined } from "@material-ui/icons"
-
+//api call, main component
 function App() {
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
@@ -94,15 +93,15 @@ function App() {
                 <Welcome />
             </Route>
             <Route path="/form/:title">
-            <Form />
+            <Form setToggle={setToggle}/>
             </Route>
             <Route exact path="/goals">
                 <Nav />
                 <h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {
-                    return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
-                })}
+                      return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
+                  })}
             </Route>
             <Route exact path="/remove/:type">
                 <Nav />

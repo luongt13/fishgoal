@@ -7,9 +7,9 @@ import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
 import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
-import CheckBoxIcon from '@material-ui/icons/CheckBox'
-import NotInterestedIcon from '@material-ui/icons/NotInterested'
-import EditIcon from '@material-ui/icons/Edit'
+import CheckBoxIcon from "@material-ui/icons/CheckBox"
+import NotInterestedIcon from "@material-ui/icons/NotInterested"
+import EditIcon from "@material-ui/icons/Edit"
 import "./styles/GoalItem.css"
 //display goals and buttons to mark complete or incomplete
 function GoalItem(props) {
