@@ -3,9 +3,9 @@ h2 {
 }
 
 .form-head {
+    align-items: center; 
     display: flex;
     flex-direction: row;
+    justify-content: space-between; 
     margin: 0 auto;
-     justify-content: space-between; 
-    align-items: center; 
-  } 
+} 

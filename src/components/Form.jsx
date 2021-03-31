@@ -19,13 +19,12 @@ function Form(props) {
                     <h2>Login</h2>
                     <Link to="/form/sign-up"><h6>Don't have an account? Sign Up</h6></Link>
                 </div>
-               
             ) 
         }  else {
             return (
                 <div>
                     <h2>Sign-Up</h2>
-                   <Link to="/form/login"><h6>Already have an account? Login</h6></Link>
+                    <Link to="/form/login"><h6>Already have an account? Login</h6></Link>
                 </div>
             )
         }

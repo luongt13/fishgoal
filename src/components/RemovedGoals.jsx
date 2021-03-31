@@ -11,7 +11,6 @@ function RemovedGoals(props) {
     function displayTitle() {
         if (type === "missed") {
             return <h2>Fish That Got Away</h2>
-            
         } else if (type === "caught") {
             return <h2>Caught Fish</h2>
         }
@@ -27,7 +26,7 @@ function RemovedGoals(props) {
                             <Typography component="p" className="label">What?</Typography>
                             <Typography component="p">{incompleteDetails.what}</Typography>
                             <Typography component="p" className="label">Amount?</Typography>
-                        <Typography component="p">{incompleteDetails.amount}</Typography>
+                            <Typography component="p">{incompleteDetails.amount}</Typography>
                             <Typography component="p" className="label">When?</Typography>
                             <Typography component="p">{incompleteDetails.when}</Typography>
                             <Typography component="p" className="label">How?</Typography>
@@ -50,7 +49,7 @@ function RemovedGoals(props) {
                                 <Typography component="p" className="label">What?</Typography>
                                 <Typography component="p">{completeDetails.what}</Typography>
                                 <Typography component="p" className="label">Amount?</Typography>
-                            <Typography component="p">{completeDetails.amount}</Typography>
+                                <Typography component="p">{completeDetails.amount}</Typography>
                                 <Typography component="p" className="label">When?</Typography>
                                 <Typography component="p">{completeDetails.when}</Typography>
                                 <Typography component="p" className="label">How?</Typography>

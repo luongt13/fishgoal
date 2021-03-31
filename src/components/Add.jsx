@@ -29,7 +29,6 @@ function Add(props) {
     }
     //post form data to API then re-render
     async function handleSubmit(event) {
-        console.log(event.target)
         event.preventDefault()
         await axios.post(baseURL, {fields: newGoal}, config)
         setNewGoal({
@@ -40,11 +39,10 @@ function Add(props) {
             status: 0,
             username: props.userId,
         })
-        setOpen(true)
         props.setToggle((prevState) => !prevState)
         props.setClose((prevState) => !prevState)
+        setOpen(true)
     }
-    console.log(newGoal)
     return (
         //form to add new goal 
         <form onSubmit={handleSubmit}>

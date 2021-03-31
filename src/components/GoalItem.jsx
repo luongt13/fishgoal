@@ -23,26 +23,23 @@ function GoalItem(props) {
     const [showEdit, setShowEdit] = useState(false)
     //change state of status to move to caught or missed list
     const [status, setStatus] = useState(pendingDetails)
-
-
+    const [anchorEl, setAnchorEl] = useState(null);
     //put when status state is changed
     useEffect(() => {
         setChange()
     }, [status])
 
-    const [anchorEl, setAnchorEl] = useState(null);
-
     const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
+    setAnchorEl(event.currentTarget);
     };
-  
+
     const handleClose = () => {
-      setAnchorEl(null);
+    setAnchorEl(null);
     };
-  
+
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
-  
+
     //axios call to update info
     async function setChange() {
         let newURL = `${baseURL}/${props.pending.id}`

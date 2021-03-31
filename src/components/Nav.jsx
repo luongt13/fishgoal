@@ -20,17 +20,17 @@ function Nav(props) {
     return (
         <div className="nav">
             <AppBar>
-                <Toolbar className="nav-bar">
-                    <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
-                        <Menu className="icon hidden"/>
-                    </IconButton>
-                    <div className="desktop">
-                        <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
-                        <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/remove/caught">Caught</Link></Button>
-                        <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/remove/missed">Missed</Link></Button>
-                        <Button color="inherit" startIcon={<ExitToAppIcon />} onClick={handleLogOut}><Link to="/">Logout</Link></Button>
-                    </div>
-                </Toolbar>
+            <Toolbar className="nav-bar">
+                <IconButton onClick={() => setToggleMenu((prevState) => !prevState)}edge="start" aria-label="menu">
+                    <Menu className="icon hidden"/>
+                </IconButton>
+                <div className="desktop">
+                    <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
+                    <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/remove/caught">Caught</Link></Button>
+                    <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/remove/missed">Missed</Link></Button>
+                    <Button color="inherit" startIcon={<ExitToAppIcon />} onClick={handleLogOut}><Link to="/">Logout</Link></Button>
+                </div>
+            </Toolbar>
             </AppBar>
             <Drawer variant="persistent" anchor="left" open={toggleMenu} className="hidden">
                 <IconButton onClick={() => setToggleMenu((prevState) => !prevState)} edge="start" aria-label="menu">
