@@ -16,6 +16,8 @@ import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
+    const [load, setLoad] = useState(true)
+
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
     const userId = localStorage.getItem("username")
@@ -25,6 +27,11 @@ function App() {
     const [incomplete, setIncomplete] = useState([])
     const [toggle, setToggle] = useState(false)
     const [close, setClose] = useState(false)
+
+
+    useEffect(() => {
+        setTimeout(() => setLoad(false), 6000)
+      }, [])
     //get data when toggle changes
     useEffect(() => {
         handleRequest()
@@ -97,11 +104,20 @@ function App() {
             </Route>
             <Route exact path="/goals">
                 <Nav />
-                <h2>{userName}'s FishGoals</h2>
+
+                {load ? 
+                <div><h2>Loading</h2></div> : 
+                <div><h2>{userName}'s FishGoals</h2>
                 {displayAdd()}
                 {pending.map((pending)=> {
                       return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
                   })}
+                    </div>}
+                {/* <h2>{userName}'s FishGoals</h2> */}
+                {/* {displayAdd()}
+                {pending.map((pending)=> {
+                      return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
+                  })} */}
             </Route>
             <Route exact path="/remove/:type">
                 <Nav />
