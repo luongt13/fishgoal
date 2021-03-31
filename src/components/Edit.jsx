@@ -34,16 +34,16 @@ function Edit(props) {
         <form onSubmit={handleEdit}>
             <Card className="form-container" id="edit-form">
                 <CardContent className="form-item">
-                    <TextField type="text" id="what" variant="outlined" label="What?" required={true} value={what} onChange={(e)=> setWhat(e.target.value)}/>
+                    <TextField size="small" type="text" id="what" variant="outlined" label="What?" required={true} value={what} onChange={(e)=> setWhat(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="amount" variant="outlined" label="Amount?" required={true} value={amount} onChange={(e)=> setAmount(e.target.value)}/>
+                    <TextField size="small" type="text" id="amount" variant="outlined" label="Amount?" required={true} value={amount} onChange={(e)=> setAmount(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="when" variant="outlined" label="When?" required={true} value={when} onChange={(e)=> setWhen(e.target.value)}/>
+                    <TextField size="small" type="text" id="when" variant="outlined" label="When?" required={true} value={when} onChange={(e)=> setWhen(e.target.value)}/>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField type="text" id="how" variant="outlined" label="How?" required={true} value={how} onChange={(e)=> setHow(e.target.value)}/>
+                    <TextField size="small" type="text" id="how" variant="outlined" label="How?" required={true} value={how} onChange={(e)=> setHow(e.target.value)}/>
                 </CardContent>
                 <CardActions className="button">
                     <Tooltip aria-label="Save" title="Save">
