@@ -77,14 +77,14 @@ function GoalItem(props) {
             return (
                 <Card className="card" id="flex">
                     <CardContent className="goal-item">
-                        <Typography variant="p" className="label">What? </Typography>
-                        <Typography variant="p">{pendingDetails.what}</Typography>
-                        <Typography variant="p" className="label">Amount? </Typography>
-                        <Typography variant="p">{pendingDetails.amount}</Typography>
-                        <Typography variant="p" className="label">When? </Typography>
-                        <Typography variant="p">{pendingDetails.when}</Typography>
-                        <Typography variant="p" className="label">How?</Typography> 
-                        <Typography variant="p">{pendingDetails.how}</Typography>
+                        <Typography component="p" className="label">What? </Typography>
+                        <Typography component="p">{pendingDetails.what}</Typography>
+                        <Typography component="p" className="label">Amount? </Typography>
+                        <Typography component="p">{pendingDetails.amount}</Typography>
+                        <Typography component="p" className="label">When? </Typography>
+                        <Typography component="p">{pendingDetails.when}</Typography>
+                        <Typography component="p" className="label">How?</Typography> 
+                        <Typography component="p">{pendingDetails.how}</Typography>
                     </CardContent>
                 <CardActions className="select-buttons" id="desktop-buttons">   
                     <Tooltip aria-label="Reel It In" title="Reel It In">
@@ -100,7 +100,6 @@ function GoalItem(props) {
                 </CardActions>
                 <CardActions className="select-buttons" id="mobile-buttons">
                     <Button id="three-dots" aria-describedby={id} onClick={handleClick} endIcon={<MoreVertIcon/>}>
-                        {/* <MoreVertIcon/> */}
                     </Button>
                     <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorOrigin={{vertical: 'bottom', horizontal: 'center',}} transformOrigin={{vertical: 'bottom', horizontal: 'center',}}>
                         <ListItem>

@@ -1,5 +1,11 @@
 h2 {
   margin-top: 100px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 5vw;
+}
+
+p {
+  font-style: bold;
 }
 
 input{
@@ -66,6 +72,7 @@ form {
 .label {
   color: gray;
   padding-top: 5px;
+  font-style:italic;
 }
 
 .button {
@@ -74,11 +81,11 @@ form {
   justify-content: center;
 } 
 
-.delete {
+/* .delete {
   flex-direction: column;
   height: 100%;
   justify-content: flex-start;
-}
+} */
 
 .form-container {
   margin-bottom: 100px;
@@ -99,9 +106,10 @@ form {
   z-index: 1;
 }
 
-
-
 @media screen and (max-width: 600px) {
+  h2 {
+    font-size: 30px;
+  }
   .form-container {
     width: 80%;
   }
