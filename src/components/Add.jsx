@@ -61,7 +61,7 @@ function Add(props) {
                     <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} label="What is your goal?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How much? How long?" required/>
+                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How long?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
                     <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you finish this by?" required/>
