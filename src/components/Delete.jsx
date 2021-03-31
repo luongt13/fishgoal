@@ -3,7 +3,7 @@ import {baseURL, config} from "../service"
 import axios from "axios"
 //styling
 import CloseIcon from "@material-ui/icons/Close"
-import {IconButton, Tooltip} from "@material-ui/core"
+import {IconButton, Button, Tooltip} from "@material-ui/core"
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 
 //handle delete items
@@ -17,9 +17,10 @@ function Delete(props) {
     return (
         <div>
             <Tooltip title="Delete" aria-label="delete">
-                <IconButton onClick={handleDelete} color="primary">
+                <Button onClick={handleDelete}><DeleteOutlineIcon/></Button>
+                {/* <IconButton onClick={handleDelete}>
                     <DeleteOutlineIcon/>
-                </IconButton>
+                </IconButton> */}
             </Tooltip>
         </div>
     )

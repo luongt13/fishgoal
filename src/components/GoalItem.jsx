@@ -6,13 +6,15 @@ import axios from "axios"
 import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
-import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, IconButton, Tooltip} from "@material-ui/core"
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
+import {Button, ButtonGroup, Card, CardContent, CardActions, Typography, Grid, Tooltip, GridList} from "@material-ui/core"
+// import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import CheckBoxIcon from "@material-ui/icons/CheckBox"
 import NotInterestedIcon from "@material-ui/icons/NotInterested"
 import EditIcon from "@material-ui/icons/Edit"
 import "./styles/GoalItem.css"
-import { DeleteOutlined } from "@material-ui/icons"
+// import { DeleteOutlined } from "@material-ui/icons"
+
+
 //display goals and buttons to mark complete or incomplete
 function GoalItem(props) {
     let pendingDetails = props.pending.fields
@@ -59,7 +61,7 @@ function GoalItem(props) {
                 <div className="goal-list">
                     <Card className="card" id="flex">
                         <Grid container>
-                            <Grid item xs={11}>
+                            <Grid item xs={12}>
                                 <CardContent className="goal-item">
                                     <Typography component="p" className="label">What? </Typography>
                                     <Typography component="p">{pendingDetails.what}</Typography>
@@ -71,23 +73,23 @@ function GoalItem(props) {
                                     <Typography component="p">{pendingDetails.how}</Typography>
                                 </CardContent>
                             </Grid>
-                        <Grid item xs={1}>
+                        {/* <Grid item xs={1}>
                             <CardActions  className="button delete">
                                 <Delete id={props.pending.id} setToggle={props.setToggle}/>
                             </CardActions>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                     <CardActions className="selectButtons">   
-                        <Tooltip aria-label="Reel It In" title="Reel It In" color="primary">
-                            <Button size="large" id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}></Button>
+                        <Tooltip aria-label="Reel It In" title="Reel It In">
+                            <Button size="large" id="complete" value="1" onClick={handleComplete}><CheckBoxIcon/></Button>
                         </Tooltip>    
-                        <Tooltip aria-label="Fish Got Away" title="Fish Got Away" color="primary">
-                            <Button size="large" id="complete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}></Button>
+                        <Tooltip aria-label="Fish Got Away" title="Fish Got Away">
+                            <Button size="large" id="complete" value="2" onClick={handleComplete}><NotInterestedIcon/></Button>
                         </Tooltip>   
-                        <Tooltip aria-label="Change Bait" title="Change Bait" color="primary">
-                            <Button size="large" onClick={() => setShowEdit(prevState => !prevState)} startIcon={<EditIcon/>}></Button>
+                        <Tooltip aria-label="Change Bait" title="Change Bait">
+                            <Button size="large" onClick={() => setShowEdit(prevState => !prevState)}><EditIcon/></Button>
                         </Tooltip>
-
+                        <Delete id={props.pending.id} setToggle={props.setToggle}/>
                         {/* <ButtonGroup variant="contained" color="primary" size="small" className="flex-buttons">
                             <Button id="complete" value="1" onClick={handleComplete} startIcon={<CheckBoxIcon/>}>Reel it in</Button>
                             <Button id="incomplete" value="2" onClick={handleComplete} startIcon={<NotInterestedIcon/>}>Fish got away</Button>
@@ -95,6 +97,33 @@ function GoalItem(props) {
                         </ButtonGroup> */}
                     </CardActions>
                 </Card>
+
+                <GridList cols={5}>
+                    <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                <Card>
+                <Typography component="p" className="label">What? </Typography>
+                <Typography component="p">{pendingDetails.what}</Typography>
+                </Card>
+                </GridList>
             </div>
             )
         }

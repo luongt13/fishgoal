@@ -29,7 +29,7 @@ function Add(props) {
     }
     //post form data to API then re-render
     async function handleSubmit(event) {
-        setOpen(true)
+        console.log(event.target)
         event.preventDefault()
         await axios.post(baseURL, {fields: newGoal}, config)
         setNewGoal({
@@ -40,13 +40,14 @@ function Add(props) {
             status: 0,
             username: props.userId,
         })
+        setOpen(true)
         props.setToggle((prevState) => !prevState)
         props.setClose((prevState) => !prevState)
     }
     console.log(newGoal)
     return (
         //form to add new goal 
-        <form>
+        <form onSubmit={handleSubmit}>
             <Card className="form-container">
                 <CardContent className="form-head">
                     <Typography component="h2">Add A New Goal</Typography> 
@@ -57,19 +58,19 @@ function Add(props) {
                     </Tooltip>
                 </CardContent>
                 <CardContent className="form-item">
-                    <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} label="What is your goal?" required={true}/>
+                    <TextField variant="outlined" type="text" id="what" value={newGoal.what} onChange={handleChange} label="What is your goal?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How much? How long?" required={true}/>
+                    <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How much? How long?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you finish this by?" required={true}/>
+                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you finish this by?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} label="How will you reach your goal?" required={true}/>
+                    <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} label="How will you reach your goal?" required/>
                 </CardContent>
                 <CardActions className="button">
-                    <Button size="small" type="submit" variant="contained" color="primary" onClick={handleSubmit}>Set Bait</Button>
+                    <Button size="small" type="submit" variant="contained" color="primary" >Set Bait</Button>
                 </CardActions>
             </Card>
             <Snackbar open={open} message="Bait Set" >
