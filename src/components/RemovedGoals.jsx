@@ -7,7 +7,9 @@ import {Card, CardContent, CardActions, Typography} from "@material-ui/core"
 import "../App.css"
 //show complete and incomplete goals
 function RemovedGoals(props) {
+    //use url to determine missed or caught goals
     let {type} = useParams()
+    //display the title 
     function displayTitle() {
         if (type === "missed") {
             return <h2>Fish That Got Away</h2>
@@ -15,6 +17,7 @@ function RemovedGoals(props) {
             return <h2>Caught Fish</h2>
         }
     }
+    //display the removed goal items 
     function displayList() {
         if(type === "missed") {
            return (props.incomplete.map((goal) => {
@@ -23,14 +26,14 @@ function RemovedGoals(props) {
                 <div className="goal-list">
                     <Card className="goal-container">
                         <CardContent className="goal-item">
-                            <Typography component="p" className="label">What?</Typography>
-                            <Typography component="p">{incompleteDetails.what}</Typography>
-                            <Typography component="p" className="label">Amount?</Typography>
-                            <Typography component="p">{incompleteDetails.amount}</Typography>
-                            <Typography component="p" className="label">When?</Typography>
-                            <Typography component="p">{incompleteDetails.when}</Typography>
-                            <Typography component="p" className="label">How?</Typography>
-                            <Typography component="p">{incompleteDetails.how}</Typography>
+                            <Typography variant="p" className="label">What?</Typography>
+                            <Typography variant="p">{incompleteDetails.what}</Typography>
+                            <Typography variant="p" className="label">Amount?</Typography>
+                            <Typography variant="p">{incompleteDetails.amount}</Typography>
+                            <Typography variant="p" className="label">When?</Typography>
+                            <Typography variant="p">{incompleteDetails.when}</Typography>
+                            <Typography variant="p" className="label">How?</Typography>
+                            <Typography variant="p">{incompleteDetails.how}</Typography>
                         </CardContent>
                         <CardActions className="button delete">
                             <Delete id={goal.id} setToggle={props.setToggle}/>
@@ -46,14 +49,14 @@ function RemovedGoals(props) {
                     <div className="goal-list">
                         <Card className="goal-container">
                             <CardContent className="goal-item">
-                                <Typography component="p" className="label">What?</Typography>
-                                <Typography component="p">{completeDetails.what}</Typography>
-                                <Typography component="p" className="label">Amount?</Typography>
-                                <Typography component="p">{completeDetails.amount}</Typography>
-                                <Typography component="p" className="label">When?</Typography>
-                                <Typography component="p">{completeDetails.when}</Typography>
-                                <Typography component="p" className="label">How?</Typography>
-                                <Typography component="p">{completeDetails.how}</Typography>
+                                <Typography variant="p" className="label">What?</Typography>
+                                <Typography variant="p">{completeDetails.what}</Typography>
+                                <Typography variant="p" className="label">Amount?</Typography>
+                                <Typography variant="p">{completeDetails.amount}</Typography>
+                                <Typography variant="p" className="label">When?</Typography>
+                                <Typography variant="p">{completeDetails.when}</Typography>
+                                <Typography variant="p" className="label">How?</Typography>
+                                <Typography variant="p">{completeDetails.how}</Typography>
                             </CardContent>
                             <CardActions className="button delete">
                                 <Delete id={goal.id} setToggle={props.setToggle}/>

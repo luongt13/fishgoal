@@ -1,5 +1,5 @@
 import React from 'react'
-import Delete from "./Delete"
+import Delete from "../Delete"
 import {Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
 import "../App.css"
 

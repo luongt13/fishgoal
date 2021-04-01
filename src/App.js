@@ -16,6 +16,8 @@ import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
+       //bring to top when renders
+       window.scrollTo(0,0)
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
     const userId = localStorage.getItem("username")
@@ -103,7 +105,7 @@ function App() {
                 <div className="goal-list">
                     {pending.map((pending)=> {
                     return <GoalItem key={pending.id} pending={pending} setToggle={setToggle} userId={userId}/>
-                  })}
+                    })}
                 </div>
             </Route>
             <Route exact path="/remove/:type">

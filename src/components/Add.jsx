@@ -3,13 +3,13 @@ import {baseURL, config} from "../service"
 import {useState} from "react"
 import axios from "axios"
 //styling
-import {Button, Card, CardContent, CardActions, Typography, IconButton, TextField, Tooltip, Snackbar} from "@material-ui/core"
-import Alert from "@material-ui/lab/Alert"
+import {Button, Card, CardContent, CardActions, Typography, IconButton, TextField, Tooltip} from "@material-ui/core"
 import CloseIcon from "@material-ui/icons/Close"
 import "./styles/Add.css"
 //add new goal
 function Add(props) {
-    const [open, setOpen] = useState(false)
+    //bring to top when renders
+    window.scrollTo(0,0)
     //storing new goal data
     const [newGoal, setNewGoal] = useState({
         what: "",
@@ -40,7 +40,6 @@ function Add(props) {
         })
         props.setToggle((prevState) => !prevState)
         props.setClose((prevState) => !prevState)
-        setOpen(true)
     }
     return (
         //form to add new goal 
@@ -61,7 +60,7 @@ function Add(props) {
                     <TextField variant="outlined" type="text" id="amount" value={newGoal.amount} onChange={handleChange} label="How many? How long?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
-                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you finish this by?" required/>
+                    <TextField variant="outlined" type="text" id="when" value={newGoal.when} onChange={handleChange} label="When will you start this by?" required/>
                 </CardContent>
                 <CardContent className="form-item">  
                     <TextField variant="outlined" type="text" id="how" value={newGoal.how} onChange={handleChange} label="How will you reach your goal?" required/>
@@ -70,9 +69,6 @@ function Add(props) {
                     <Button size="small" type="submit" variant="contained" color="primary">Set Bait</Button>
                 </CardActions>
             </Card>
-            <Snackbar open={open} message="Bait Set" >
-                <Alert severity="success">Set Bait</Alert>
-            </Snackbar>
         </form>
     )
 }

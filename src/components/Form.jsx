@@ -10,10 +10,13 @@ import {userURL, config} from "../service"
 import axios from "axios"
 //sign-up or login form
 function Form(props) {
+    //to toggle axios call
+    const [data, setData] = useState(false)
+    //alerts and message
     const [open, setOpen] = useState(false)
     const [success, setSuccess] = useState(false)
     const [message, setMessage] = useState("")
-    const [data, setData] = useState(false)
+    //password 
     const [password, setPassword] = useState("")
     //user data from axios get
     const [userData, setUserData] = useState([])
@@ -27,13 +30,11 @@ function Form(props) {
     useEffect(() => {
         handleUser()
     }, [data])
-    console.log(userData)
+    //on submit, check for user if logging in or signing up
     function checkInput(event) {
         event.preventDefault()
-       console.log(userData)
-       for (let i=0; i<userData.length; i++) {
-        let user = userData[i]
-            console.log(user)
+        for (let i=0; i<userData.length; i++) {
+            let user = userData[i]
             let currentUsers = Object.values(user)
             if (title === "login") {
                 if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
@@ -55,14 +56,13 @@ function Form(props) {
                 }
             }
         }
-        }
-    //register user 
+    }
+    //register user, set fields to empty and alert success message
     async function registerUser() {
         let newUser = {
             name,
             username,
         }
-        console.log(newUser)
         await axios.post(userURL, {fields: newUser}, config)
         setData(prevState => !prevState)
         history.push("/form/login")
