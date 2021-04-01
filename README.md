@@ -133,32 +133,32 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | Sunday 3/21    | Continue previous day / Add create | Complete |
 | Monday 3/22    | Continue previous day / Add update | Complete |
 | Tuesday 3/23   | Wrap up components / Start styling | Complete |
-| Wednesday 3/24 | Style | In progress |
-| Thursday 3/25  | MVP / User Testing | In progress |
+| Wednesday 3/24 | Style | Complete |
+| Thursday 3/25  | MVP / User Testing | Complete |
 | Friday 3/26    | Project Presentation | In progress |
 
 ## Timeframes
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
 | --------- | :----: | :----: | :----: | :----: |
 | **COMPONENTS:** |
-| Nav              | H | 2 | 1 |  |
-| Goal             | H | 3 | 3 |  |
-| Completed Goals  | H | 3 | 3 |  |
-| Form to Create   | H | 3 | 3 |  |
-| Form to Update   | H | 3 | 3 |  |
+| Nav              | H | 2 | 3 | 3 |
+| Goal             | H | 3 | 3 | 3 |
+| Completed Goals  | H | 3 | 3 | 3 |
+| Form to Create   | H | 3 | 3 | 3 |
+| Form to Update   | H | 3 | 3 | 3 |
 | **DATA:** |
-| Set up AirTable | H | 4 | 2 |  |
-| Axios calls     | H | 3 | 3 |  |
-| Render on page  | H | 5 | 4 |  |
-| React Router    | H | 2 | 2 |  |
+| Set up AirTable | H | 4 | 3 | 3 |
+| Axios calls     | H | 3 | 4 | 4 |
+| Render on page  | H | 5 | 4 | 4 |
+| React Router    | H | 2 | 2 | 2 |
 | **DESIGN:** |
-| Nav             | H | 2 | 2 |  |
-| Goal            | H | 3 | 3 |  |
-| Goal item       | H | 3 | 3 |  |
-| Form            | L | 3 | 3 |  |
-| Buttons         | L | 3 | 2 |  |
-| General Design  | L | 5 | 5 |  |
-| **TOTAL:**      |   |**47**|**TBD**|**TBD**| 
+| Nav             | H | 2 | 2 | 2 |
+| Goal            | H | 3 | 3 | 3 |
+| Goal item       | H | 3 | 4 | 4 |
+| Form            | L | 3 | 4 | 4 |
+| Buttons         | L | 3 | 3 | 3 |
+| General Design  | L | 5 | 8 | 8 |
+| **TOTAL:**      |   |**47**|**52**|**52**| 
 
 ## SWOT Analysis
 **Strengths:**
