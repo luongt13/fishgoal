@@ -39,7 +39,7 @@ function Form(props) {
             let user = userData[i]
             let currentUsers = Object.values(user)
             if (title === "login") {
-                if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username) && currentUsers.find(userPassword => userPassword === password)) {
+                if(currentUsers.find(userName => userName === username) && currentUsers.find(userPassword => userPassword === password)) {
                     return handleRedirect()
                     } else {
                         setMessage("Invalid username or password")
