@@ -47,7 +47,7 @@ function Form(props) {
                     }
             } else if (title === "register"){
                 if(currentUsers.find(userName => userName === username)) {
-                    setMessage("Username Taken")
+                    setMessage("Username taken")
                     setOpen(true)
                     setUsername("")
                     setPassword("")
