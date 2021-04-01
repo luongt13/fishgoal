@@ -2,20 +2,26 @@ import {Link, useParams, useHistory} from "react-router-dom"
 import {useState, useEffect} from "react"
 import {useLocalStorage} from "../useLocalStorage"
 //styling
-import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
+import {Button, Card, CardContent, CardActions, TextField, Snackbar} from "@material-ui/core"
+import Alert from '@material-ui/lab/Alert'
 import "./styles/Form.css"
 
 import {userURL, config} from "../service"
 import axios from "axios"
 //sign-up or login form
 function Form(props) {
+    const [open, setOpen] = useState(false)
+
     const [password, setPassword] = useState("")
+    //user data from axios get
+    const [userData, setUserData] = useState([])
+    //local storage data from form input
     const [name, setName] = useLocalStorage("name",'')
     const [username, setUsername] = useLocalStorage("username","")
-
+    //params from url
     let { title } = useParams()
     let history = useHistory()
-    const [userData, setUserData] = useState([])
+    //get user data invoked
     useEffect(() => {
         handleUser()
     }, [])
@@ -41,7 +47,7 @@ function Form(props) {
                     }
             } else if (title === "sign-up"){
                 if(currentUsers.find(userName => userName === username)) {
-                    alert("username is taken")
+                    setOpen(true)
                     break
                 } else {
                     console.log(username)
@@ -49,9 +55,7 @@ function Form(props) {
             }
         }
         }
-    
-    
-
+    //register user 
     async function registerUser() {
         let newUser = {
             name,
@@ -61,7 +65,7 @@ function Form(props) {
         await axios.post(userURL, {fields: newUser}, config)
         history.push("/form/login")
     }
-
+    //get user data
     async function handleUser() {
         let resp = await axios.get(userURL, config)
         setUserData(resp.data.records.map(user => user.fields))
@@ -108,6 +112,9 @@ function Form(props) {
                     </CardActions>
                 </Card>  
             </form>
+            <Snackbar open={open} message="Username Taken" >
+                <Alert onClose={() => setOpen(false)} severity="error">Username Taken</Alert>
+            </Snackbar>
         </div>
     )
 }
