@@ -7,6 +7,8 @@ import {Card, CardContent, CardActions, Typography} from "@material-ui/core"
 import "../App.css"
 //show complete and incomplete goals
 function RemovedGoals(props) {
+    //bring to top when renders
+    window.scrollTo(0,0)
     //use url to determine missed or caught goals
     let {type} = useParams()
     //display the title 
@@ -20,46 +22,46 @@ function RemovedGoals(props) {
     //display the removed goal items 
     function displayList() {
         if(type === "missed") {
-           return (props.incomplete.map((goal) => {
+           return (props.incomplete.map((goal, index) => {
             let incompleteDetails = goal.fields
             return (
-                <div className="goal-list">
+                <div key={index} className="goal-list">
                     <Card className="goal-container">
                         <CardContent className="goal-item">
-                            <Typography variant="p" className="label">What?</Typography>
-                            <Typography variant="p">{incompleteDetails.what}</Typography>
-                            <Typography variant="p" className="label">Amount?</Typography>
-                            <Typography variant="p">{incompleteDetails.amount}</Typography>
-                            <Typography variant="p" className="label">When?</Typography>
-                            <Typography variant="p">{incompleteDetails.when}</Typography>
-                            <Typography variant="p" className="label">How?</Typography>
-                            <Typography variant="p">{incompleteDetails.how}</Typography>
+                            <Typography variant="body1" className="label">What?</Typography>
+                            <Typography variant="body2">{incompleteDetails.what}</Typography>
+                            <Typography variant="body1" className="label">Amount?</Typography>
+                            <Typography variant="body2">{incompleteDetails.amount}</Typography>
+                            <Typography variant="body1" className="label">When?</Typography>
+                            <Typography variant="body2">{incompleteDetails.when}</Typography>
+                            <Typography variant="body1" className="label">How?</Typography>
+                            <Typography variant="body2">{incompleteDetails.how}</Typography>
                         </CardContent>
                         <CardActions className="button delete">
-                            <Delete id={goal.id} setToggle={props.setToggle}/>
+                            <Delete key={goal.id} id={goal.id} setToggle={props.setToggle}/>
                         </CardActions>
                     </Card>
                 </div>       
                )
             }))
         } else if(type === "caught") {
-            return (props.complete.map((goal) => {
+            return (props.complete.map((goal, index) => {
                 let completeDetails = goal.fields
                 return (
-                    <div className="goal-list">
+                    <div key={index} className="goal-list">
                         <Card className="goal-container">
                             <CardContent className="goal-item">
-                                <Typography variant="p" className="label">What?</Typography>
-                                <Typography variant="p">{completeDetails.what}</Typography>
-                                <Typography variant="p" className="label">Amount?</Typography>
-                                <Typography variant="p">{completeDetails.amount}</Typography>
-                                <Typography variant="p" className="label">When?</Typography>
-                                <Typography variant="p">{completeDetails.when}</Typography>
-                                <Typography variant="p" className="label">How?</Typography>
-                                <Typography variant="p">{completeDetails.how}</Typography>
+                                <Typography variant="body1" className="label">What?</Typography>
+                                <Typography variant="body2">{completeDetails.what}</Typography>
+                                <Typography variant="body1" className="label">Amount?</Typography>
+                                <Typography variant="body2">{completeDetails.amount}</Typography>
+                                <Typography variant="body1" className="label">When?</Typography>
+                                <Typography variant="body2">{completeDetails.when}</Typography>
+                                <Typography variant="body1" className="label">How?</Typography>
+                                <Typography variant="body2">{completeDetails.how}</Typography>
                             </CardContent>
                             <CardActions className="button delete">
-                                <Delete id={goal.id} setToggle={props.setToggle}/>
+                                <Delete key={goal.id} id={goal.id} setToggle={props.setToggle}/>
                             </CardActions>
                         </Card>
                     </div>       

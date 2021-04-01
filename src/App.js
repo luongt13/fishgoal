@@ -16,8 +16,8 @@ import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
-       //bring to top when renders
-       window.scrollTo(0,0)
+    //bring to top when renders
+    window.scrollTo(0,0)
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
     const userId = localStorage.getItem("username")
@@ -35,7 +35,7 @@ function App() {
     //pass the props accordingly when goals change
     useEffect(() => {
         findStatus()
-    }, [goals])
+    }, [goals]) //eslint-disable-line
     //axios get API data
     async function handleRequest(){
         let resp = await axios.get(baseURL, config)
@@ -64,10 +64,10 @@ function App() {
         let completeArray = []
         let incompleteArray = []
         //map through array and push only if there is a value of 0
-        goals.map((goal) => {
+        goals.forEach((goal) => {
             if(Object.values(goal.fields).includes(0) && Object.values(goal.fields).includes(userId)) {
                 pendingArray.push({id: goal.id, fields: goal.fields})
-            } else if (Object.values(goal.fields).includes(1) && Object.values(goal.fields).includes(userId)) {
+            } else if (Object.values(goal.fields).includes(1) && Object.values(goal.fields).includes(userId)) { 
                 completeArray.push({id: goal.id, fields: goal.fields})
             } else if (Object.values(goal.fields).includes(2) && Object.values(goal.fields).includes(userId)) {
                 incompleteArray.push({id: goal.id, fields: goal.fields})
@@ -110,7 +110,7 @@ function App() {
             </Route>
             <Route exact path="/remove/:type">
                 <Nav setGoals={setGoals}/>
-                <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
+                <RemovedGoals key="removed" incomplete={incomplete} complete={complete} setToggle={setToggle}/>
             </Route>
         </div>
     );

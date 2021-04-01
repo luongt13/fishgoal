@@ -27,7 +27,7 @@ function GoalItem(props) {
     //put when status state is changed
     useEffect(() => {
         setChange()
-    }, [status])
+    }, [status]) //eslint-disable-line
 
     const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
