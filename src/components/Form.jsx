@@ -39,10 +39,10 @@ function Form(props) {
             let user = userData[i]
             let currentUsers = Object.values(user)
             if (title === "login") {
-                if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
+                if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username) && currentUsers.find(userPassword => userPassword === password)) {
                     return handleRedirect()
                     } else {
-                        setMessage("Invalid username")
+                        setMessage("Invalid username or password")
                         setOpen(true)
                     }
             } else if (title === "register"){
@@ -64,6 +64,7 @@ function Form(props) {
         let newUser = {
             name,
             username,
+            password,
         }
         await axios.post(userURL, {fields: newUser}, config)
         setData(prevState => !prevState)
