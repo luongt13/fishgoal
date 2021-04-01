@@ -1,13 +1,14 @@
 import {Link, useParams, useHistory} from "react-router-dom"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import {useLocalStorage} from "../useLocalStorage"
 //styling
 import {Button, Card, CardContent, CardActions, TextField} from "@material-ui/core"
 import "./styles/Form.css"
+
+import {userURL, config} from "../service"
+import axios from "axios"
 //sign-up or login form
 function Form(props) {
-
-
     const [password, setPassword] = useState("")
     const [name, setName] = useLocalStorage("name",'')
     const [username, setUsername] = useLocalStorage("username","")
@@ -18,7 +19,13 @@ function Form(props) {
     // const [userId, setUserId] = useLocalStorage("username","")
     let { title } = useParams()
     let history = useHistory()
-
+    const [userData, setUserData] = useState([])
+    useEffect(() => {
+        handleUser()
+    }, [])
+    userData.map(userInfo => {
+        console.log(userInfo.fields)
+    })
     // let storedUserId = JSON.parse(localStorage.getItem("username"))
     // let storedUserName = localStorage.getItem("name")
     // console.log(storedUserId)
@@ -37,6 +44,11 @@ function Form(props) {
     //         history.push("/form/login")
     //     }
     // }
+
+    async function handleUser() {
+        let resp = await axios.get(userURL, config)
+        setUserData(resp.data.records)
+    }
     //login or sign-up heading
     function showForm() {
         if(title === "login") {

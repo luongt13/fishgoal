@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom"
 //component
 import Delete from "./Delete"
 //styling
-import {Card, CardContent, CardActions, Typography, Grid} from "@material-ui/core"
+import {Card, CardContent, CardActions, Typography} from "@material-ui/core"
 import "../App.css"
 //show complete and incomplete goals
 function RemovedGoals(props) {

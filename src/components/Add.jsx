@@ -7,7 +7,6 @@ import {Button, Card, CardContent, CardActions, Typography, IconButton, TextFiel
 import Alert from "@material-ui/lab/Alert"
 import CloseIcon from "@material-ui/icons/Close"
 import "./styles/Add.css"
-import { ContactSupportOutlined } from "@material-ui/icons"
 //add new goal
 function Add(props) {
     const [open, setOpen] = useState(false)

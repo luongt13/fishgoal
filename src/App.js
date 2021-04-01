@@ -12,7 +12,7 @@ import Welcome from "./components/Welcome"
 import RemovedGoals from "./components/RemovedGoals"
 //styling
 import AddIcon from "@material-ui/icons/Add"
-import {Fab, Tooltip, Grid} from "@material-ui/core"
+import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
@@ -107,7 +107,7 @@ function App() {
                 </div>
             </Route>
             <Route exact path="/remove/:type">
-                <Nav />
+                <Nav setGoals={setGoals}/>
                 <RemovedGoals incomplete={incomplete} complete={complete} setToggle={setToggle}/>
             </Route>
         </div>

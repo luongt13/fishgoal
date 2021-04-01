@@ -2,7 +2,6 @@
 import {baseURL, config} from "../service"
 import axios from "axios"
 //styling
-import CloseIcon from "@material-ui/icons/Close"
 import {Button, Tooltip} from "@material-ui/core"
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 //handle delete items
