@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useParams} from "react-router-dom"
 //component
 import Delete from "./Delete"
@@ -7,10 +7,12 @@ import {Card, CardContent, CardActions, Typography} from "@material-ui/core"
 import "../App.css"
 //show complete and incomplete goals
 function RemovedGoals(props) {
-    //bring to top when renders
-    window.scrollTo(0,0)
     //use url to determine missed or caught goals
     let {type} = useParams()
+    useEffect(() => {
+        //bring to top when renders
+        window.scrollTo(0,0)
+    }, [type])
     //display the title 
     function displayTitle() {
         if (type === "missed") {

@@ -16,8 +16,6 @@ import {Fab, Tooltip} from "@material-ui/core"
 import './App.css';
 //api call, main component
 function App() {
-    //bring to top when renders
-    window.scrollTo(0,0)
     //get local storage username
     let userName = JSON.parse(localStorage.getItem("name"))
     const userId = localStorage.getItem("username")
@@ -31,6 +29,8 @@ function App() {
     //get data when toggle changes
     useEffect(() => {
         handleRequest()
+        //bring to top when renders
+        window.scrollTo(0,0)
     }, [toggle])
     //pass the props accordingly when goals change
     useEffect(() => {
