@@ -19,60 +19,37 @@ function Form(props) {
     useEffect(() => {
         handleUser()
     }, [])
-console.log(userData)
+    console.log(userData)
     function checkInput(event) {
         event.preventDefault()
-        userData.map(user => {
+       console.log(userData)
+       for (let i=0; i<userData.length; i++) {
+        let user = userData[i]
+            console.log(user)
             let currentUsers = Object.values(user)
-            
-            console.log(currentUsers.find(userName => userName === name))
-            // console.log(currentUsers.find(userName => userName === username))
-            if (title === "login") {
-                    if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
-                        console.log("success")
-                        return handleRedirect()
-                        } else {
-                            console.log("Invalid username and password")
-                        }
-                } else if (title === "sign-up"){
-                    if(currentUsers.find(userName => userName === username)) {
-                        return alert("username is taken")
-                    } else if(currentUsers.find(userName => userName !== username)) {
-                        // return registerUser()
-                        return alert(username)
-                        // console.log(username)
-                    } else {
-                        console.log("blah")
-                    }
-                }
-            })
-           
+            console.log(currentUsers)
 
+            console.log(currentUsers.find(userName => userName === name))
+            console.log(currentUsers.find(userName => userName === username))
+
+            if (title === "login") {
+                if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
+                    console.log("success")
+                    return handleRedirect()
+                    } else {
+                        console.log("Invalid username and password")
+                    }
+            } else if (title === "sign-up"){
+                if(currentUsers.find(userName => userName === username)) {
+                    alert("username is taken")
+                    break
+                } else {
+                    console.log(username)
+                }
+            }
+        }
         }
     
-        // users.map(user => {
-        //         console.log(Object.values(user))
-        //         let currentUsers = Object.values(user)
-
-
-        //         if (title === "login") {
-        //             if(currentUsers[0] === name && currentUsers[1] === username) {
-        //                 console.log("success")
-        //                 return handleRedirect()
-        //                 } else {
-        //                     console.log("Invalid username and password")
-        //                 }
-        //         } else if (title === "sign-up"){
-        //             if(currentUsers[1] === username) {
-        //                 console.log("username is taken")
-        //             } else if(name.length > 2 && username.length > 2){
-        //                 // return registerUser()
-        //                 console.log(username)
-        //             }
-        //         }
-        //     })
-           
-        // })
     
 
     async function registerUser() {
