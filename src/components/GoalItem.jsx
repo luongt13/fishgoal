@@ -7,15 +7,11 @@ import Edit from "./Edit"
 import Delete from "./Delete"
 //styling
 import {Button, Card, CardContent, CardActions, Typography, Tooltip, Popover, ListItem} from "@material-ui/core"
-// import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import CheckBoxIcon from "@material-ui/icons/CheckBox"
 import NotInterestedIcon from "@material-ui/icons/NotInterested"
 import EditIcon from "@material-ui/icons/Edit"
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import "./styles/GoalItem.css"
-// import { DeleteOutlined } from "@material-ui/icons"
-
-
 //display goals and buttons to mark complete or incomplete
 function GoalItem(props) {
     let pendingDetails = props.pending.fields
@@ -24,19 +20,19 @@ function GoalItem(props) {
     //change state of status to move to caught or missed list
     const [status, setStatus] = useState(pendingDetails)
     const [anchorEl, setAnchorEl] = useState(null);
+
     //put when status state is changed
     useEffect(() => {
         setChange()
     }, [status]) //eslint-disable-line
 
+    //handle morevert icon
     const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     };
-
     const handleClose = () => {
     setAnchorEl(null);
     };
-
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
@@ -63,6 +59,7 @@ function GoalItem(props) {
             })
         })
     }
+    
     //display either input to edit to goal text, pass toggle to rerender, pass status to set status
     function displayEdit() {
         if(showEdit){

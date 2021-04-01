@@ -26,10 +26,12 @@ function Form(props) {
     //params from url
     let { title } = useParams()
     let history = useHistory()
+
     //get user data invoked
     useEffect(() => {
         handleUser()
     }, [data])
+    
     //on submit, check for user if logging in or signing up
     function checkInput(event) {
         event.preventDefault()
