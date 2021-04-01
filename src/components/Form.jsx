@@ -11,7 +11,9 @@ import axios from "axios"
 //sign-up or login form
 function Form(props) {
     const [open, setOpen] = useState(false)
-
+    const [success, setSuccess] = useState(false)
+    const [message, setMessage] = useState("")
+    const [data, setData] = useState(false)
     const [password, setPassword] = useState("")
     //user data from axios get
     const [userData, setUserData] = useState([])
@@ -24,7 +26,7 @@ function Form(props) {
     //get user data invoked
     useEffect(() => {
         handleUser()
-    }, [])
+    }, [data])
     console.log(userData)
     function checkInput(event) {
         event.preventDefault()
@@ -33,24 +35,23 @@ function Form(props) {
         let user = userData[i]
             console.log(user)
             let currentUsers = Object.values(user)
-            console.log(currentUsers)
-
-            console.log(currentUsers.find(userName => userName === name))
-            console.log(currentUsers.find(userName => userName === username))
-
             if (title === "login") {
                 if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
-                    console.log("success")
                     return handleRedirect()
                     } else {
-                        console.log("Invalid username and password")
+                        setMessage("Invalid username")
+                        setOpen(true)
                     }
             } else if (title === "sign-up"){
                 if(currentUsers.find(userName => userName === username)) {
+                    setMessage("Username Taken")
                     setOpen(true)
+                    setUsername("")
+                    setPassword("")
                     break
                 } else {
-                    console.log(username)
+                    registerUser()
+                    break
                 }
             }
         }
@@ -63,7 +64,13 @@ function Form(props) {
         }
         console.log(newUser)
         await axios.post(userURL, {fields: newUser}, config)
+        setData(prevState => !prevState)
         history.push("/form/login")
+        setName("")
+        setUsername("")
+        setPassword("")
+        setMessage("Successfully Registered")
+        setSuccess(true)
     }
     //get user data
     async function handleUser() {
@@ -112,8 +119,11 @@ function Form(props) {
                     </CardActions>
                 </Card>  
             </form>
-            <Snackbar open={open} message="Username Taken" >
-                <Alert onClose={() => setOpen(false)} severity="error">Username Taken</Alert>
+            <Snackbar open={open} message={message} >
+                <Alert onClose={() => setOpen(false)} severity="error">{message}</Alert>
+            </Snackbar>
+            <Snackbar open={success} message={message} >
+                <Alert onClose={() => setSuccess(false)} severity="success">{message}</Alert>
             </Snackbar>
         </div>
     )
