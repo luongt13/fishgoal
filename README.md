@@ -12,8 +12,7 @@
 * [SWOT Analysis](#swot-analysis)
 
 ## Project Name
-FishGoal
-
+FishGoal [Netlify](https://adoring-bhabha-8202f9.netlify.app/)
 ## Project Description
 A tool to allows users to add, update, and remove custom goals. The goal is to allow users to keep track of SMART goals or tasks.
 
