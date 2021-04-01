@@ -1,6 +1,6 @@
 //react
 import {useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 //styling
 import {Button, List, ListItem, AppBar, IconButton, Toolbar, Drawer} from "@material-ui/core"
 import {Menu, Close} from "@material-ui/icons"
@@ -12,10 +12,12 @@ import "./styles/Nav.css"
 //nav bar
 function Nav(props) {
     const [toggleMenu, setToggleMenu] = useState(false)
+    let history = useHistory()
     //clear local storage upon logout
     function handleLogOut(){
         localStorage.clear()
         props.setGoals([])
+        history.push("/")
     }
     return (
         <div className="nav">
@@ -28,7 +30,7 @@ function Nav(props) {
                     <Button color="inherit" startIcon={<ListAltIcon/>}><Link to="/goals">FishGoals</Link></Button>
                     <Button color="inherit" startIcon={<CheckBoxIcon/>}><Link to="/remove/caught">Caught</Link></Button>
                     <Button color="inherit" startIcon={<CheckBoxOutlineBlankIcon/>}><Link to="/remove/missed">Missed</Link></Button>
-                    <Button color="inherit" startIcon={<ExitToAppIcon />} onClick={handleLogOut}><Link to="/">Logout</Link></Button>
+                    <Button color="inherit" startIcon={<ExitToAppIcon />} onClick={handleLogOut}>Logout</Button>
                 </div>
             </Toolbar>
             </AppBar>
@@ -40,7 +42,7 @@ function Nav(props) {
                     <ListItem ><Link className="item" to="/goals">FishGoals</Link></ListItem>           
                     <ListItem><Link className="item" to="/remove/caught">Fish Caught</Link></ListItem>
                     <ListItem><Link className="item" to="/remove/missed">Fish Missed</Link></ListItem> 
-                    <ListItem onClick={handleLogOut}><Link className="item" to="/">Log Out</Link></ListItem>
+                    <ListItem onClick={handleLogOut} className="item">Log Out</ListItem>
                 </List>
             </Drawer>
         </div>

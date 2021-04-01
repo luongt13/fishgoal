@@ -45,7 +45,7 @@ function Form(props) {
                         setMessage("Invalid username")
                         setOpen(true)
                     }
-            } else if (title === "sign-up"){
+            } else if (title === "register"){
                 if(currentUsers.find(userName => userName === username)) {
                     setMessage("Username Taken")
                     setOpen(true)
@@ -85,13 +85,13 @@ function Form(props) {
             return (
                 <div>
                     <h2>Login</h2>
-                    <Link to="/form/sign-up"><h6>Don't have an account? Sign Up</h6></Link>
+                    <Link to="/form/register"><h6>Don't have an account? Register</h6></Link>
                 </div>
             ) 
         }  else {
             return (
                 <div>
-                    <h2>Sign-Up</h2>
+                    <h2>Register</h2>
                     <Link to="/form/login"><h6>Already have an account? Login</h6></Link>
                 </div>
             )

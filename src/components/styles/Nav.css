@@ -8,6 +8,7 @@
 
 .item {
     color: black;
+    text-transform: uppercase;
 }
 
 .desktop {
