@@ -31,21 +31,25 @@ function Form(props) {
     useEffect(() => {
         handleUser()
     }, [data])
-    
     //on submit, check for user if logging in or signing up
     function checkInput(event) {
+        console.log(userData)
+
         event.preventDefault()
         for (let i=0; i<userData.length; i++) {
             let user = userData[i]
             let currentUsers = Object.values(user)
+            console.log(currentUsers)
+            console.log(user)
             if (title === "login") {
-                if(currentUsers.find(userName => userName === username) && currentUsers.find(userPassword => userPassword === password)) {
+                if(currentUsers.find(userName => userName === username) && currentUsers.find(userName => userName === name)) {
                     return handleRedirect()
                     } else {
-                        setMessage("Invalid username or password")
+                        setMessage("Invalid username")
                         setOpen(true)
                     }
             } else if (title === "register"){
+                console.log(currentUsers.find(userName => userName))
                 if(currentUsers.find(userName => userName === username)) {
                     setMessage("Username taken")
                     setOpen(true)
@@ -64,7 +68,6 @@ function Form(props) {
         let newUser = {
             name,
             username,
-            password,
         }
         await axios.post(userURL, {fields: newUser}, config)
         setData(prevState => !prevState)
