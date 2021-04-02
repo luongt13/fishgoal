@@ -33,36 +33,69 @@ function Form(props) {
     }, [data])
     //on submit, check for user if logging in or signing up
     function checkInput(event) {
-        console.log(userData)
-
         event.preventDefault()
-        for (let i=0; i<userData.length; i++) {
-            let user = userData[i]
-            let currentUsers = Object.values(user)
-            console.log(currentUsers)
-            console.log(user)
-            if (title === "login") {
-                if(currentUsers.find(userName => userName === username) && currentUsers.find(userName => userName === name)) {
+
+        console.log(userData)
+        console.log(userData)
+        let currentUsernames = []
+        for(let i=0; i<userData.length; i++) {
+            currentUsernames.push(userData[i].username)
+        }
+        console.log(currentUsernames)
+
+
+        if (title === "login"){
+            if(currentUsernames.find(userName => userName === username)) {
                     return handleRedirect()
                     } else {
                         setMessage("Invalid username")
                         setOpen(true)
                     }
             } else if (title === "register"){
-                console.log(currentUsers.find(userName => userName))
-                if(currentUsers.find(userName => userName === username)) {
+                if(currentUsernames.find(userName => userName === username)) {
                     setMessage("Username taken")
                     setOpen(true)
                     setUsername("")
                     setPassword("")
-                    break
+                    // break
                 } else {
+                    // console.log('available')
                     registerUser()
-                    break
+                    // break
                 }
-            }
-        }
+        
+
     }
+}
+        // for (let i=0; i<userData.length; i++) {
+        //     let user = userData[i]
+        //     let currentUsers = Object.values(user)
+        //     console.log(currentUsers)
+        //     console.log(user)
+        //     if (title === "login") {
+        //         if(currentUsers.find(userName => userName === name) && currentUsers.find(userName => userName === username)) {
+        //             return handleRedirect()
+        //             } else {
+        //                 setMessage("Invalid username")
+        //                 setOpen(true)
+        //             }
+        //     } else if (title === "register"){
+        //         console.log(currentUsers.find(userName => userName))
+        //         if(currentUsers.find(userName => userName === username)) {
+        //             console.log("taken")
+        //             setMessage("Username taken")
+        //             setOpen(true)
+        //             setUsername("")
+        //             setPassword("")
+        //             break
+        //         } else {
+        //             console.log('available')
+        //             registerUser()
+        //             break
+        //         }
+        //     }
+        // }
+   
     //register user, set fields to empty and alert success message
     async function registerUser() {
         let newUser = {
