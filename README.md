@@ -13,12 +13,20 @@
 
 ## Project Name
 FishGoal [Netlify](https://fish-goals.netlify.app/)
+
+Create an account or use the test account
+* Test name: Rose
+* Test username: username
+* Test password: test
+
 ## Project Description
 A tool to allows users to add, update, and remove custom goals. The goal is to allow users to keep track of SMART goals or tasks.
 
 ## Setup
 
 ```
+fork
+git clone
 npm install
 npm start
 ```
