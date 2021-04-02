@@ -1,5 +1,5 @@
 # Project Overview
-![](/assets/fishgoals.gif)
+![](/assets/fish-goals.gif)
 ## Table of contents
 * [Project Introduction](#project-description)
 * [Setup](#setup)
