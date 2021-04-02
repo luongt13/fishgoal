@@ -142,7 +142,7 @@ Mobile design shows the changes needed in order to fit the components in the scr
 | Tuesday 3/23   | Wrap up components / Start styling | Complete |
 | Wednesday 3/24 | Style | Complete |
 | Thursday 3/25  | MVP / User Testing | Complete |
-| Friday 3/26    | Project Presentation | In progress |
+| Friday 3/26    | Project Presentation | Complete |
 
 ## Timeframes
 | Component | Priority | Estimated Time (hours) | Time Invested (hours) | Actual Time (hours) |
