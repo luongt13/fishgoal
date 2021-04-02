@@ -39,12 +39,6 @@ function Form(props) {
         for(let i=0; i<userData.length; i++) {
             currentUsernames.push(userData[i].username)
         }
-        // for(let i=0; i<userData.length; i++) {
-        //     if(userData[i].username === "luongt") {
-        //         let userPassword = userData[i].password
-        //         break
-        //     }
-        // }
         if (title === "login"){
             if(currentUsernames.find(userName => userName === username)) {
                 for(let i=0; i<userData.length; i++) {
@@ -63,17 +57,17 @@ function Form(props) {
                 setMessage("Invalid username")
                 setOpen(true)
             }
-            } else if (title === "register"){
-                if(currentUsernames.find(userName => userName === username)) {
-                    setMessage("Username taken")
-                    setOpen(true)
-                    setUsername("")
-                    setPassword("")
-                } else {
-                    registerUser()
-                }
+        } else if (title === "register"){
+            if(currentUsernames.find(userName => userName === username)) {
+                setMessage("Username taken")
+                setOpen(true)
+                setUsername("")
+                setPassword("")
+            } else {
+                registerUser()
             }
         }
+    }
     //register user, set fields to empty and alert success message
     async function registerUser() {
         let newUser = {
