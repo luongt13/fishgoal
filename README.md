@@ -62,7 +62,7 @@ Mobile design shows the changes needed in order to fit the components in the scr
 
 ## Component Hierarchy
 
-![component hierarchy](/assets/hierarchy.png)
+![component hierarchy](/assets/component-hierarchy.png)
 
 ## API and Data Sample
 ```
